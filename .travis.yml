@@ -1,0 +1,25 @@
+language: node_js
+node_js: stable
+
+install:
+  - npm install
+
+script:
+  - npm install -g hexo
+  - hexo g
+
+after_script:
+  - cd ./_posts
+  - git init
+  - git config user.name "xkloveme"
+  - git config user.email "admin@jixiaokang.com"
+  - git add .
+  - git commit -m "Update docs"
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:${P_BRANCH}
+
+branches:
+  only:
+    - master
+env:
+  global:
+    - GH_REF: github.com/xkloveme/xkloveme.github.io.git

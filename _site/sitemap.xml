@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>http://localhost:4000/2016/11/build_blog_with_github_and_jekyll/</loc>
+<lastmod>2016-11-21T00:00:00+08:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2016/11/aflred_workflow/</loc>
+<lastmod>2016-11-24T00:00:00+08:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2017/07/Front_end_tutorial/</loc>
+<lastmod>2017-07-11T00:00:00+08:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2017/08/change_hosts/</loc>
+<lastmod>2017-08-01T00:00:00+08:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2018/08/vue-refs/</loc>
+<lastmod>2018-08-10T00:00:00+08:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/about/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/archive/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/tags/</loc>
+</url>
+</urlset>
