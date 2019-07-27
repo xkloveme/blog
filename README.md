@@ -168,11 +168,11 @@ env:
 
 ### 参考资料
 
-[Github 简明教程](http://www.runoob.com/w3cnote/git-guide.html)  
-[Git 简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)  
-[Jekyll 英文文档](https://jekyllrb.com/docs/home/)  
-[Jekyll 中文文档](http://jekyll.com.cn/docs/home/)  
-[Jekyll 代码高亮的几种选择](http://blog.csdn.net/qiujuer/article/details/50419279)  
-[Markdown 语法说明](http://wowubuntu.com/markdown/index.html)  
-[Markdown Lint](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md)  
+[Github 简明教程](http://www.runoob.com/w3cnote/git-guide.html)
+[Git 简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)
+[Jekyll 英文文档](https://jekyllrb.com/docs/home/)
+[Jekyll 中文文档](http://jekyll.com.cn/docs/home/)
+[Jekyll 代码高亮的几种选择](http://blog.csdn.net/qiujuer/article/details/50419279)
+[Markdown 语法说明](http://wowubuntu.com/markdown/index.html)
+[Markdown Lint](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md)
 [kramdown Quick Reference](http://kramdown.gettalong.org/quickref.html)
