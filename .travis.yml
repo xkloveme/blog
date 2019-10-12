@@ -2,15 +2,14 @@ language: node_js
 node_js: stable
 
 before_install:
-  - npm install -g hexo-cli
+  - gem install jekyll bundler
 
 install:
   - npm install
-  - npm install hexo-deployer-git --save
 
 script:
-  - hexo clean
-  - hexo generate
+  - bundle install
+  - bundle exec jekyll build
 
 after_script:
   - cd ./_posts
