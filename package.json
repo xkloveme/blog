@@ -10,7 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/xkloveme/xkloveme.github.io.git"
   },
-  "keywords": ["blog"],
+  "keywords": [
+    "blog"
+  ],
   "author": "xkloveme",
   "license": "ISC",
   "bugs": {
