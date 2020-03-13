@@ -1,18 +1,27 @@
 language: node_js
 node_js: stable
 
+cache: npm
 before_install:
-  - gem install jekyll bundler
+  - npm install hexo -g
 
-install:
-  - npm install
+# install:
+#   - npm install
 
 script:
-  - bundle install
-  - bundle exec jekyll build
+  - hexo generate # generate static files
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GH_TOKEN
+  keep-history: true
+  on:
+    branch: master
+  local-dir: public
 
 after_script:
-  - cd ./_posts
+  - cd ./public
   - git init
   - git config user.name "xkloveme"
   - git config user.email "admin@jixiaokang.com"
