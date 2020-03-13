@@ -4,11 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="基于 Vue拓展的 v-xxx 库, 小康,xkloveme,blog">
-    <meta name="description" content="
-君问归期未有期，巴山夜雨涨秋池。 &amp;gt; 何当共剪西窗烛，却话巴山夜雨时。
+    <meta name="keywords" content="使用GitHub Pages+Jekyll搭建个人博客, 小康,xkloveme,blog">
+    <meta name="description" content="概述
 
-作为vue轻车熟路的老司机，经常会用到一些指令，vue官方提供的指令又太少，无法满足旺盛的欲望，而每次要写一遍，终日郁郁寡欢，从小就教育我们乐于助人，为了将奉">
+GitHub Pages 免费无限容量的站点数据托管工具(国内访问速度较慢)，内置 Jekyll 服务，能将特定名称的代码仓库动态编译为静态网页
+Jekyll 基于 Ruby 的静态网页生成系统，采用模板将 Markdown(或 T">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>基于 Vue拓展的 v-xxx 库 | 小康之家</title>
+    <title>使用GitHub Pages+Jekyll搭建个人博客 | 小康之家</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -285,13 +285,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        基于 Vue拓展的 v-xxx 库
+                        使用GitHub Pages+Jekyll搭建个人博客
                     </div>
                 </div>
             </div>
@@ -403,16 +403,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/vue/">
-                                <span class="chip bg-color">vue</span>
-                            </a>
-                        
                             <a href="/tags/GitHub/">
                                 <span class="chip bg-color">GitHub</span>
                             </a>
                         
-                            <a href="/tags/%E6%8C%87%E4%BB%A4/">
-                                <span class="chip bg-color">指令</span>
+                            <a href="/tags/%E6%95%99%E7%A8%8B/">
+                                <span class="chip bg-color">教程</span>
+                            </a>
+                        
+                            <a href="/tags/Jekyll/">
+                                <span class="chip bg-color">Jekyll</span>
                             </a>
                         
                     </div>
@@ -427,7 +427,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-12
+                    2016-11-21
                 </div>
                 
 
@@ -436,14 +436,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    6 分
                 </div>
                 
 				
@@ -459,356 +459,138 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p><strong>君问归期未有期，巴山夜雨涨秋池。</strong> &gt; <strong>何当共剪西窗烛，却话巴山夜雨时。</strong></p>
-</blockquote>
-<p>作为<code>vue</code>轻车熟路的老司机，经常会用到一些指令，<code>vue</code>官方提供的指令又太少，无法满足旺盛的欲望，而每次要写一遍，终日郁郁寡欢，从小就教育我们乐于助人，为了将奉献精神贯彻始终，用了这个库，空下来大把时间陪陪家人朋友岂不乐哉。</p>
-<p>闲话少叙，直逼主题，毕竟我们是正经的官方软文。</p>
-<ul>
-<li><strong><a href="https://www.jixiaokang.com/vue-v-xxx/" target="_blank" rel="noopener">查看官网</a></strong></li>
-<li><strong><a href="https://github.com/xkloveme/vue-v-xxx/" target="_blank" rel="noopener">查看源码</a></strong></li>
-</ul>
-<h2 id="什么是-vue-指令"><a href="#什么是-vue-指令" class="headerlink" title="什么是 vue 指令?"></a>什么是 vue 指令?</h2><hr>
-<ul>
-<li>在我们了解库之前,我们先回顾一下<code>Vue</code>指令</li>
-</ul>
-<h3 id="1-我们经常用的有一下几种指令"><a href="#1-我们经常用的有一下几种指令" class="headerlink" title="1. 我们经常用的有一下几种指令"></a>1. 我们经常用的有一下几种指令</h3><pre class=" language-js"><code class="language-js">v<span class="token operator">-</span>text 、 v<span class="token operator">-</span>html 、 v<span class="token operator">-</span>show 、 v<span class="token operator">-</span><span class="token keyword">if</span> 、 v<span class="token operator">-</span><span class="token keyword">else</span> 、v<span class="token operator">-</span><span class="token keyword">for</span> 、 v<span class="token operator">-</span>bind 、 v<span class="token operator">-</span>on 、
-v<span class="token operator">-</span>model 、 v<span class="token operator">-</span>once</code></pre>
+                <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p><img src="/assets/build_blog_with_github_and_jekyll/01.jpg" alt=""></p>
 <blockquote>
-<p>具体用法<a href="https://cn.vuejs.org/v2/guide/conditional.html" target="_blank" rel="noopener">前去官网</a>,不再赘述</p>
-</blockquote>
-<h3 id="什么是自定义指令"><a href="#什么是自定义指令" class="headerlink" title="什么是自定义指令?"></a>什么是自定义指令?</h3><blockquote>
-<p>有的情况下，你仍然需要对普通 DOM 元素进行底层操作，这时候就会用到自定义指令.</p>
-</blockquote>
-<pre class=" language-js"><code class="language-js"><span class="token operator">&lt;</span>input  v<span class="token operator">-</span>focus<span class="token operator">></span><span class="token comment" spellcheck="true">// 为例</span>
-
-<span class="token comment" spellcheck="true">// 在组件内部</span>
-directives<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-  focus<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-  <span class="token comment" spellcheck="true">// 指令的定义</span>
-  inserted<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>el<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    el<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<h3 id="钩子函数"><a href="#钩子函数" class="headerlink" title="钩子函数"></a>钩子函数</h3><p>一个指令定义对象可以提供如下几个钩子函数 (均为可选)：</p>
-<ul>
-<li><p><code>bind</code>：只调用一次，指令第一次绑定到元素时调用。在这里可以进行一次性的初始化设置。</p>
-</li>
-<li><p><code>inserted</code>：被绑定元素插入父节点时调用 (仅保证父节点存在，但不一定已被插入文档中)。</p>
-</li>
-<li><p><code>update</code>：所在组件的 VNode 更新时调用，<strong>但是可能发生在其子 VNode 更新之前</strong>。指令的值可能发生了改变，也可能没有。但是你可以通过比较更新前后的值来忽略不必要的模板更新。</p>
-</li>
-<li><p><code>componentUpdated</code>：指令所在组件的 VNode <strong>及其子 VNode</strong> 全部更新后调用。</p>
-</li>
-<li><p><code>unbind</code>：只调用一次，指令与元素解绑时调用。</p>
-</li>
-</ul>
-<h3 id="钩子函数的参数"><a href="#钩子函数的参数" class="headerlink" title="钩子函数的参数"></a>钩子函数的参数</h3><ul>
-<li><code>el</code>：指令所绑定的元素，可以用来直接操作 DOM 。</li>
-<li><code>binding</code>：一个对象，包含以下属性：<ul>
-<li><code>name</code>：指令名，不包括 <code>v-</code> 前缀。</li>
-<li><code>value</code>：指令的绑定值，例如：<code>v-my-directive=&quot;1 + 1&quot;</code> 中，绑定值为 <code>2</code>。</li>
-<li><code>oldValue</code>：指令绑定的前一个值，仅在 <code>update</code> 和 <code>componentUpdated</code> 钩子中可用。无论值是否改变都可用。</li>
-<li><code>expression</code>：字符串形式的指令表达式。例如 <code>v-my-directive=&quot;1 + 1&quot;</code> 中，表达式为 <code>&quot;1 + 1&quot;</code>。</li>
-<li><code>arg</code>：传给指令的参数，可选。例如 <code>v-my-directive:foo</code> 中，参数为 <code>&quot;foo&quot;</code>。</li>
-<li><code>modifiers</code>：一个包含修饰符的对象。例如：<code>v-my-directive.foo.bar</code> 中，修饰符对象为 <code>{ foo: true, bar: true }</code>。</li>
-</ul>
-</li>
-<li><code>vnode</code>：Vue 编译生成的虚拟节点。</li>
-<li><code>oldVnode</code>：上一个虚拟节点，仅在 <code>update</code> 和 <code>componentUpdated</code> 钩子中可用。</li>
-</ul>
-<h2 id="怎么安装-vue-v-xxx"><a href="#怎么安装-vue-v-xxx" class="headerlink" title="怎么安装 vue-v-xxx?"></a>怎么安装 vue-v-xxx?</h2><hr>
+<p><strong><code>GitHub Pages</code></strong> 免费无限容量的站点数据托管工具(<em>国内访问速度较慢</em>)，内置 Jekyll 服务，能将特定名称的代码仓库动态编译为静态网页</p>
+<p><strong><code>Jekyll</code></strong> 基于 Ruby 的静态网页生成系统，采用模板将 Markdown(或 Textile)文件转换为统一的网页</p>
+<p><strong>统计</strong> 统计工具主要是为了方便查看站点的访问情况，目前支持<a href="http://tongji.baidu.com" target="_blank" rel="noopener">百度统计</a>和<a href="http://www.google.com/analytics/" target="_blank" rel="noopener">Google Analytics</a>(可同时使用)</p>
+<p><strong>评论</strong> 评论工具可以为静态页面增加评论和分享功能，目前支持国内的<a href="http://duoshuo.com" target="_blank" rel="noopener">多说</a>和国外的<a href="https://disqus.com" target="_blank" rel="noopener">Disqus</a></p>
 <blockquote>
-<p>基于 vue 指令,又新增丰富一些常用的指令,看看是怎么使用的吧</p>
+<p><em>本文将重点介绍标注 `` 的必选项目，未标注的可选项目请按照给定地址自行注册即可</em></p>
 </blockquote>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
-<li>您可以通过 npm 安装,推荐使用 <code>npm</code> 的方式安装，它能更好地和 <code>webpack</code> 打包工具配合使用。</li>
-</ul>
-<pre class=" language-bash"><code class="language-bash">
-<span class="token comment" spellcheck="true"># install vue-v-xxx</span>
-
- <span class="token function">npm</span> <span class="token function">install</span> vue-v-xxx --save
-
-<span class="token comment" spellcheck="true"># or</span>
-
- yarn add vue-v-xxx --save
-</code></pre>
-<ul>
-<li>您也可以通过 unpkg.com/vue-v-xxx 获取到最新版本的资源，在页面上引入 js 和 css 文件即可开始使用。</li>
-</ul>
-<pre class=" language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!-- 引入样式 --></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://unpkg.com/vue-v-xxx/lib/vue-v-xxx.css<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-
-<span class="token comment" spellcheck="true">&lt;!-- 引入组件库 --></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://unpkg.com/vue-v-xxx<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ul>
-<li>您可以在<code>main.js</code>里面全局注册,在组件内就可以应用了<a href="https://github.com/xkloveme/vue-v-xxx-project" target="_blank" rel="noopener">推荐工程</a></li>
-</ul>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">"vue"</span><span class="token punctuation">;</span>
-
-<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">"./App"</span><span class="token punctuation">;</span>
-
-<span class="token keyword">import</span> Vxxx <span class="token keyword">from</span> <span class="token string">"vue-v-xxx"</span><span class="token punctuation">;</span>
-
-<span class="token keyword">import</span> <span class="token string">"vue-v-xxx/lib/vue-v-xxx.css"</span><span class="token punctuation">;</span>
-
-Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>productionTip <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-
-Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Vxxx<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment" spellcheck="true">/* eslint-disable no-new */</span>
-
-<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  el<span class="token punctuation">:</span> <span class="token string">"#app"</span><span class="token punctuation">,</span>
-
-  components<span class="token punctuation">:</span> <span class="token punctuation">{</span> App <span class="token punctuation">}</span><span class="token punctuation">,</span>
-
-  template<span class="token punctuation">:</span> <span class="token string">"&lt;App/>"</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<ul>
-<li>您可以通过 CDN 可以快速使用 vue-v-xxx 写出一个示例，您可以复制下面代码或<a href="https://codesandbox.io/s/vue-v-xxx-bndj4" target="_blank" rel="noopener">在线预览</a></li>
-</ul>
-<pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>vue-v-xxx<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
-
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span>
-      <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span>
-      <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://unpkg.com/vue-v-xxx/lib/vue-v-xxx.css<span class="token punctuation">"</span></span>
-    <span class="token punctuation">/></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Welcome<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>欢迎使用 {{ value }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
-
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">v-copy</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>value<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Click me!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-
-  <span class="token comment" spellcheck="true">&lt;!-- import Vue before vue-v-xxx --></span>
-
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://unpkg.com/vue/dist/vue.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-
-  <span class="token comment" spellcheck="true">&lt;!-- import JavaScript --></span>
-
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://unpkg.com/vue-v-xxx/lib/vue-v-xxx.umd.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
-    <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-      el<span class="token punctuation">:</span> <span class="token string">"#app"</span><span class="token punctuation">,</span>
-
-      data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        value<span class="token punctuation">:</span> <span class="token string">"vue-v-xxx"</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
-<h2 id="我们提供了那些额外的指令"><a href="#我们提供了那些额外的指令" class="headerlink" title="我们提供了那些额外的指令?"></a>我们提供了那些额外的指令?</h2><hr>
-<h3 id="v-call-拨打指令"><a href="#v-call-拨打指令" class="headerlink" title="v-call 拨打指令"></a>v-call 拨打指令</h3><blockquote>
-<p>该指令快速唤起拨打电话或者发送短信</p>
 </blockquote>
-<ul>
-<li><p><a href="https://www.jixiaokang.com/vue-v-xxx/configurations/v-call.html" target="_blank" rel="noopener">在线预览</a></p>
+<h3 id="建立-GitHub-Pages-站点"><a href="#建立-GitHub-Pages-站点" class="headerlink" title="建立 GitHub Pages 站点"></a>建立 GitHub Pages 站点</h3><ol>
+<li><p>在 GitHub 上建立一个以 <strong><em>.github.io</em></strong> 为后缀的和你帐号名一样的代码仓库，如我的帐号是:<a href="https://github.com/xkloveme" target="_blank" rel="noopener">xkloveme</a>，则建立的仓库名为:<a href="https://github.com/xkloveme/xkloveme.github.io" target="_blank" rel="noopener">xkloveme.github.io</a>, 同时在底部 Add .gitigore 选择 Jekyll 模板，这样 Jekyll 产生的临时文件，例如_site 目录就不会添加到源代码管理中，当然你也可以以后手动配置:</p>
+<p><img src="/assets/build_blog_with_github_and_jekyll/02.jpg" alt=""></p>
 </li>
-<li><p>使用案例</p>
+<li><p>将该代码仓库克隆到地:</p>
+<blockquote>
+<pre class=" language-sh"><code class="language-sh">$ git clone https://github.com/xkloveme/xkloveme.github.io</code></pre>
+</blockquote>
+</li>
+</ol>
+<p>3) 创建一个测试页面并推送:</p>
+<blockquote>
+<pre class=" language-sh"><code class="language-sh">$ cd xkloveme.github.io
+$ echo "Hello World" > index.html
+$ git add --all
+$ git commit -m "Initial commit"
+$ git push -u origin master</code></pre>
+</blockquote>
+<ol start="4">
+<li>浏览器中输入<a href="https://xkloveme.github.io" target="_blank" rel="noopener">xkloveme.github.io</a>，如果一切正常，你应该能看到一个显示 Hello World 的页面.</li>
+</ol>
+<blockquote>
+<p><em>请将以上的 <strong>xkloveme</strong> 替换为你申请的帐号名</em></p>
+</blockquote>
+<h3 id="安装配置-Jekyll"><a href="#安装配置-Jekyll" class="headerlink" title="安装配置 Jekyll"></a>安装配置 Jekyll</h3><ol>
+<li><p>安装 Jekyll:</p>
+<blockquote>
+<pre class=" language-sh"><code class="language-sh">$ gem install jekyll</code></pre>
+</blockquote>
+</li>
+<li><p>创建或使用模板, 创建模板使用 <em>jekyll new <strong>name</strong></em> 命令，但创建出来的测试模板极其简陋，在这里我主要介绍使用第三方主题，在 <a href="http://jekyllthemes.org" target="_blank" rel="noopener">这里</a> 你可以找到各种主题，当然你也可以直接使用我的博客模板:<a href="https://github.com/stidio/stidio.github.io/archive/master.zip" target="_blank" rel="noopener">点击下载</a>，下载后解压到本地代码仓库目录，并运行 <em>bundle install</em> 命令安装项目依赖包.</p>
+</li>
+<li><p>运行 <em>jekyll serve</em> 启动本地测试服务器，Jekyll 默认使用 4000 端口，如果被占用，可以使用 <em>jekyll serve -P $PORT</em> 指定其他端口，如果本机从没配置过 Jekyll，可能会给出 <em>cannot load such file – bundler</em> 的错误，运行 <em>gem install bundler</em> 即可解决，如果还是出现包缺失的错误，可以从以下两点排查：</p>
+<blockquote>
+<ul>
+<li>Gemfile 文件未添加指定包</li>
+<li>运行环境冲突，可以运行 <em>bundle exe jekyll serve</em> 执行，或者运行 <em>sudo bundle clean –force</em>(<strong>该命令会对全局环境造成影响，小心使用</strong>) 强制清理无关包后重新运行</li>
+</ul>
+</blockquote>
+</li>
+<li><p>在浏览器中输入 <a href="http://127.0.0.1:4000" target="_blank" rel="noopener">127.0.0.1:4000</a> 进行本地预览</p>
+</li>
+</ol>
+<blockquote>
+<p>Ruby 包管理工具介绍</p>
+<ul>
+<li><p><code>gem</code> 全局包管理工具，类似于 Python 的 pip, Node.js 的 npm -g</p>
+<ul>
+<li>gem install 安装组件</li>
+<li>gem install -v 安装特定版本</li>
+<li>gem list 列出已经安装组件</li>
+<li>gem sources -a 添加源</li>
+<li>gem sources –remove 删除源</li>
+</ul>
+</li>
+<li><p><code>bundle</code> 项目包管理工具，可以理解为一个独立的运行环境</p>
+<ul>
+<li>bundle update 更新项目依赖包</li>
+<li>bundle install 安装项目依赖包</li>
+<li>sudo bundle clean –force 强制删除不相关的包</li>
+<li>bundle exe 在指定环境中运行</li>
+</ul>
 </li>
 </ul>
-<pre><code>&lt;template lang=&quot;pug&quot;&gt;
-.v-xxx
-  div(v-call=&quot;tel&quot;) 点击拨打☎️
-  div(v-call:sms=&quot;10086&quot;) 点击发短信💬
-&lt;/template&gt;
-&lt;script&gt;
-  export default {
-    name: &#39;v-call&#39;,
-    data() {
-      return {
-        tel: &#39;10086&#39;
-      }
-    }
-  }
-&lt;/script&gt;</code></pre><h3 id="v-copy-复制指令"><a href="#v-copy-复制指令" class="headerlink" title="v-copy 复制指令"></a>v-copy 复制指令</h3><blockquote>
-<p>在很多情况下，我们需要复制操作</p>
 </blockquote>
+<h3 id="使用我的博客模板"><a href="#使用我的博客模板" class="headerlink" title="使用我的博客模板"></a>使用我的博客模板</h3><ol>
+<li>按照注释说明修改 <em>\</em>config.yml_ 配置文件</li>
+<li>删除文章目录 <em>\</em>post/_ 和文章图片目录 <em>images/posts/</em> 下面的所有内容</li>
+<li>Enjoy!</li>
+</ol>
+<p>我的模板在 <a href="https://github.com/leopardpan/leopardpan.github.io" target="_blank" rel="noopener">leopardpan</a> 基础上进行了修改，主要改进了以下内容:</p>
+<blockquote>
 <ul>
-<li><p><a href="https://www.jixiaokang.com/vue-v-xxx/configurations/v-copy.html" target="_blank" rel="noopener">在线预览</a></p>
-</li>
-<li><p>使用案例</p>
-</li>
+<li>统一风格，给关于，标签页面添加了标题栏</li>
+<li>添加分割改进文章列表的多标签显示</li>
+<li>修正了一些翻译不全的文字</li>
+<li>代码颜色高亮支持，综合了 Pygments monokai 方案和 Rouge monokai.sublime 方案，<a href="/css/code_style_monokai.css">点此查看</a></li>
+<li>底部统计和版权排版对齐</li>
+<li>更新 Jekyll 及其依赖包到最新版本</li>
+<li>修正 jekyll-sitemap 加载失败的问题</li>
+<li>支持 GFM 形式的 Markdown Codeblock 解析</li>
 </ul>
-<pre><code>&lt;template lang=&quot;pug&quot;&gt;
-.v-xxx
-  Button(@click=&quot;handleClick&quot; v-copy=&quot;value&quot;) 点击复制
-  div
-    textarea(placeholder=&quot;Paste here&quot; style=&quot;margin-top:40px;width:100%;height:100%;&quot;)
-&lt;/template&gt;
-&lt;script&gt;
-  export default {
-    name: &#39;v-copy&#39;,
-    data() {
-      return {
-        value: &#39;&#39;
-      }
-    },
-    methods: {
-      handleClick(html = &#39;你复制了我,去粘贴吧&#39;) {
-        this.value = html
-      }
-    }
-  }
-&lt;/script&gt;</code></pre><h3 id="v-debounce-防抖指令"><a href="#v-debounce-防抖指令" class="headerlink" title="v-debounce 防抖指令"></a>v-debounce 防抖指令</h3><blockquote>
-<p><code>v-debounce</code> 支持传入防抖时间<code>v-debounce:500</code> 默认 500ms</p>
 </blockquote>
+<p>如果喜欢请<a href="https://github.com/xkloveme/xkloveme.github.io" target="_blank" rel="noopener">Star!</a>，谢谢!</p>
+<h3 id="编写文章"><a href="#编写文章" class="headerlink" title="编写文章"></a>编写文章</h3><p>推荐</p>
+<ol>
+<li>国内在线 md 编辑工具<a href="https://www.zybuluo.com/mdeditor" target="_blank" rel="noopener">mdeditor</a>一款国内的在线 markdown 编辑器</li>
+<li>国外在线 md 编辑工具<a href="https://stackedit.io/" target="_blank" rel="noopener">stackedit</a>国外的在线 markdown 编辑器，功能强大，同步云盘国内用户不推荐速度稍慢<br>文章为 Markdown 格式，请使用.md 作为后缀名，有以下两个文章目录：</li>
+</ol>
+<blockquote>
 <ul>
-<li><a href="https://www.jixiaokang.com/vue-v-xxx/configurations/v-debounce.html" target="_blank" rel="noopener">在线预览</a></li>
+<li><code>_posts</code> 文件名格式为：YEAR-MONTH-DAY-title.md</li>
+<li><code>_drafts</code> 草稿目录，文件名格式为：title.md，即不加日期前缀，如果需要预览草稿，使用 <em>--drafts</em> 选项运行 <em>jekyll serve</em> 或 <em>jekyll build</em></li>
 </ul>
-<pre><code>&lt;template lang=&quot;pug&quot;&gt;
-.v-xxx
-  h1 未加防抖
-  h2 点击次数:{{num}}
-  Button(@click=&quot;addNum&quot;) (点我)
-  h1 加入防抖
-  h2 点击次数:{{num2}}
-  Button(v-debounce=&quot;addNum2&quot;) (点我)
-&lt;/template&gt;
-&lt;script&gt;
-export default {
-  name: &#39;v-debounce&#39;,
-  data () {
-    return {
-      num: 0,
-      num2: 0,
-    }
-  },
-  methods: {
-    addNum () {
-      this.num++
-    },
-    addNum2 () {
-      this.num2++
-    }
-  }
-}
-&lt;/script&gt;</code></pre><h3 id="v-throttle-节流指令"><a href="#v-throttle-节流指令" class="headerlink" title="v-throttle 节流指令"></a>v-throttle 节流指令</h3><blockquote>
-<p><code>v-throttle</code> 支持传入防抖时间<code>v-throttle:2000</code> 默认 2s</p>
+<p><strong>* 尽量避免使用中文文件名, 具体目录结构请参考: <a href="http://jekyll.com.cn/docs/structure/" target="_blank" rel="noopener">官方文档</a></strong></p>
 </blockquote>
-<ul>
-<li><a href="https://www.jixiaokang.com/vue-v-xxx/configurations/v-throttle.html" target="_blank" rel="noopener">在线预览</a></li>
-</ul>
-<pre><code>&lt;template lang=&quot;pug&quot;&gt;
-.v-xxx
-  h3 立即触发:{{num}}
-  input(v-model=&quot;num&quot;)
-  h3 节流后:{{num2}}
-  input(v-throttle:2000=&quot;num2&quot;)
-&lt;/template&gt;
-&lt;script&gt;
-  export default {
-    name: &#39;v-throttle&#39;,
-    data() {
-      return {
-        num: &#39;立即改变&#39;,
-        num2: &#39;节流值&#39;
-      }
-    }
-  }
-&lt;/script&gt;</code></pre><h3 id="v-ellipsis-省略指令"><a href="#v-ellipsis-省略指令" class="headerlink" title="v-ellipsis 省略指令"></a>v-ellipsis 省略指令</h3><blockquote>
-<p><code>v-ellipsis</code> 在表格中经常使用,<code>v-ellipsis</code>默认单行省略</p>
+<p>每篇文章都必须以参数：</p>
+<blockquote>
+<pre class=" language-conf"><code class="language-conf">---
+layout: post
+title: 使用GitHub+Jekyll搭建个人博客
+date: 2016-11-21 11:29:08 +0800
+tags: [Jekyll, GitHub, 教程]
+---</code></pre>
 </blockquote>
-<ul>
-<li><a href="https://www.jixiaokang.com/vue-v-xxx/configurations/v-ellipsis.html" target="_blank" rel="noopener">在线预览</a></li>
-</ul>
-<pre><code>&lt;template lang=&quot;pug&quot;&gt;
-.v-xxx
-  div(v-ellipsis) {{des}}
-  div(v-ellipsis:3)
-    p {{des2}}
-&lt;/template&gt;
-&lt;script&gt;
-export default {
-  name: &#39;v-ellipsis&#39;,
-  data() {
-    return {
-      des:
-        &#39;单行省略单行省略单行省略单行省略单行省略单行省略单行省略单行省略单行省略单行省略单行省略单行省略单行省略单行省略单行省略单行省略&#39;,
-      des2:
-        &#39;多行省略多行省略多行省略多行省略多行省略多行省略多行省略多行省略多行省略多行省略多行省略多行省略多行省略多行省略多行省略多行省略多行省略多行省略多行省略多行省略多行省略多行省略&#39;
-    }
-  }
-}
-&lt;/script&gt;</code></pre><h3 id="v-pin-固定指令"><a href="#v-pin-固定指令" class="headerlink" title="v-pin 固定指令"></a>v-pin 固定指令</h3><blockquote>
-<p><code>v-pin</code> 支持传入定位位置和定位值<code>v-pin:left || top</code> 默认 left</p>
+<p>作为头部信息，layout 为布局格式；title 为显示的文章名；date 为显示的发布日期；tags 为文章分类标签</p>
+<p>文章正文采用 Markdown 编写，如果不熟悉可以查看: <a href="http://wowubuntu.com/markdown/basic.html" target="_blank" rel="noopener">Markdown 快速入门</a>；强烈建议遵循<a href="https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md" target="_blank" rel="noopener">Markdown Lint</a>，规范有一些对书写文章不友好的地方，我做了调整，以下是我的<a href="https://code.visualstudio.com" target="_blank" rel="noopener">Visual Studio Code</a>的配置文件:</p>
+<blockquote>
+<pre class=" language-json"><code class="language-json"><span class="token property">"markdownlint.config"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"MD002"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>                                 // 禁用文章开头必须为H1标题栏
+        <span class="token property">"MD001"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>                                 // 禁用严格的标题层级关系(H1->H2->H3...<span class="token punctuation">)</span>
+        <span class="token property">"MD003"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"style"</span><span class="token operator">:</span> <span class="token string">"setext_with_atx_closed"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>  // 允许#和===形式的标题风格混用
+        <span class="token property">"MD009"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"br_spaces"</span><span class="token operator">:</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>                    // 允许末尾两个空格为&lt;BR/>自动换行模式
+        <span class="token property">"MD013"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>                                 // 禁用单行长度限制
+        <span class="token property">"MD014"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>                                 // 禁用sh命令以 $ 作为开始
+        <span class="token property">"MD038"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>                                 // 禁用代码不以空格作为开始或结束
+        <span class="token property">"MD041"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>                                 // 禁用代码段必须有标题栏
+        <span class="token property">"MD029"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"style"</span><span class="token operator">:</span> <span class="token string">"ordered"</span> <span class="token punctuation">}</span>                 // 有序列表格式为顺序方式
+    <span class="token punctuation">}</span></code></pre>
 </blockquote>
-<ul>
-<li><a href="https://www.jixiaokang.com/vue-v-xxx/configurations/v-pin.html" target="_blank" rel="noopener">在线预览</a></li>
-</ul>
-<pre><code>&lt;template lang=&quot;pug&quot;&gt;
-.v-xxx
-  div(v-pin=&quot;200&quot;) 顶部200px
-  div(v-pin:left=&quot;300&quot;) 左边300px
-&lt;/template&gt;
-&lt;script&gt;
-  export default {
-    name: &#39;v-pin&#39;
-  }
-&lt;/script&gt;</code></pre><h3 id="v-focus-聚焦指令"><a href="#v-focus-聚焦指令" class="headerlink" title="v-focus 聚焦指令"></a>v-focus 聚焦指令</h3><blockquote>
-<p><code>v-focus</code> 在移动端登录时异常好用</p>
-</blockquote>
-<ul>
-<li><a href="https://www.jixiaokang.com/vue-v-xxx/configurations/v-focus.html" target="_blank" rel="noopener">在线预览</a></li>
-</ul>
-<pre><code>&lt;template lang=&quot;pug&quot;&gt;
-.v-xxx
-  input(v-focus)
-&lt;/template&gt;
-&lt;script&gt;
-export default {
-  name: &#39;v-focus&#39;
-}
-&lt;/script&gt;</code></pre><h3 id="v-click-out-外部点击指令"><a href="#v-click-out-外部点击指令" class="headerlink" title="v-click-out 外部点击指令"></a>v-click-out 外部点击指令</h3><blockquote>
-<p><code>v-click-out</code> 点击外部 dom 触发</p>
-</blockquote>
-<ul>
-<li><a href="https://www.jixiaokang.com/vue-v-xxx/configurations/v-click-out.html" target="_blank" rel="noopener">在线预览</a></li>
-</ul>
-<pre><code>&lt;template lang=&quot;pug&quot;&gt;
-.v-xxx
-  div(style=&quot;border:1px solid red;width:200px;height:200px;&quot; @click=&quot;handleClick&quot; v-click-out=&quot;handleClickOut&quot;) {{name}}
-&lt;/template&gt;
-&lt;script&gt;
-  export default {
-    name: &#39;v-click-out&#39;,
-    data() {
-      return {
-        name: &#39;内部&#39;
-      }
-    },
-    methods: {
-      handleClick() {
-        this.name = &#39;您点击了内部&#39;
-      },
-      handleClickOut() {
-        this.name = &#39;您点击了外部&#39;
-      }
-    }
-  }
-&lt;/script&gt;
-</code></pre><h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><blockquote>
-<p><strong>如果您有好的指令欢迎 👏 来提 issue,尽可能多的覆盖,一旦选用将获取神秘礼品,期待您的加入</strong></p>
-</blockquote>
-<h2 id="神交"><a href="#神交" class="headerlink" title="神交"></a>神交</h2><p>觉得不错的话给个<code>star</code></p>
-<ul>
-<li><a href="https://github.com/xkloveme/vue-v-xxx/" target="_blank" rel="noopener">GitHub</a></li>
-<li><a href="https://www.cnblogs.com/xkloveme/" target="_blank" rel="noopener">blog</a></li>
-</ul>
+<p>Jekyll 的 Markdown 解释器从 3.0 开始，默认从 <em>redcarpet+Pygments</em> 换为 <em>kramdown+Rouge</em>, 现在已知的问题为：列表下不支持 GFM 形式的代码块(神奇的是 Github 下的 README.md 文件支持)，折中的办法是使用区块引用(Blockquote)，在其下再使用代码块(我的博客模板已针对这种情况在呈现上做了优化)</p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a href="http://www.runoob.com/w3cnote/git-guide.html" target="_blank" rel="noopener">Github 简明教程</a><br><a href="http://rogerdudler.github.io/git-guide/index.zh.html" target="_blank" rel="noopener">Git 简明指南</a><br><a href="https://jekyllrb.com/docs/home/" target="_blank" rel="noopener">Jekyll 英文文档</a><br><a href="http://jekyll.com.cn/docs/home/" target="_blank" rel="noopener">Jekyll 中文文档</a><br><a href="http://blog.csdn.net/qiujuer/article/details/50419279" target="_blank" rel="noopener">Jekyll 代码高亮的几种选择</a><br><a href="http://wowubuntu.com/markdown/index.html" target="_blank" rel="noopener">Markdown 语法说明</a><br><a href="https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md" target="_blank" rel="noopener">Markdown Lint</a><br><a href="http://kramdown.gettalong.org/quickref.html" target="_blank" rel="noopener">kramdown Quick Reference</a></p>
 
             </div>
             <hr/>
@@ -834,7 +616,7 @@ export default {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://jixioakang.com/2019/10/12/2019-10-12-vue-v-xxx-ji-yu-vue-tuo-zhan-de-v-xxx-ku/">http://jixioakang.com/2019/10/12/2019-10-12-vue-v-xxx-ji-yu-vue-tuo-zhan-de-v-xxx-ku/</a>
+                    <a href="http://jixioakang.com/2016/11/21/2016-11-18-build-blog-with-github-and-jekyll/">http://jixioakang.com/2016/11/21/2016-11-18-build-blog-with-github-and-jekyll/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -872,16 +654,16 @@ export default {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/vue/">
-                                    <span class="chip bg-color">vue</span>
-                                </a>
-                            
                                 <a href="/tags/GitHub/">
                                     <span class="chip bg-color">GitHub</span>
                                 </a>
                             
-                                <a href="/tags/%E6%8C%87%E4%BB%A4/">
-                                    <span class="chip bg-color">指令</span>
+                                <a href="/tags/%E6%95%99%E7%A8%8B/">
+                                    <span class="chip bg-color">教程</span>
+                                </a>
+                            
+                                <a href="/tags/Jekyll/">
+                                    <span class="chip bg-color">Jekyll</span>
                                 </a>
                             
                         </div>
@@ -1067,7 +849,7 @@ export default {
         repo: '',
         owner: '',
         admin: null,
-        id: '2019-10-12T00-00-00',
+        id: '2016-11-21T00-00-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1092,31 +874,24 @@ export default {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/03/13/2020-03-13-fa-shao-zi-de-ren/">
+                <a href="/2016/11/24/2016-11-23-aflred-workflow/">
                     <div class="card-image">
                         
-                        <img src="https://s1.ax1x.com/2020/03/12/8mBQ3V.jpg" class="responsive-img" alt="发哨子的人">
                         
-                        <span class="card-title">发哨子的人</span>
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Alfred Workflow教程与实例">
+                        
+                        <span class="card-title">Alfred Workflow教程与实例</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-全文摘取《人物》发哨子的人为了躲避审查,可谓是无所不用其极,戏剧般的艺术绽放往往藏着更为悲伤的故事
-
-
-
-如果这些医⽣都能够得到及时的提醒，或许就不会有这⼀天
-
-
-2019 年 12 ⽉ 30 ⽇，艾芬曾拿到过⼀份不明肺炎病⼈的病毒检测报
+                            小帽子 Alfred 作为 macOS 上的最佳效率软件应该没太大争议(排名)，而其中最强大的部分即为 Alfred 2.0 推出的Workflow特性；其允许你将日常重复性的工作使用脚本语言(目前支持：bash, zsh, php, py
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-13
+                            <i class="far fa-clock fa-fw icon-date"></i>2016-11-24
                         </span>
                         <span class="publish-author">
                             
@@ -1129,8 +904,12 @@ export default {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E4%BA%BA%E7%94%9F%E7%99%BE%E6%80%81/">
-                        <span class="chip bg-color">人生百态</span>
+                    <a href="/tags/%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">教程</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">工具</span>
                     </a>
                     
                 </div>
@@ -1141,30 +920,30 @@ export default {
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/12/2019-10-12-ru-he-shang-chuan-zi-ji-de-ui-zu-jian-bao/">
+                <a href="/2016/11/21/2016-11-18-build-blog-with-github-and-jekyll/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="如何上传自己的UI组件包">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="使用GitHub Pages+Jekyll搭建个人博客">
                         
-                        <span class="card-title">如何上传自己的UI组件包</span>
+                        <span class="card-title">使用GitHub Pages+Jekyll搭建个人博客</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            开篇
-西风吹老洞庭波，一夜湘君白发多。醉后不知天在水，满船清梦压星河。
+                            概述
 
-前言 身为程序员,还没有自己的包,总感觉缺点什么,女朋友和包至少占一样吧.正如上战场没有扛枪的士兵,吃饭少了筷子一样,令人心情不愉悦.同时经常会有面试官会问一个犀利的
+GitHub Pages 免费无限容量的站点数据托管工具(国内访问速度较慢)，内置 Jekyll 服务，能将特定名称的代码仓库动态编译为静态网页
+Jekyll 基于 Ruby 的静态网页生成系统，采用模板将 Markdown(或 T
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2016-11-21
                             </span>
                         <span class="publish-author">
                             
@@ -1174,12 +953,9 @@ export default {
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
-                    
-                    <a href="/tags/vue/">
-                        <span class="chip bg-color">vue</span>
-                    </a>
                     
                     <a href="/tags/GitHub/">
                         <span class="chip bg-color">GitHub</span>
@@ -1187,6 +963,10 @@ export default {
                     
                     <a href="/tags/%E6%95%99%E7%A8%8B/">
                         <span class="chip bg-color">教程</span>
+                    </a>
+                    
+                    <a href="/tags/Jekyll/">
+                        <span class="chip bg-color">Jekyll</span>
                     </a>
                     
                 </div>
