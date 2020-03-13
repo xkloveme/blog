@@ -1,22 +1,31 @@
 {
-  "name": "xkloveme.github.io",
+  "name": "jixiaokang.com",
   "version": "1.0.0",
-  "description": "个人博客",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "dev": "bundle exe jekyll serve"
+    "dev": "hexo server",
+    "build": "hexo generate",
+    "clean": "hexo clean",
+    "deploy": "hexo deploy",
+    "server": "hexo server"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/xkloveme/xkloveme.github.io.git"
+  "hexo": {
+    "version": "4.2.0"
   },
-  "keywords": [
-    "blog"
-  ],
-  "author": "xkloveme",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/xkloveme/xkloveme.github.io/issues"
-  },
-  "homepage": "https://github.com/xkloveme/xkloveme.github.io#readme"
+  "dependencies": {
+    "hexo": "^4.0.0",
+    "hexo-generator-archive": "^1.0.0",
+    "hexo-generator-category": "^1.0.0",
+    "hexo-generator-feed": "^2.2.0",
+    "hexo-generator-index": "^1.0.0",
+    "hexo-generator-search": "^2.4.0",
+    "hexo-generator-tag": "^1.0.0",
+    "hexo-permalink-pinyin": "^1.1.0",
+    "hexo-prism-plugin": "^2.3.0",
+    "hexo-renderer-ejs": "^1.0.0",
+    "hexo-renderer-marked": "^2.0.0",
+    "hexo-renderer-stylus": "^1.1.0",
+    "hexo-server": "^1.0.0",
+    "hexo-wordcount": "^6.0.1"
+  }
 }
