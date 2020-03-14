@@ -98,7 +98,7 @@ theme: hexo-theme-matery
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: ""
+  repo: git@github.com:xkloveme/xkloveme.github.io.git
 
 # 高亮代码
 
