@@ -414,6 +414,15 @@ for(j = ">
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
 
@@ -501,14 +510,17 @@ for(j = ">
 </ol>
 <p>不同点： 1.<strong>forEach()「没有返回值」</strong></p>
 <ul>
-<li>参数：value 数组中的当前项, index 当前项的索引, array 原始数组；</li>
-<li>数组中有几项，那么传递进去的匿名回调函数就需要执行几次；</li>
-<li>理论上这个方法是没有返回值的，仅仅是遍历数组中的每一项，不对原来数组进行修改；但是可以自己通过数组的索引来修改原来的数组；</li>
-</ul>
+<li><p>参数：value 数组中的当前项, index 当前项的索引, array 原始数组；</p>
+</li>
+<li><p>数组中有几项，那么传递进去的匿名回调函数就需要执行几次；</p>
+</li>
+<li><p>理论上这个方法是没有返回值的，仅仅是遍历数组中的每一项，不对原来数组进行修改；但是可以自己通过数组的索引来修改原来的数组；</p>
 <p>2.<strong>map()「有返回值，可以 return」</strong></p>
-<ul>
-<li>参数：value 数组中的当前项,index 当前项的索引,array 原始数组；</li>
-<li>区别：map 的回调函数中支持 return 返回值；return 的是啥，相当于把数组中的这一项变为啥（并不影响原来的数组，只是相当于把原数组克隆一份，把克隆的这一份的数组中的对应项改变了）；</li>
+</li>
+<li><p>参数：value 数组中的当前项,index 当前项的索引,array 原始数组；</p>
+</li>
+<li><p>区别：map 的回调函数中支持 return 返回值；return 的是啥，相当于把数组中的这一项变为啥（并不影响原来的数组，只是相当于把原数组克隆一份，把克隆的这一份的数组中的对应项改变了）；</p>
+</li>
 </ul>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>循环方式对比是专门对比普通 for 循环和 foreach,以及其它遍历方式在大量运算后的结果，目前对比三大类型,for 循环,forin,foreac，以及 for 循环的几种不同运用，可以看到,不同的方式差距较大，在综合考虑性能和方便性和可靠性上还是多选用 for 吧，<strong>在循环数组的时候还是用 for 循环吧，而在循环对象的时候再用 for…in</strong></p>
 
@@ -815,8 +827,12 @@ alert(1 &amp;&amp; 2) 得到的结果是什么？ A:true      B:false      C:1  
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            xkloveme
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -862,8 +878,12 @@ alert(1 &amp;&amp; 2) 得到的结果是什么？ A:true      B:false      C:1  
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            xkloveme
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
+                                    教程
+                                </a>
+                            
                             
                         </span>
                     </div>

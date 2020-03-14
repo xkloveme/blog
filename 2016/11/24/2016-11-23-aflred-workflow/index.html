@@ -4,11 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="如何上传自己的UI组件包, 小康,xkloveme,博客">
-    <meta name="description" content="开篇
-西风吹老洞庭波，一夜湘君白发多。醉后不知天在水，满船清梦压星河。
-
-前言 身为程序员,还没有自己的包,总感觉缺点什么,女朋友和包至少占一样吧.正如上战场没有扛枪的士兵,吃饭少了筷子一样,令人心情不愉悦.同时经常会有面试官会问一个犀利的">
+    <meta name="keywords" content="Alfred Workflow教程与实例, 小康,xkloveme,博客">
+    <meta name="description" content="小帽子 Alfred 作为 macOS 上的最佳效率软件应该没太大争议(排名)，而其中最强大的部分即为 Alfred 2.0 推出的Workflow特性；其允许你将日常重复性的工作使用脚本语言(目前支持：bash, zsh, php, py">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>如何上传自己的UI组件包 | 小康之家</title>
+    <title>Alfred Workflow教程与实例 | 小康之家</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -285,13 +282,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        如何上传自己的UI组件包
+                        Alfred Workflow教程与实例
                     </div>
                 </div>
             </div>
@@ -401,24 +398,21 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E6%95%99%E7%A8%8B/">
-                                <span class="chip bg-color">教程</span>
-                            </a>
-                        
-                            <a href="/tags/GitHub/">
-                                <span class="chip bg-color">GitHub</span>
-                            </a>
-                        
-                            <a href="/tags/vue/">
-                                <span class="chip bg-color">vue</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
+                                教程
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -427,7 +421,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-11
+                    2016-11-24
                 </div>
                 
 
@@ -436,14 +430,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    4 分
                 </div>
                 
 				
@@ -459,383 +453,83 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="开篇"><a href="#开篇" class="headerlink" title="开篇"></a>开篇</h1><blockquote>
-<p>西风吹老洞庭波，一夜湘君白发多。<br>醉后不知天在水，满船清梦压星河。</p>
-</blockquote>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p> <strong>身为程序员,还没有自己的包,总感觉缺点什么,女朋友和包至少占一样吧.正如上战场没有扛枪的士兵,吃饭少了筷子一样,令人心情不愉悦.同时经常会有面试官会问一个犀利的问题,你有自己开源项目么?你写过公司自己的UI组件么?如同雷劈,总觉得比别人矮一截,那么今天就以<a href="https://hy.hekr.me/hk-ui/web/index.html" target="_blank" rel="noopener">hekr-ui</a>为例,介绍一下如何打造自己的UI库吧</strong></p>
-<ul>
-<li><a href="https://hy.hekr.me/hk-ui/web/index.html" target="_blank" rel="noopener">文档地址</a></li>
-<li><a href="https://github.com/xkloveme/hk-ui" target="_blank" rel="noopener">项目源码</a></li>
-</ul>
-<h2 id="选型"><a href="#选型" class="headerlink" title="选型"></a>选型</h2><blockquote>
-<p>我们的目标是构建一个以<code>Vue</code>为基础基于<code>element-ui</code>的UI框架</p>
-</blockquote>
-<ul>
-<li>文档选用 <code>Vuepress</code> 构建,简单便捷</li>
-<li>打包选择 <code>gitlab CI</code> ,本文以 <code>travis</code> 为例</li>
-<li>初始化采用<code>vue-cli 3.0</code>、<code>pug</code>和<code>sass</code>等相关依赖和插件(自行探索)</li>
-</ul>
-<h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><ol>
-<li>快速构建属于❤️自己<code>npm</code>库</li>
-<li>熟悉打包📦命令及其语法</li>
-<li>熟练掌握自动化👷构建</li>
-<li>为社区贡献自己一份脚印👣</li>
-</ol>
-<h1 id="初步构思"><a href="#初步构思" class="headerlink" title="初步构思"></a>初步构思</h1><h2 id="启动一个项目"><a href="#启动一个项目" class="headerlink" title="启动一个项目"></a>启动一个项目</h2><h3 id="1-初始化一个项目"><a href="#1-初始化一个项目" class="headerlink" title="1.初始化一个项目"></a>1.初始化一个项目</h3><blockquote>
-<p>这里推荐使用<a href="https://cli.vuejs.org/zh/guide/creating-a-project.html#vue-create" target="_blank" rel="noopener"><code>Vue CLI</code></a> 来进行快速构建</p>
-</blockquote>
-<p><img src="https://s2.ax1x.com/2019/10/10/uThubn.jpg" alt="初始化.jpg"></p>
-<pre class=" language-bash"><code class="language-bash">vue create hekr-ui</code></pre>
-<p>我们选择默认配置就可以了</p>
-<h3 id="2-关联代码到你的库"><a href="#2-关联代码到你的库" class="headerlink" title="2.关联代码到你的库"></a>2.关联代码到你的库</h3><blockquote>
-<p><code>git</code>可以很好对代码版本进行管理</p>
-</blockquote>
-<ul>
-<li>当你初始化库时</li>
-</ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token keyword">echo</span> <span class="token string">"# hekr-ui"</span> <span class="token operator">>></span> README.md
-<span class="token function">git</span> init
-<span class="token function">git</span> add README.md
-<span class="token function">git</span> commit -m <span class="token string">"first commit"</span>
-<span class="token function">git</span> remote add origin https://github.com/xkloveme/hekr-ui.git
-<span class="token function">git</span> push -u origin master</code></pre>
-<ul>
-<li>关联本地库时</li>
-</ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> remote add origin https://github.com/xkloveme/hekr-ui.git
-<span class="token function">git</span> push -u origin master</code></pre>
-<p>当然我们选择第二种.记得把<code>node_modules</code>忽略</p>
-<h2 id="配置你的项目"><a href="#配置你的项目" class="headerlink" title="配置你的项目"></a>配置你的项目</h2><h3 id="1-添加相关依赖"><a href="#1-添加相关依赖" class="headerlink" title="1.添加相关依赖"></a>1.添加相关依赖</h3><blockquote>
-<p>本文以<code>yarn</code>为主,当然<code>npm</code>也是👌OK的</p>
-</blockquote>
-<p>我们以<code>vuepress</code>为主编写文档,当然这是非必须的,如果您只想发一个包,可以省略此步,必要的<code>demo</code>和测试会有极大的方便</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 将 VuePress 作为一个本地依赖安装</span>
-yarn add -D vuepress <span class="token comment" spellcheck="true"># 或者：npm install -D vuepress</span>
-
-<span class="token comment" spellcheck="true"># 新建一个 docs 文件夹</span>
-<span class="token function">mkdir</span> docs
-
-<span class="token comment" spellcheck="true"># 新建一个 markdown 文件</span>
-<span class="token keyword">echo</span> <span class="token string">'# Hello VuePress!'</span> <span class="token operator">></span> docs/README.md
-
-<span class="token comment" spellcheck="true"># 开始写作</span>
-npx vuepress dev docs</code></pre>
-<p>接着，在 <code>package.json</code> 里加一些脚本:</p>
-<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"docs:dev"</span><span class="token operator">:</span> <span class="token string">"vuepress dev docs"</span><span class="token punctuation">,</span>
-    <span class="token property">"docs:build"</span><span class="token operator">:</span> <span class="token string">"vuepress build docs"</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<p>然后就可以开始写作了:</p>
-<pre class=" language-bash"><code class="language-bash">yarn docs:dev <span class="token comment" spellcheck="true"># 或者：npm run docs:dev</span></code></pre>
-<p>要生成静态的 HTML 文件，运行：</p>
-<pre class=" language-bash"><code class="language-bash">yarn docs:build <span class="token comment" spellcheck="true"># 或者：npm run docs:build</span></code></pre>
-<p>添加其他依赖,常用语法</p>
-<pre class=" language-bash"><code class="language-bash">// 安装指定包
-yarn add *** 
-// 安装所有包,注意和npm的区别
-yarn</code></pre>
-<p>注意⚠️这两者的区别<code>dependencies</code>和<code>devDependencies</code></p>
-<ol>
-<li><code>--save</code> 将依赖的名称、版本要求添加到 <code>dependencies</code></li>
-<li><code>--save-dev</code> 将依赖的名称、版本要求添加到 <code>devDependencies</code></li>
-</ol>
-<h3 id="2-一些约定俗成的目录结构"><a href="#2-一些约定俗成的目录结构" class="headerlink" title="2.一些约定俗成的目录结构"></a>2.一些约定俗成的目录结构</h3><ul>
-<li>在使用<code>vuepress</code>开发时,约定了一些目录结构</li>
-</ul>
-<pre class=" language-docs"><code class="language-docs">.
-├── docs
-│   ├── .vuepress (可选的)
-│   │   ├── components (可选的)
-│   │   ├── theme (可选的)
-│   │   │   └── Layout.vue
-│   │   ├── public (可选的)
-│   │   ├── styles (可选的)
-│   │   │   ├── index.styl
-│   │   │   └── palette.styl
-│   │   ├── templates (可选的, 谨慎配置)
-│   │   │   ├── dev.html
-│   │   │   └── ssr.html
-│   │   ├── config.js (可选的)
-│   │   └── enhanceApp.js (可选的)
-│   │ 
-│   ├── README.md
-│   ├── guide
-│   │   └── README.md
-│   └── config.md
-│ 
-└── package.json</code></pre>
-<ul>
-<li>在本项目中目录结构为</li>
-</ul>
-<p><img src="https://s2.ax1x.com/2019/10/10/uThQU0.jpg" alt="结构.jpg"></p>
-<pre class=" language-tree"><code class="language-tree">template
-├─ docs
-│    └─ .vuepress            # 配置、演示组件、静态资源
-│    │    ├─ compnents        # 演示组件
-│    │    |    └─ demo          # demo组件
-│    │    ├─ public           # 静态资源
-│    │    |    └─ images        # 图片文件
-│    │    |    └─ scss          # 样式文件
-│    │    ├─ config.js        # 配置文件
-│    │    └─ enhanceApp       # 引入文件
-|    ├─ compnent             # 组件md文件
-|    └─ README              # 首页md
-├─ packages
-│    ├─ index.js             # 组件index.js
-│    └─ hk-countup           # countup组件
-├─ public
-└─ package.json</code></pre>
-<h3 id="3-修改你的package-json文件"><a href="#3-修改你的package-json文件" class="headerlink" title="3.修改你的package.json文件"></a>3.修改你的<code>package.json</code>文件</h3><blockquote>
-<p>这个文件是项目的灵魂👻,是最重要的文件之一.具体字段参考<a href="http://javascript.ruanyifeng.com/nodejs/packagejson.html" target="_blank" rel="noopener">packagejson</a></p>
-</blockquote>
-<p><img src="https://s2.ax1x.com/2019/10/10/uThl5V.jpg" alt="目录.jpg"></p>
-<ul>
-<li>修改主入口<code>main</code></li>
-</ul>
+                <p>小帽子 <a href="https://www.alfredapp.com" target="_blank" rel="noopener">Alfred</a> 作为 macOS 上的最佳效率软件应该没太大争议(<a href="https://github.com/hzlzh/Best-App" target="_blank" rel="noopener">排名</a>)，而其中最强大的部分即为 Alfred 2.0 推出的<a href="https://www.alfredapp.com/workflows/" target="_blank" rel="noopener">Workflow</a>特性；其允许你将日常重复性的工作使用脚本语言(目前支持：bash, zsh, php, python, ruby, perl, osascript(AppleScript, JavaScript))封装起来，以 Alfred 作为统一的入口和呈现来使用，大大提高效率；本文将对其开发的一般流程进行讲述，并最终实现两个实例：</p>
 <blockquote>
-<p><code>main</code>字段指定了加载的入口文件，<code>require(&#39;moduleName&#39;)</code>就会加载这个文件。这个字段的默认值是模块根目录下面的<code>index.js</code>。</p>
+<ul>
+<li><p><code>CDto</code>: 打开 Terminal 并转到任意文件夹或文件所在目录，使用 <em>bash+osascript</em> 实现 <a href="https://raw.githubusercontent.com/stidio/Alfred-Workflow/master/CDto.alfredworkflow" target="_blank" rel="noopener">点此下载</a></p>
+</li>
+<li><p><code>Effective IP</code>: 查询本机和外网 IP 地址，解析任意 URL 和域名的 IP 地址，同时进行归属地和运营商查询，使用 <em>python</em> 实现 <a href="https://raw.githubusercontent.com/stidio/Alfred-Workflow/master/Effective%20IP.alfredworkflow" target="_blank" rel="noopener">点此下载</a></p>
+</li>
+</ul>
 </blockquote>
-<pre class=" language-bash"><code class="language-bash"><span class="token string">"main"</span><span class="token keyword">:</span> <span class="token string">"dist/hekr-ui.umd.min.js"</span></code></pre>
+<p>本文源代码地址：<a href="https://github.com/stidio/Alfred-Workflow" target="_blank" rel="noopener">https://github.com/stidio/Alfred-Workflow</a>，如果喜欢请<a href="https://github.com/stidio/Alfred-Workflow" target="_blank" rel="noopener">Star!</a>，谢谢!</p>
+<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>Alfred Workflow 的整体架构，极度类似于 Windows 中的 Direct Show，首先由一个 Input 开始，中间经过一堆 filter，然后到一个 Output 结束，中间通过 Pin 连接，上一个 Output Pin 作为输入传递给下一个 Input Pin，从而形成一个完整的 Graph，而最终传递给 Alfred 做输出呈现的内容必须符合下面的形式：</p>
 <blockquote>
-<p>你可以通过下面的命令将一个单独的入口构建为一个库</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>items</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span> <span class="token attr-name">valid</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>yes<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>10.0.2.11<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>subtitle</span><span class="token punctuation">></span></span>45.76.65.119 美国新泽西州皮斯卡特维 choopa.com<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>subtitle</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>icon</span><span class="token punctuation">></span></span>Info.icns<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>icon</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>item</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>items</span><span class="token punctuation">></span></span></code></pre>
+<p>Alfred 上每一行显示对应一个<em>item</em>，如果显示多行，那就在<em>items</em>下放入多个<em>item</em>即可</p>
+<ul>
+<li><em>valid</em> 表现为可不可以选择，点击，再次传递</li>
+<li><em>title</em> 主标题</li>
+<li><em>subtitle</em> 副标题</li>
+<li><em>icon</em> 图标</li>
+</ul>
 </blockquote>
-<pre class=" language-bash"><code class="language-bash">vue-cli-service build --target lib --name myLib <span class="token punctuation">[</span>entry<span class="token punctuation">]</span></code></pre>
-<p>运行结果为:</p>
-<pre class=" language-bash"><code class="language-bash">  File                     Size                     Gzipped
-
-  dist/hk-ui.umd.min.js    13.64 KiB                5.31 KiB
-  dist/hk-ui.umd.js        43.87 KiB                11.37 KiB
-  dist/hk-ui.common.js     43.49 KiB                11.25 KiB
-  dist/hk-ui.css           0.54 KiB                 0.29 KiB</code></pre>
-<ul>
-<li>添加<code>lib</code>命令</li>
-</ul>
-<pre class=" language-bash"><code class="language-bash">    <span class="token string">"lib"</span><span class="token keyword">:</span> <span class="token string">"vue-cli-service build --target lib --name hk-ui --dest dist ./src/packages/index.js"</span></code></pre>
-<p>这个入口可以是一个 <code>.js</code> 或一个 <code>.vue</code> 文件。如果没有指定入口，则会使用 <code>src/App.vue</code>。</p>
-<p>构建一个库会输出：</p>
-<ul>
-<li><p><code>dist/myLib.common.js</code>：一个给打包器用的 CommonJS 包 (不幸的是，webpack 目前还并没有支持 ES modules 输出格式的包)</p>
+<h3 id="开发准备"><a href="#开发准备" class="headerlink" title="开发准备"></a>开发准备</h3><ol>
+<li><p>使用[Option+空格]调出 Alfred，输入 alfred 打开 Alfred Preferences:</p>
 </li>
-<li><p><code>dist/myLib.umd.js</code>：一个直接给浏览器或 AMD loader 使用的 UMD 包</p>
-</li>
-<li><p><code>dist/myLib.umd.min.js</code>：压缩后的 UMD 构建版本</p>
-</li>
-<li><p><code>dist/myLib.css</code>：提取出来的 CSS 文件 (可以通过在 <code>vue.config.js</code> 中设置 <code>css: { extract: false }</code> 强制内联)</p>
-</li>
-</ul>
-<h3 id="4-文档配置"><a href="#4-文档配置" class="headerlink" title="4. 文档配置"></a>4. 文档配置</h3><p><img src="https://s2.ax1x.com/2019/10/10/uTIdVs.jpg" alt="文档.jpg"></p>
+<li><p>点击 Workflows 按钮，然后点击最下面的 <strong>+</strong> 按钮，创建一个 Blank Workflow，按照提示填入信息:</p>
 <blockquote>
-<p>项目启动之后需要我们配置我们的<code>vuepress</code></p>
+<p><strong>Bundle Id</strong> 作为该 Workflow 的标识为必填内容，如果不填或与其他重复，有可能造成其不能正常运行</p>
 </blockquote>
-<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/*
- * @describe: 配置文件 config.js
- * @Author: superDragon
- * @Date: 2019-10-09 23:25:49
- * @LastEditors: superDragon
- * @LastEditTime: 2019-10-10 18:49:25
- */</span>
-<span class="token keyword">let</span> component <span class="token operator">=</span> <span class="token punctuation">[</span>
-  <span class="token string">'hk-button'</span><span class="token punctuation">,</span>
-  <span class="token string">'hk-card'</span>
-<span class="token punctuation">]</span>
-module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-  base<span class="token punctuation">:</span> <span class="token string">'/hekr-ui/'</span><span class="token punctuation">,</span>
-  title<span class="token punctuation">:</span> <span class="token string">'hekr-ui'</span><span class="token punctuation">,</span>
-  description<span class="token punctuation">:</span> <span class="token string">'hekr-ui'</span><span class="token punctuation">,</span>
-  themeConfig<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    nav<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-      <span class="token punctuation">{</span> text<span class="token punctuation">:</span> <span class="token string">'首页'</span><span class="token punctuation">,</span> link<span class="token punctuation">:</span> <span class="token string">'/'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
-      <span class="token punctuation">{</span>
-        text<span class="token punctuation">:</span> <span class="token string">'组件'</span><span class="token punctuation">,</span>
-        link<span class="token punctuation">:</span> <span class="token string">'/component/hk-button'</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">]</span><span class="token punctuation">,</span>
-    sidebar<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      <span class="token string">'/component/'</span><span class="token punctuation">:</span> component
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    lastUpdated<span class="token punctuation">:</span> <span class="token string">'最后更新'</span><span class="token punctuation">,</span>
-    repo<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
-    repoLabel<span class="token punctuation">:</span> <span class="token string">'GitLab'</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-  serviceWorker<span class="token punctuation">:</span> <span class="token boolean">true</span>
-<span class="token punctuation">}</span></code></pre>
-<p>当我们能够成功运行下面时</p>
-<pre class=" language-js"><code class="language-js">    <span class="token string">"docs:dev"</span><span class="token punctuation">:</span> <span class="token string">"vuepress dev docs"</span><span class="token punctuation">,</span>
-    <span class="token string">"docs:build"</span><span class="token punctuation">:</span> <span class="token string">"vuepress build docs"</span><span class="token punctuation">,</span></code></pre>
-<ul>
-<li>本地运行</li>
-</ul>
-<pre><code>yarn docs:dev # 或者：npm run docs:dev</code></pre><ul>
-<li>打包</li>
-</ul>
-<pre><code>yarn docs:build # 或者：npm run docs:build</code></pre><h3 id="5-持续集成"><a href="#5-持续集成" class="headerlink" title="5.持续集成"></a>5.持续集成</h3><blockquote>
-<p>以<code>GitHub Pages</code> 和<code>Travis CI</code> 为例</p>
-</blockquote>
-<ul>
-<li>打包后放置在项目的 <code>docs</code> 目录中的<code>dist</code>中,注意⚠️区分；</li>
-<li>使用的是默认的构建输出位置；</li>
-<li>VuePress 以本地依赖的形式被安装到你的项目中，并且配置了如下的 npm scripts:</li>
-</ul>
-<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"docs:build"</span><span class="token operator">:</span> <span class="token string">"vuepress build docs"</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<ol>
-<li><p>在 <code>docs/.vuepress/config.js</code> 中设置正确的 <code>base</code>这里我们设置<code>/hekr-ui/</code> 🌿。</p>
-<p>如果你打算发布到 <code>https://&lt;USERNAME&gt;.github.io/</code>，则可以省略这一步，因为 <code>base</code> 默认即是 <code>&quot;/&quot;</code>。</p>
-<p>如果你打算发布到 <code>https://&lt;USERNAME&gt;.github.io/&lt;REPO&gt;/</code>（也就是说你的仓库在 <code>https://github.com/&lt;USERNAME&gt;/&lt;REPO&gt;</code>），则将 <code>base</code> 设置为 <code>&quot;/&lt;REPO&gt;/&quot;</code>。</p>
-</li>
-<li><p>在你的项目中，创建一个如下的 <code>.travis.yml</code> 文件📃:</p>
 </li>
 </ol>
-<pre class=" language-yml"><code class="language-yml">language: node_js
-node_js:
-  - '8'
-
-install:
-  - npm install
-
-script:
-  - npm run build
-
-after_success:
-  - cd ./docs/.vuepress/dist
-  - git init
-  - git config --global user.name "${U_NAME}"
-  - git config --global user.email "${U_EMAIL}"
-  - git add .
-  - git commit -m "👷‍Automatically update from travis-ci 👷‍"
-  - git push --quiet --force  "https://${GH_TOKEN}@${GH_REF}" master:${P_BRANCH}
-
-branches:
-  only:
-    - master
-
-notifications:
-  email:
-    - xkloveme@163.com
-  on_failure: always
-
-# Note: you should set Environment Variables here or 'Settings' on travis-ci.org
-env:
-  global:
-    # 我将其添加到了travis-ci的环境变量中
-    - U_NAME: xkloveme
-    - U_EMAIL: xkloveme@qq.com
-    - P_BRANCH: gh-pages
-    - GH_REF: github.com/xkloveme/vue-v-xxx.git</code></pre>
-<ol start="3">
-<li>注册<code>github</code>、<code>travis</code>和配置<code>travis</code>相关,启用构建,自行<code>Google</code><a href="https://docs.travis-ci.com/user/deployment/pages/" target="_blank" rel="noopener">传送门</a></li>
-<li>更多配置参考<a href="https://vuepress.vuejs.org/zh/guide/deploy.html" target="_blank" rel="noopener">vuepress部署</a></li>
-</ol>
-<h1 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h1><h2 id="完善组件并打包"><a href="#完善组件并打包" class="headerlink" title="完善组件并打包"></a>完善组件并打包</h2><blockquote>
-<p>以编写<code>hk-button</code>组件为例,并导出</p>
-</blockquote>
+<h3 id="Workflow-CDto"><a href="#Workflow-CDto" class="headerlink" title="Workflow - CDto"></a>Workflow - CDto</h3><p>使用 Terminal 的一般步骤大概是运行 Terminal，然后一路 cd 到目标文件夹后开始使用；虽然 Finder 有 cd to 插件，但也需要你一路点到指定文件夹后，才能调起来；虽然 Alfred 的 Right Arrow 按键里面有 Open Terminal Here 操作，但排在太后面了，打开的操作路径至少需要：Right Arrow -&gt; 输入 o -&gt; [Command + 3]三步才能完成:</p>
+<p>作为一个需要频繁和 Terminal 交互的码农这完全不能忍，下面我们就利用 Workflow 做个一步到位的 CDto 神器</p>
 <ol>
-<li>添加组件及导出</li>
+<li><p>在 Alfred Workflows 的工作区点右键，选择菜单[Inputs -&gt; File Filter]，并按下图设置好，其他两个选项卡使用默认设置即可:</p>
+</li>
+<li><p>在刚才插入的[File Filter]上点击右键，选择菜单[Insert After -&gt; Actions -&gt; Run Script]，并按照下图设置好，最下面的 Escaping 表示对指定字符进行转义，比如说:/Users/$a1，如果不对$转义，那外部会把$a1 一起当做一个变量，而这个变量未定义也就是为空，传递进来的参数最终变成:/Users/，<a href="https://github.com/stidio/Alfred-Workflow/blob/master/CDto/cdto.bash" target="_blank" rel="noopener">点此查看代码</a>:</p>
+</li>
 </ol>
-<pre class=" language-vue"><code class="language-vue"><template lang="pug">
-el-tooltip(effect="dark" v-if="tips" :content="tips" placement="top-start")
-  el-button.hk-button(:size="size" :type="type" v-bind="$attrs" @click="handleClick")
-    slot
-el-button.hk-button(:size="size" v-else :type="type" v-bind="$attrs" @click="handleClick")
-  slot
-</template>
-
-<script>
-import { Debounce } from './../util/debounce'
-export default {
-  name: 'hk-button',
-  props: {
-    type: {
-      type: String,
-      default: 'primary'
-    },
-    size: {
-      type: String,
-      default: 'medium'
-    },
-    tips: {
-      type: String,
-      default: null
-    }
-  },
-  methods: {
-    handleClick: Debounce(function (e) {
-      this.$emit('click', e)
-    }, 200)
-  }
-}
-</script>
-
-<style lang="scss">
-.hk-button {
-  i + span {
-    padding-left: 10px;
-  }
-}
-</style>
-</code></pre>
-<ol start="2">
-<li>导出组件</li>
+<h3 id="Workflow-Effective-IP"><a href="#Workflow-Effective-IP" class="headerlink" title="Workflow - Effective IP"></a>Workflow - Effective IP</h3><p>现在我们使用 Python 来做个更复杂的例子，<a href="https://github.com/stidio/Alfred-Workflow/blob/master/Effective%20IP/effectiveip.py" target="_blank" rel="noopener">点此查看源码</a>，具体分析见下图:</p>
+<p>我们基于<a href="https://github.com/deanishe/alfred-workflow/" target="_blank" rel="noopener">Full-featured python library for writing Alfred workflows</a>进行开发，具体的内容请参考前面的内容和<a href="http://www.deanishe.net/alfred-workflow/tutorial_1.html" target="_blank" rel="noopener">官方教程</a>, 这里我只对两个设置界面进行必要的解释：</p>
+<ol>
+<li><p>主设置界面</p>
+<blockquote>
+<ol>
+<li>直接输入 ip 无参形式是查询本机的本地和公网地址，有参形式是进行 DNS 解析，因此参数是可选的，需要设置为：[Argument Optional]</li>
+<li>点击 Run Behaviour 按钮，进行运行行为设置</li>
 </ol>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">import</span> HkButton <span class="token keyword">from</span> <span class="token string">'./hk-button'</span>
-
-<span class="token keyword">export</span> <span class="token keyword">default</span> HkButton</code></pre>
-<ol start="3">
-<li>导出为<code>install</code></li>
-</ol>
-<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/*
- * @describe: 主入口,导出install
- * @Author: superDragon
- * @Date: 2019-10-09 23:21:11
- * @LastEditors: superDragon
- * @LastEditTime: 2019-10-10 19:09:57
- */</span>
-<span class="token keyword">import</span> HkButton <span class="token keyword">from</span> <span class="token string">'./hk-button'</span>
-<span class="token keyword">import</span> HKcard <span class="token keyword">from</span> <span class="token string">'./hk-card'</span>
-
-<span class="token keyword">const</span> install <span class="token operator">=</span> Vue <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-  Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span>HkButton<span class="token punctuation">.</span>name<span class="token punctuation">,</span> HkButton<span class="token punctuation">)</span>
-  Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span>HKcard<span class="token punctuation">.</span>name<span class="token punctuation">,</span> HKcard<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> window <span class="token operator">!==</span> <span class="token string">'undefined'</span> <span class="token operator">&amp;&amp;</span> window<span class="token punctuation">.</span>Vue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token function">install</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>Vue<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">export</span> <span class="token punctuation">{</span>
-  HkButton<span class="token punctuation">,</span>
-  HKcard
-<span class="token punctuation">}</span>
-
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span> install <span class="token punctuation">}</span>
-</code></pre>
-<h2 id="上传自己的npm"><a href="#上传自己的npm" class="headerlink" title="上传自己的npm"></a>上传自己的<code>npm</code></h2><h3 id="注册®️并切换到官方npm源"><a href="#注册®️并切换到官方npm源" class="headerlink" title="注册®️并切换到官方npm源"></a>注册®️并切换到官方<code>npm</code>源</h3><p><img src="https://s2.ax1x.com/2019/10/10/uTjYY4.jpg" alt="换源.jpg"></p>
-<h3 id="注册登陆npm"><a href="#注册登陆npm" class="headerlink" title="注册登陆npm"></a>注册登陆<code>npm</code></h3><pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> adduser        //回车后,弹出Username:  
-Username:          //输入你在官网注册时的用户名,回车
-Password:          //输入官网注册的密码,密码看不见,请确保你输的密码正确, 回车
-Email:<span class="token punctuation">(</span>this is Public<span class="token punctuation">)</span>    //输入官网注册时绑定的邮箱,回车</code></pre>
-<h3 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> publish        //此处上传命令,回车</code></pre>
-<p><img src="https://s2.ax1x.com/2019/10/10/uTvZB6.jpg" alt="发布.jpg"></p>
-<p>这样一个<code>hekr-ui</code>就发布完成了</p>
-<h3 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h3><blockquote>
-<p>24小时内撤销也是很简单的.</p>
 </blockquote>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> unpublish --force </code></pre>
-<h1 id="大功告成"><a href="#大功告成" class="headerlink" title="大功告成"></a>大功告成</h1><blockquote>
-<p>Let’s enjoy the taste of life, if we feel, the more we will live longer.</p>
+</li>
+<li><p>运行行为设置</p>
+<blockquote>
+<ol>
+<li>如果输入发生变化，我们肯定是希望得到之后的结果，因此我们需要即时结束掉之前的查询</li>
+<li>在输入过程中不进行查询，Alfred 通过最后一个字符输入延迟来判断输入结束后才进行查询</li>
+</ol>
 </blockquote>
-<p>觉得不错的话给个<code>star</code></p>
-<ul>
-<li>本文演示库地址<a href="https://github.com/xkloveme/hekr-ui" target="_blank" rel="noopener">hekr-ui</a></li>
-<li><a href="https://hy.hekr.me/hk-ui/web/index.html" target="_blank" rel="noopener">文档地址</a></li>
-<li><a href="https://github.com/xkloveme/hk-ui" target="_blank" rel="noopener">项目源码</a></li>
-</ul>
+</li>
+</ol>
+<h3 id="其他事项"><a href="#其他事项" class="headerlink" title="其他事项"></a>其他事项</h3><blockquote>
+<ol>
+<li>左边列表区域里点右键选择[Open in Finder]可以打开该 Workflow 的目录进行文件查看和编辑</li>
+<li>点此可以调出调试窗口，查看调试信息</li>
+</ol>
+</blockquote>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a href="http://macshuo.com/?p=625" target="_blank" rel="noopener">神兵利器 — Alfred</a><br><a href="http://myg0u.com/python/2015/05/23/tutorial-alfred-workflow.html" target="_blank" rel="noopener">Alfred workflow 开发指南</a><br><a href="http://developer.telerik.com/featured/javascript-os-x-automation-example/" target="_blank" rel="noopener">JavaScript for OS X Automation by Example</a><br><a href="http://www.deanishe.net/alfred-workflow/" target="_blank" rel="noopener">Full-featured python library for writing Alfred workflows</a></p>
+<br/>
+
+<blockquote>
+<p><a href="!--￼0--">原始链接</a> 版权声明：自由转载-非商用-非衍生-保持署名 | <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" target="_blank" rel="noopener">Creative Commons BY-NC-ND 4.0</a></p>
+</blockquote>
 
             </div>
             <hr/>
@@ -861,7 +555,7 @@ Email:<span class="token punctuation">(</span>this is Public<span class="token p
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://jixioakang.com/2019/10/11/2019-10-12-ru-he-shang-chuan-zi-ji-de-ui-zu-jian-bao/">http://jixioakang.com/2019/10/11/2019-10-12-ru-he-shang-chuan-zi-ji-de-ui-zu-jian-bao/</a>
+                    <a href="http://jixioakang.com/2016/11/24/2016-11-23-aflred-workflow/">http://jixioakang.com/2016/11/24/2016-11-23-aflred-workflow/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -898,19 +592,7 @@ Email:<span class="token punctuation">(</span>this is Public<span class="token p
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E6%95%99%E7%A8%8B/">
-                                    <span class="chip bg-color">教程</span>
-                                </a>
-                            
-                                <a href="/tags/GitHub/">
-                                    <span class="chip bg-color">GitHub</span>
-                                </a>
-                            
-                                <a href="/tags/vue/">
-                                    <span class="chip bg-color">vue</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -1094,7 +776,7 @@ Email:<span class="token punctuation">(</span>this is Public<span class="token p
         repo: 'xkloveme.github.io',
         owner: 'xkloveme',
         admin: "xkloveme",
-        id: '2019-10-11T16-00-00',
+        id: '2016-11-24T00-00-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1119,32 +801,37 @@ Email:<span class="token punctuation">(</span>this is Public<span class="token p
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/10/11/2019-10-12-vue-v-xxx-ji-yu-vue-tuo-zhan-de-v-xxx-ku/">
+                <a href="/2017/08/08/2017-08-08-flex-bu-ju-jiao-cheng-yu-fa-pian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="基于 Vue拓展的 v-xxx 库">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Flex 布局教程：语法篇">
                         
-                        <span class="card-title">基于 Vue拓展的 v-xxx 库</span>
+                        <span class="card-title">Flex 布局教程：语法篇</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-君问归期未有期，巴山夜雨涨秋池。 &gt; 何当共剪西窗烛，却话巴山夜雨时。
+                            网页布局（layout）是 CSS 的一个重点应用。
 
-作为vue轻车熟路的老司机，经常会用到一些指令，vue官方提供的指令又太少，无法满足旺盛的欲望，而每次要写一遍，终日郁郁寡欢，从小就教育我们乐于助人，为了将奉
+布局的传统解决方案，基于盒状模型，依赖  display  属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。
+
+2009 
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-11
+                            <i class="far fa-clock fa-fw icon-date"></i>2017-08-08
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            xkloveme
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -1152,16 +839,12 @@ Email:<span class="token punctuation">(</span>this is Public<span class="token p
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/GitHub/">
-                        <span class="chip bg-color">GitHub</span>
+                    <a href="/tags/%E6%8A%80%E6%9C%AF/">
+                        <span class="chip bg-color">技术</span>
                     </a>
                     
-                    <a href="/tags/vue/">
-                        <span class="chip bg-color">vue</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%8C%87%E4%BB%A4/">
-                        <span class="chip bg-color">指令</span>
+                    <a href="/tags/CSS/">
+                        <span class="chip bg-color">CSS</span>
                     </a>
                     
                 </div>
@@ -1175,32 +858,36 @@ Email:<span class="token punctuation">(</span>this is Public<span class="token p
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/08/09/2018-07-10-vue-refs/">
+                <a href="/2016/11/21/2016-11-18-build-blog-with-github-and-jekyll/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Vue中的代理Proxy和$refs">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="使用GitHub Pages+Jekyll搭建个人博客">
                         
-                        <span class="card-title">Vue中的代理Proxy和$refs</span>
+                        <span class="card-title">使用GitHub Pages+Jekyll搭建个人博客</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            前言
-最近国内 VPN 限制的严厉的多，一不小心就会被抓去签保证书，为了能和小伙伴联系，也为了能查到相关资讯，了解国内动态，关注权利的猎物老郭特此写博，然而这一切都是免费的！免费的！免费的！（重要的事情讲三遍）
+                            概述
 
-正文开始一、 代理 Pro
+GitHub Pages 免费无限容量的站点数据托管工具(国内访问速度较慢)，内置 Jekyll 服务，能将特定名称的代码仓库动态编译为静态网页
+Jekyll 基于 Ruby 的静态网页生成系统，采用模板将 Markdown(或 T
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-08-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2016-11-21
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            xkloveme
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
+                                    教程
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -1208,8 +895,16 @@ Email:<span class="token punctuation">(</span>this is Public<span class="token p
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vue/">
-                        <span class="chip bg-color">vue</span>
+                    <a href="/tags/%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">教程</span>
+                    </a>
+                    
+                    <a href="/tags/Jekyll/">
+                        <span class="chip bg-color">Jekyll</span>
+                    </a>
+                    
+                    <a href="/tags/GitHub/">
+                        <span class="chip bg-color">GitHub</span>
                     </a>
                     
                 </div>
