@@ -212,8 +212,8 @@ myProjects:
     hexo-theme-matery:
       icon: fas fa-file-alt
       iconBackground: "linear-gradient(to bottom right, #66BB6A 0%, #81C784 100%)"
-      url: http://github.com/xkloveme/vue-v-xxx
-      desc: This is a Hexo blog theme with 'Material Design' and responsive design.
+      url: https://www.jixiaokang.com/vue-v-xxx/
+      desc: A v-xxx extended library for Vue..
     hk-ui:
       icon: fas fa-database
       iconBackground: "linear-gradient(to bottom right, #F06292 0%, #EF5350 100%)"
@@ -222,8 +222,8 @@ myProjects:
     typora-vue-theme:
       icon: fas fa-file-alt
       iconBackground: "linear-gradient(to bottom right, #29B6F6 0%, #1E88E5 100%)"
-      url: https://github.com/blinkfox/typora-vue-theme
-      desc: This is a typora theme inspired by Vue document style.
+      url: https://www.jixiaokang.com/whatisit/
+      desc: Live online TV by Vue.
 
 # config my skills informations in about page.
 # If you don't want to display this `My Skills` content, you can deactivate or delete this configuration.
@@ -268,11 +268,11 @@ postCalendar: true
 # Gitalk 评论模块的配置，默认为不激活
 gitalk:
   enable: true
-  owner:
-  repo:
+  owner: xkloveme
+  repo: https://github.com/xkloveme/xkloveme.github.io
   oauth:
-    clientId:
-    clientSecret:
+    clientId: f1e60c7afa53a51926b5
+    clientSecret: 2430231be04e68f6ba8ccf331c537cc19f50a0bd
   admin:
 
 # the Gitment config，default disabled
