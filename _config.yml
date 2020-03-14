@@ -98,7 +98,9 @@ theme: hexo-theme-matery
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  repo: git@github.com:xkloveme/xkloveme.github.io.git
+  - type: git
+    repo: git@github.com:xkloveme/xkloveme.github.io.git
+    branch: master
 
 # 高亮代码
 
