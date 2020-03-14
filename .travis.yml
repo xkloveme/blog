@@ -22,6 +22,7 @@ deploy:
 
 after_script:
   - cd ./public
+  - echo 'www.jixiaokang.com' >> CNAME
   - git init
   - git config user.name "xkloveme"
   - git config user.email "admin@jixiaokang.com"
