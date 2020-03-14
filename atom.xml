@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>小康之家</title>
+  
+  <subtitle>小康前端之家</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://jixioakang.com/"/>
+  <updated>2020-03-13T09:16:30.628Z</updated>
+  <id>http://jixioakang.com/</id>
+  
+  <author>
+    <name>xkloveme</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>发哨子的人</title>
+    <link href="http://jixioakang.com/2020/03/13/2020-03-13-fa-shao-zi-de-ren/"/>
+    <id>http://jixioakang.com/2020/03/13/2020-03-13-fa-shao-zi-de-ren/</id>
+    <published>2020-03-13T03:57:26.000Z</published>
+    <updated>2020-03-13T09:16:30.628Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;全文摘取《人物》发哨子的人&lt;/strong&gt;&lt;br&gt;为了躲避审查,可谓是无所不用其极,戏剧般的艺术绽放往往藏着更为悲伤的故事&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="人生百态" scheme="http://jixioakang.com/tags/%E4%BA%BA%E7%94%9F%E7%99%BE%E6%80%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于 Vue拓展的 v-xxx 库</title>
+    <link href="http://jixioakang.com/2019/10/11/2019-10-12-vue-v-xxx-ji-yu-vue-tuo-zhan-de-v-xxx-ku/"/>
+    <id>http://jixioakang.com/2019/10/11/2019-10-12-vue-v-xxx-ji-yu-vue-tuo-zhan-de-v-xxx-ku/</id>
+    <published>2019-10-11T16:00:00.000Z</published>
+    <updated>2020-03-13T09:14:04.630Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;君问归期未有期，巴山夜雨涨秋池。&lt;/strong&gt; &amp;gt;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="GitHub" scheme="http://jixioakang.com/tags/GitHub/"/>
+    
+      <category term="vue" scheme="http://jixioakang.com/tags/vue/"/>
+    
+      <category term="指令" scheme="http://jixioakang.com/tags/%E6%8C%87%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何上传自己的UI组件包</title>
+    <link href="http://jixioakang.com/2019/10/11/2019-10-12-ru-he-shang-chuan-zi-ji-de-ui-zu-jian-bao/"/>
+    <id>http://jixioakang.com/2019/10/11/2019-10-12-ru-he-shang-chuan-zi-ji-de-ui-zu-jian-bao/</id>
+    <published>2019-10-11T16:00:00.000Z</published>
+    <updated>2020-03-13T05:30:39.436Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;开篇&quot;&gt;&lt;a href=&quot;#开篇&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="教程" scheme="http://jixioakang.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="GitHub" scheme="http://jixioakang.com/tags/GitHub/"/>
+    
+      <category term="vue" scheme="http://jixioakang.com/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue中的代理Proxy和$refs</title>
+    <link href="http://jixioakang.com/2018/08/09/2018-07-10-vue-refs/"/>
+    <id>http://jixioakang.com/2018/08/09/2018-07-10-vue-refs/</id>
+    <published>2018-08-09T16:00:00.000Z</published>
+    <updated>2020-03-13T09:23:49.784Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;最近国内 VPN
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="vue" scheme="http://jixioakang.com/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Alfred Workflow教程与实例</title>
+    <link href="http://jixioakang.com/2016/11/23/2016-11-23-aflred-workflow/"/>
+    <id>http://jixioakang.com/2016/11/23/2016-11-23-aflred-workflow/</id>
+    <published>2016-11-23T16:00:00.000Z</published>
+    <updated>2020-03-13T09:08:01.101Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;小帽子 &lt;a href=&quot;https://www.alfredapp.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Alfred&lt;/a&gt; 作为 macOS 上的最佳效率软件应该没太大争议(&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="教程" scheme="http://jixioakang.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="工具" scheme="http://jixioakang.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用GitHub Pages+Jekyll搭建个人博客</title>
+    <link href="http://jixioakang.com/2016/11/20/2016-11-18-build-blog-with-github-and-jekyll/"/>
+    <id>http://jixioakang.com/2016/11/20/2016-11-18-build-blog-with-github-and-jekyll/</id>
+    <published>2016-11-20T16:00:00.000Z</published>
+    <updated>2020-03-13T09:28:13.518Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/assets/build_blog_with_github_and_jekyll/01.jpg&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="教程" scheme="http://jixioakang.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Jekyll" scheme="http://jixioakang.com/tags/Jekyll/"/>
+    
+      <category term="GitHub" scheme="http://jixioakang.com/tags/GitHub/"/>
+    
+  </entry>
+  
+</feed>
