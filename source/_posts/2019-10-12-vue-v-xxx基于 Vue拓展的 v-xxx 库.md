@@ -3,6 +3,7 @@ layout: post
 title: 基于 Vue拓展的 v-xxx 库
 date: 2019-10-12
 tags: [vue, GitHub, 指令]
+categories: 前端
 ---
 
 > **君问归期未有期，巴山夜雨涨秋池。** > **何当共剪西窗烛，却话巴山夜雨时。**

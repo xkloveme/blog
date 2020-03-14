@@ -2,7 +2,7 @@
 layout: post
 title: Alfred Workflow教程与实例
 date: 2016-11-24
-tags: [教程, 工具]
+categories: 教程
 ---
 
 小帽子 [Alfred](https://www.alfredapp.com) 作为 macOS 上的最佳效率软件应该没太大争议([排名](https://github.com/hzlzh/Best-App))，而其中最强大的部分即为 Alfred 2.0 推出的[Workflow](https://www.alfredapp.com/workflows/)特性；其允许你将日常重复性的工作使用脚本语言(目前支持：bash, zsh, php, python, ruby, perl, osascript(AppleScript, JavaScript))封装起来，以 Alfred 作为统一的入口和呈现来使用，大大提高效率；本文将对其开发的一般流程进行讲述，并最终实现两个实例：

@@ -3,6 +3,7 @@ title: 在 Google platform 上架設 ShadowSocks(SS) + BBR
 tags:
   - 翻墙
 date: 2018-02-09 07:06:00
+categories: 教程
 ---
 
 ### 建立 VPS

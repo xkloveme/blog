@@ -3,6 +3,7 @@ title: 下载谷歌浏览器(Chrome)扩展crx文件最简单的方法～
 tags:
   - 工具
 date: 2018-01-25 01:55:00
+categories: 教程
 ---
 
 **下载谷歌浏览器(Chrome)扩展 crx 文件最简单的方法**

@@ -3,6 +3,7 @@ layout: post
 title: 使用GitHub Pages+Jekyll搭建个人博客
 date: 2016-11-21
 tags: [Jekyll, GitHub, 教程]
+categories: 教程
 ---
 
 ### 概述

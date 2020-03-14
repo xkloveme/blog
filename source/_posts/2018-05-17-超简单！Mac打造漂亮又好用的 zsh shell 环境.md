@@ -4,6 +4,7 @@ tags:
   - 技术
   - 工具
 date: 2018-05-17 08:16:48
+categories: 教程
 ---
 
 ![](http://www.jixiaokang.com/wp-content/uploads/2018/05/QQ20180517-1@2x.png)身为开发者，很大一部分的时间是在用 command line 做事，如果能把 command line 调整成好用又酷炫的模样，不只是效率提升非常多，用起来爽度也比较高,上面放了一张我自己的 item，是不是觉得高大上了许多

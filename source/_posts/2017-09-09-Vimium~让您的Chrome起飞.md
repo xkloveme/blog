@@ -3,6 +3,7 @@ title: Vimium~让您的Chrome起飞
 tags:
   - 技术
 date: 2017-09-09 15:13:00
+categories: 工具
 ---
 
 工欲善其事，必先利其器！撸起 Vimium,我的 Chrome 就这么起飞了。

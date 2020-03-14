@@ -2,6 +2,7 @@
 title: javascript逻辑运算符“||”和“&&”的简单梳理
 date: 2018-05-31 23:28:19
 tags: [技术]
+categories: 前端
 ---
 
 一道经典的前端面试题：
