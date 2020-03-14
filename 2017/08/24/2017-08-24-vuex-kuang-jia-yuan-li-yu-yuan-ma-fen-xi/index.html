@@ -1,0 +1,1803 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Vuex框架原理与源码分析, 小康,xkloveme,博客">
+    <meta name="description" content="Vuex 是一个专为 Vue 服务，用于管理页面数据状态、提供统一数据操作的生态系统。它集中于 MVC 模式中的 Model 层，规定所有的数据操作必须通过  action - mutation - state change  的流程来进行">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Vuex框架原理与源码分析 | 小康之家</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="小康之家" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">小康之家</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">小康之家</div>
+        <div class="logo-desc">
+            
+            小康のblog
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/xkloveme" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/xkloveme" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Vuex框架原理与源码分析
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%8A%80%E6%9C%AF/">
+                                <span class="chip bg-color">技术</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2017-08-24
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    6.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    26 分
+                </div>
+                
+				
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+            
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>Vuex 是一个专为 Vue 服务，用于管理页面数据状态、提供统一数据操作的生态系统。它集中于 MVC 模式中的 Model 层，规定所有的数据操作必须通过  <code>action - mutation - state change</code>  的流程来进行，再结合 Vue 的数据视图双向绑定特性来实现页面的展示更新。统一的页面状态管理以及操作处理，可以让复杂的组件交互变得简单清晰，同时可在调试模式下进行时光机般的倒退前进操作，查看数据改变过程，使 code debug 更加方便。</p>
+<p>最近在开发的项目中用到了 Vuex 来管理整体页面状态，遇到了很多问题。决定研究下源码，在答疑解惑之外，能深入学习其实现原理。</p>
+<p>先将问题抛出来，使学习和研究更有针对性：</p>
+<ol>
+<li>使用 Vuex 只需执行  <code>Vue.use(Vuex)</code>，并在 Vue 的配置中传入一个 store 对象的示例，store 是如何实现注入的？</li>
+<li>state 内部是如何实现支持模块配置和模块嵌套的？</li>
+<li>在执行 dispatch 触发 action（commit 同理）的时候，只需传入（type, payload），action 执行函数中第一个参数 store 从哪里获取的？</li>
+<li>如何区分 state 是外部直接修改，还是通过 mutation 方法修改的？</li>
+<li>调试时的“时空穿梭”功能是如何实现的？</li>
+</ol>
+<blockquote>
+<p>注：本文对有 Vuex 有实际使用经验的同学帮助更大，能更清晰理解 Vuex 的工作流程和原理，使用起来更得心应手。初次接触的同学，可以先参考 Vuex<a href="http://vuex.vuejs.org/" target="_blank" rel="noopener">官方文档</a>进行基础概念的学习。</p>
+</blockquote>
+<h2 id="一、框架核心流程"><a href="#一、框架核心流程" class="headerlink" title="一、框架核心流程"></a>一、框架核心流程</h2><p>进行源码分析之前，先了解一下官方文档中提供的核心思想图，它也代表着整个 Vuex 框架的运行流程。<br><img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/vuex.png" alt="vuex-core"><br>如图示，Vuex 为 Vue Components 建立起了一个完整的生态圈，包括开发中的 API 调用一环。围绕这个生态圈，简要介绍一下各模块在核心流程中的主要功能：</p>
+<ul>
+<li>Vue Components：Vue 组件。HTML 页面上，负责接收用户操作等交互行为，执行 dispatch 方法触发对应 action 进行回应。</li>
+<li>dispatch：操作行为触发方法，是唯一能执行 action 的方法。</li>
+<li>actions：操作行为处理模块。负责处理 Vue Components 接收到的所有交互行为。包含同步/异步操作，支持多个同名方法，按照注册的顺序依次触发。向后台 API 请求的操作就在这个模块中进行，包括触发其他 action 以及提交 mutation 的操作。该模块提供了 Promise 的封装，以支持 action 的链式触发。</li>
+<li>commit：状态改变提交操作方法。对 mutation 进行提交，是唯一能执行 mutation 的方法。</li>
+<li>mutations：状态改变操作方法。是 Vuex 修改 state 的唯一推荐方法，其他修改方式在严格模式下将会报错。该方法只能进行同步操作，且方法名只能全局唯一。操作之中会有一些 hook 暴露出来，以进行 state 的监控等。</li>
+<li>state：页面状态管理容器对象。集中存储 Vue components 中 data 对象的零散数据，全局唯一，以进行统一的状态管理。页面显示所需的数据从该对象中进行读取，利用 Vue 的细粒度数据响应机制来进行高效的状态更新。</li>
+<li>getters：state 对象读取方法。图中没有单独列出该模块，应该被包含在了 render 中，Vue Components 通过该方法读取全局 state 对象。</li>
+</ul>
+<blockquote>
+<p>Vue 组件接收交互行为，调用 dispatch 方法触发 action 相关处理，若页面状态需要改变，则调用 commit 方法提交 mutation 修改 state，通过 getters 获取到 state 新值，重新渲染 Vue Components，界面随之更新。</p>
+</blockquote>
+<h2 id="二、目录结构介绍"><a href="#二、目录结构介绍" class="headerlink" title="二、目录结构介绍"></a>二、目录结构介绍</h2><p>打开 Vuex 项目，看下源码目录结构。</p>
+<p><img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/vuex_src.jpg" alt="dir_structure"></p>
+<p>Vuex 提供了非常强大的状态管理功能，源码代码量却不多，目录结构划分也很清晰。先大体介绍下各个目录文件的功能：</p>
+<ul>
+<li>module：提供 module 对象与 module 对象树的创建功能；</li>
+<li>plugins：提供开发辅助插件，如“时光穿梭”功能，state 修改的日志记录功能等；</li>
+<li>helpers.js：提供 action、mutations 以及 getters 的查找 API；</li>
+<li>index.js：是源码主入口文件，提供 store 的各 module 构建安装；</li>
+<li>mixin.js：提供了 store 在 Vue 实例上的装载注入；</li>
+<li>util.js：提供了工具方法如 find、deepCopy、forEachValue 以及 assert 等方法。</li>
+</ul>
+<h2 id="三、初始化装载与注入"><a href="#三、初始化装载与注入" class="headerlink" title="三、初始化装载与注入"></a>三、初始化装载与注入</h2><p>了解大概的目录及对应功能后，下面开始进行源码分析。<a href="https://github.com/vuejs/vuex/blob/dev/src/index.js" target="_blank" rel="noopener">index.js</a>中包含了所有的核心代码，从该文件入手进行分析。</p>
+<h3 id="3-1-装载实例"><a href="#3-1-装载实例" class="headerlink" title="3.1 装载实例"></a>3.1 装载实例</h3><p>先看个简单的例子：</p>
+<pre><code>/**
+ *  store.js文件
+ *  创建store对象，配置state、action、mutation以及getter
+ *
+ **/
+
+import Vue from &#39;vue&#39;
+import Vuex from &#39;vuex&#39;
+
+// install Vuex框架
+Vue.use(Vuex)
+
+// 创建并导出store对象。为了方便，不配置任何参数
+export default new Vuex.Store()</code></pre><p>store.js 文件中，加载 Vuex 框架，创建并导出一个空配置的 store 对象实例。</p>
+<pre><code>/**
+ *  vue-index.js文件
+ *
+ *
+ **/
+
+import Vue from &#39;vue&#39;
+import App from &#39;./../pages/app.vue&#39;
+import store from &#39;./store.js&#39;
+
+new Vue({
+  el: &#39;#root&#39;,
+  router,
+  store,
+  render: h =&gt; h(App)
+})</code></pre><p>然后在 index.js 中，正常初始化一个页面根级别的 Vue 组件，传入这个自定义的 store 对象。</p>
+<p>如<strong>问题 1</strong>所述，以上实例除了 Vue 的初始化代码，只是多了一个 store 对象的传入。一起看下源码中的实现方式。</p>
+<h3 id="3-2-装载分析"><a href="#3-2-装载分析" class="headerlink" title="3.2 装载分析"></a>3.2 装载分析</h3><p>index.js 文件代码执行开头，定义局部 Vue 变量，用于判断是否已经装载和减少全局作用域查找。</p>
+<pre><code>let Vue</code></pre><p>然后判断若处于浏览器环境下且加载过 Vue，则执行 install 方法。</p>
+<pre><code>// auto install in dist mode
+if (typeof window !== &#39;undefined&#39; &amp;&amp; window.Vue) {
+  install(window.Vue)
+}</code></pre><p>install 方法将 Vuex 装载到 Vue 对象上，<code>Vue.use(Vuex)</code>  也是通过它执行，先看下 Vue.use 方法实现：</p>
+<pre><code>function (plugin: Function | Object) {
+  /* istanbul ignore if */
+  if (plugin.installed) {
+    return
+  }
+  // additional parameters
+  const args = toArray(arguments, 1)
+  args.unshift(this)
+  if (typeof plugin.install === &#39;function&#39;) {
+    // 实际执行插件的install方法
+    plugin.install.apply(plugin, args)
+  } else {
+    plugin.apply(null, args)
+  }
+  plugin.installed = true
+  return this
+}</code></pre><p>若是首次加载，将局部 Vue 变量赋值为全局的 Vue 对象，并执行 applyMixin 方法，install 实现如下：</p>
+<pre><code>function install (_Vue) {
+  if (Vue) {
+    console.error(
+      &#39;[vuex] already installed. Vue.use(Vuex) should be called only once.&#39;
+    )
+    return
+  }
+  Vue = _Vue
+  applyMixin(Vue)
+}</code></pre><p>来看下 applyMixin 方法内部代码。如果是 2.x.x 以上版本，可以使用 hook 的形式进行注入，或使用封装并替换 Vue 对象原型的_init 方法，实现注入。</p>
+<pre><code>export default function (Vue) {
+  const version = Number(Vue.version.split(&#39;.&#39;)[0])
+
+  if (version &gt;= 2) {
+    const usesInit = Vue.config._lifecycleHooks.indexOf(&#39;init&#39;) &gt; -1
+    Vue.mixin(usesInit ? { init: vuexInit } : { beforeCreate: vuexInit })
+  } else {
+    // override init and inject vuex init procedure
+    // for 1.x backwards compatibility.
+    const _init = Vue.prototype._init
+    Vue.prototype._init = function (options = {}) {
+      options.init = options.init
+        ? [vuexInit].concat(options.init)
+        : vuexInit
+      _init.call(this, options)
+    }
+  }</code></pre><p>具体实现：将初始化 Vue 根组件时传入的 store 设置到 this 对象的$store属性上，子组件从其父组件引用$store 属性，层层嵌套进行设置。在任意组件中执行  <code>this.$store</code>  都能找到装载的那个 store 对象，vuexInit 方法实现如下：</p>
+<pre><code>function vuexInit () {
+  const options = this.$options
+  // store injection
+  if (options.store) {
+    this.$store = options.store
+  } else if (options.parent &amp;&amp; options.parent.$store) {
+    this.$store = options.parent.$store
+  }
+}</code></pre><p>看个图例理解下 store 的传递。</p>
+<p>页面 Vue 结构图：<br><img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/shopping_cart_vue.jpg" alt="cart_vue_structure"></p>
+<p>对应 store 流向：<br><img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/store_flow2.jpg" alt="cart_vue_structure"></p>
+<h2 id="四、store-对象构造"><a href="#四、store-对象构造" class="headerlink" title="四、store 对象构造"></a>四、store 对象构造</h2><p>上面对 Vuex 框架的装载以及注入自定义 store 对象进行分析，解决了<strong>问题 1</strong>。接下来详细分析 store 对象的内部功能和具体实现，来解答  <strong>为什么 actions、getters、mutations 中能从 arguments[0]中拿到 store 的相关数据?</strong>  等问题。</p>
+<p>store 对象实现逻辑比较复杂，先看下构造方法的整体逻辑流程来帮助后面的理解：</p>
+<p><img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/4.5_flow.jpg" alt="cart_vue_structure"></p>
+<h3 id="4-1-环境判断"><a href="#4-1-环境判断" class="headerlink" title="4.1 环境判断"></a>4.1 环境判断</h3><p>开始分析 store 的构造函数，分小节逐函数逐行的分析其功能。</p>
+<pre><code>constructor (options = {}) {
+  assert(Vue, `must call Vue.use(Vuex) before creating a store instance.`)
+  assert(typeof Promise !== &#39;undefined&#39;, `vuex requires a Promise polyfill in this browser.`)</code></pre><p>在 store 构造函数中执行环境判断，以下都是 Vuex 工作的必要条件：</p>
+<ol>
+<li>已经执行安装函数进行装载；</li>
+<li>支持 Promise 语法。</li>
+</ol>
+<p>assert 函数是一个简单的断言函数的实现，一行代码即可实现。</p>
+<pre><code>function assert (condition, msg) {
+  if (!condition) throw new Error(`[vuex] ${msg}`)
+}</code></pre><h3 id="4-2-数据初始化、module-树构造"><a href="#4-2-数据初始化、module-树构造" class="headerlink" title="4.2 数据初始化、module 树构造"></a>4.2 数据初始化、module 树构造</h3><p>环境判断后，根据 new 构造传入的 options 或默认值，初始化内部数据。</p>
+<pre><code>const {
+    state = {},
+    plugins = [],
+    strict = false
+} = options
+
+// store internal state
+this._committing = false // 是否在进行提交状态标识
+this._actions = Object.create(null) // acitons操作对象
+this._mutations = Object.create(null) // mutations操作对象
+this._wrappedGetters = Object.create(null) // 封装后的getters集合对象
+this._modules = new ModuleCollection(options) // Vuex支持store分模块传入，存储分析后的modules
+this._modulesNamespaceMap = Object.create(null) // 模块命名空间map
+this._subscribers = [] // 订阅函数集合，Vuex提供了subscribe功能
+this._watcherVM = new Vue() // Vue组件用于watch监视变化</code></pre><p>调用  <code>new Vuex.store(options)</code>  时传入的 options 对象，用于构造 ModuleCollection 类，下面看看其功能。</p>
+<pre><code>constructor (rawRootModule) {
+  // register root module (Vuex.Store options)
+  this.root = new Module(rawRootModule, false)
+
+  // register all nested modules
+  if (rawRootModule.modules) {
+    forEachValue(rawRootModule.modules, (rawModule, key) =&gt; {
+      this.register([key], rawModule, false)
+    })
+  }</code></pre><p>ModuleCollection 主要将传入的 options 对象整个构造为一个 module 对象，并循环调用  <code>this.register([key], rawModule, false)</code>  为其中的 modules 属性进行模块注册，使其都成为 module 对象，最后 options 对象被构造成一个完整的组件树。ModuleCollection 类还提供了 modules 的更替功能，详细实现可以查看源文件<a href="https://github.com/vuejs/vuex/blob/dev/src/module/module-collection.js" target="_blank" rel="noopener">module-collection.js</a>。</p>
+<h3 id="4-3-dispatch-与-commit-设置"><a href="#4-3-dispatch-与-commit-设置" class="headerlink" title="4.3 dispatch 与 commit 设置"></a>4.3 dispatch 与 commit 设置</h3><p>继续回到 store 的构造函数代码。</p>
+<pre><code>// bind commit and dispatch to self
+const store = this
+const { dispatch, commit } = this
+
+this.dispatch = function boundDispatch (type, payload) {
+  return dispatch.call(store, type, payload)
+}
+
+this.commit = function boundCommit (type, payload, options) {
+  return commit.call(store, type, payload, options)
+}</code></pre><p>封装替换原型中的 dispatch 和 commit 方法，将 this 指向当前 store 对象。dispatch 和 commit 方法具体实现如下：</p>
+<pre><code>dispatch (_type, _payload) {
+  // check object-style dispatch
+  const {
+      type,
+      payload
+  } = unifyObjectStyle(_type, _payload) // 配置参数处理
+
+  // 当前type下所有action处理函数集合
+  const entry = this._actions[type]
+  if (!entry) {
+    console.error(`[vuex] unknown action type: ${type}`)
+    return
+  }
+  return entry.length &gt; 1
+      ? Promise.all(entry.map(handler =&gt; handler(payload)))
+      : entry[0](payload)
+}</code></pre><p>前面提到，dispatch 的功能是触发并传递一些参数（payload）给对应 type 的 action。因为其支持 2 种调用方法，所以在 dispatch 中，先进行参数的适配处理，然后判断 action type 是否存在，若存在就逐个执行（注：上面代码中的<code>this._actions[type]</code>  以及 下面的  <code>this._mutations[type]</code>  均是处理过的函数集合，具体内容留到后面进行分析）。</p>
+<p>commit 方法和 dispatch 相比虽然都是触发 type，但是对应的处理却相对复杂，代码如下。</p>
+<pre><code>commit (_type, _payload, _options) {
+  // check object-style commit
+  const {
+      type,
+      payload,
+      options
+  } = unifyObjectStyle(_type, _payload, _options)
+
+  const mutation = { type, payload }
+  const entry = this._mutations[type]
+  if (!entry) {
+    console.error(`[vuex] unknown mutation type: ${type}`)
+    return
+  }
+  // 专用修改state方法，其他修改state方法均是非法修改
+  this._withCommit(() =&gt; {
+    entry.forEach(function commitIterator (handler) {
+      handler(payload)
+    })
+  })
+
+  // 订阅者函数遍历执行，传入当前的mutation对象和当前的state
+  this._subscribers.forEach(sub =&gt; sub(mutation, this.state))
+
+  if (options &amp;&amp; options.silent) {
+    console.warn(
+        `[vuex] mutation type: ${type}. Silent option has been removed. ` +
+        &#39;Use the filter functionality in the vue-devtools&#39;
+    )
+  }
+}</code></pre><p>该方法同样支持 2 种调用方法。先进行参数适配，判断触发 mutation type，利用_withCommit 方法执行本次批量触发 mutation 处理函数，并传入 payload 参数。执行完成后，通知所有_subscribers（订阅函数）本次操作的 mutation 对象以及当前的 state 状态，如果传入了已经移除的 silent 选项则进行提示警告。</p>
+<h3 id="4-4-state-修改方法"><a href="#4-4-state-修改方法" class="headerlink" title="4.4 state 修改方法"></a>4.4 state 修改方法</h3><p>_withCommit 是一个代理方法，所有触发 mutation 的进行 state 修改的操作都经过它，由此来统一管理监控 state 状态的修改。实现代码如下。</p>
+<pre><code>_withCommit (fn) {
+  // 保存之前的提交状态
+  const committing = this._committing
+
+  // 进行本次提交，若不设置为true，直接修改state，strict模式下，Vuex将会产生非法修改state的警告
+  this._committing = true
+
+  // 执行state的修改操作
+  fn()
+
+  // 修改完成，还原本次修改之前的状态
+  this._committing = committing
+}</code></pre><p>缓存执行时的 committing 状态将当前状态设置为 true 后进行本次提交操作，待操作完毕后，将 committing 状态还原为之前的状态。</p>
+<h3 id="4-5-module-安装"><a href="#4-5-module-安装" class="headerlink" title="4.5 module 安装"></a>4.5 module 安装</h3><p>绑定 dispatch 和 commit 方法之后，进行严格模式的设置，以及模块的安装（installModule）。由于占用资源较多影响页面性能，严格模式建议只在开发模式开启，上线后需要关闭。</p>
+<pre><code>// strict mode
+this.strict = strict
+
+// init root module.
+// this also recursively registers all sub-modules
+// and collects all module getters inside this._wrappedGetters
+installModule(this, state, [], this._modules.root)</code></pre><h4 id="4-5-1-初始化-rootState"><a href="#4-5-1-初始化-rootState" class="headerlink" title="4.5.1 初始化 rootState"></a>4.5.1 初始化 rootState</h4><p>上述代码的备注中，提到 installModule 方法初始化组件树根组件、注册所有子组件，并将其中所有的 getters 存储到 this._wrappedGetters 属性中，让我们看看其中的代码实现。</p>
+<pre><code>function installModule (store, rootState, path, module, hot) {
+  const isRoot = !path.length
+  const namespace = store._modules.getNamespace(path)
+
+  // register in namespace map
+  if (namespace) {
+    store._modulesNamespaceMap[namespace] = module
+  }
+
+  // 非根组件设置 state 方法
+  if (!isRoot &amp;&amp; !hot) {
+    const parentState = getNestedState(rootState, path.slice(0, -1))
+    const moduleName = path[path.length - 1]
+    store._withCommit(() =&gt; {
+      Vue.set(parentState, moduleName, module.state)
+    })
+  }
+
+  ······</code></pre><p>判断是否是根目录，以及是否设置了命名空间，若存在则在 namespace 中进行 module 的存储，在不是根组件且不是 hot 条件的情况下，通过 getNestedState 方法拿到该 module 父级的 state，拿到其所在的 moduleName ，调用  <code>Vue.set(parentState, moduleName, module.state)</code>  方法将其 state 设置到父级 state 对象的 moduleName 属性中，由此实现该模块的 state 注册（首次执行这里，因为是根目录注册，所以并不会执行该条件中的方法）。getNestedState 方法代码很简单，分析 path 拿到 state，如下。</p>
+<pre><code>function getNestedState (state, path) {
+  return path.length
+    ? path.reduce((state, key) =&gt; state[key], state)
+    : state
+}</code></pre><h4 id="4-5-2-module-上下文环境设置"><a href="#4-5-2-module-上下文环境设置" class="headerlink" title="4.5.2 module 上下文环境设置"></a>4.5.2 module 上下文环境设置</h4><pre><code>const local = module.context = makeLocalContext(store, namespace, path)</code></pre><p>命名空间和根目录条件判断完毕后，接下来定义 local 变量和 module.context 的值，执行 makeLocalContext 方法，为该 module 设置局部的 dispatch、commit 方法以及 getters 和 state（由于 namespace 的存在需要做兼容处理）。</p>
+<h4 id="4-5-3-mutations、actions-以及-getters-注册"><a href="#4-5-3-mutations、actions-以及-getters-注册" class="headerlink" title="4.5.3 mutations、actions 以及 getters 注册"></a>4.5.3 mutations、actions 以及 getters 注册</h4><p>定义 local 环境后，循环注册我们在 options 中配置的 action 以及 mutation 等。逐个分析各注册函数之前，先看下模块间的逻辑关系流程图：</p>
+<p><img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/complete_flow1.jpg" alt="complete_flow"></p>
+<p>下面分析代码逻辑：</p>
+<pre><code>// 注册对应模块的mutation，供state修改使用
+module.forEachMutation((mutation, key) =&gt; {
+  const namespacedType = namespace + key
+  registerMutation(store, namespacedType, mutation, local)
+})
+
+// 注册对应模块的action，供数据操作、提交mutation等异步操作使用
+module.forEachAction((action, key) =&gt; {
+  const namespacedType = namespace + key
+  registerAction(store, namespacedType, action, local)
+})
+
+// 注册对应模块的getters，供state读取使用
+module.forEachGetter((getter, key) =&gt; {
+  const namespacedType = namespace + key
+  registerGetter(store, namespacedType, getter, local)
+})</code></pre><p>registerMutation 方法中，获取 store 中的对应 mutation type 的处理函数集合，将新的处理函数 push 进去。这里将我们设置在 mutations type 上对应的 handler 进行了封装，给原函数传入了 state。在执行  <code>commit(&#39;xxx&#39;, payload)</code>  的时候，type 为 xxx 的 mutation 的所有 handler 都会接收到 state 以及 payload，这就是在 handler 里面拿到 state 的原因。</p>
+<pre><code>function registerMutation (store, type, handler, local) {
+  // 取出对应type的mutations-handler集合
+  const entry = store._mutations[type] || (store._mutations[type] = [])
+  // commit实际调用的不是我们传入的handler，而是经过封装的
+  entry.push(function wrappedMutationHandler (payload) {
+    // 调用handler并将state传入
+    handler(local.state, payload)
+  })
+}</code></pre><p>action 和 getter 的注册也是同理的，看一下代码（注：前面提到的  <code>this.actions</code>  以及  <code>this.mutations</code>在此处进行设置）。</p>
+<pre><code>function registerAction (store, type, handler, local) {
+  // 取出对应type的actions-handler集合
+  const entry = store._actions[type] || (store._actions[type] = [])
+  // 存储新的封装过的action-handler
+  entry.push(function wrappedActionHandler (payload, cb) {
+    // 传入 state 等对象供我们原action-handler使用
+    let res = handler({
+      dispatch: local.dispatch,
+      commit: local.commit,
+      getters: local.getters,
+      state: local.state,
+      rootGetters: store.getters,
+      rootState: store.state
+    }, payload, cb)
+    // action需要支持promise进行链式调用，这里进行兼容处理
+    if (!isPromise(res)) {
+      res = Promise.resolve(res)
+    }
+    if (store._devtoolHook) {
+      return res.catch(err =&gt; {
+        store._devtoolHook.emit(&#39;vuex:error&#39;, err)
+        throw err
+      })
+    } else {
+      return res
+    }
+  })
+}
+
+function registerGetter (store, type, rawGetter, local) {
+  // getters只允许存在一个处理函数，若重复需要报错
+  if (store._wrappedGetters[type]) {
+    console.error(`[vuex] duplicate getter key: ${type}`)
+    return
+  }
+
+  // 存储封装过的getters处理函数
+  store._wrappedGetters[type] = function wrappedGetter (store) {
+    // 为原getters传入对应状态
+    return rawGetter(
+      local.state, // local state
+      local.getters, // local getters
+      store.state, // root state
+      store.getters // root getters
+    )
+  }
+}</code></pre><p>action handler 比 mutation handler 以及 getter wrapper 多拿到 dispatch 和 commit 操作方法，因此 action 可以进行 dispatch action 和 commit mutation 操作。</p>
+<h4 id="4-5-4-子-module-安装"><a href="#4-5-4-子-module-安装" class="headerlink" title="4.5.4 子 module 安装"></a>4.5.4 子 module 安装</h4><p>注册完了根组件的 actions、mutations 以及 getters 后，递归调用自身，为子组件注册其 state，actions、mutations 以及 getters 等。</p>
+<pre><code>module.forEachChild((child, key) =&gt; {
+  installModule(store, rootState, path.concat(key), child, hot)
+})</code></pre><h4 id="4-5-5-实例结合"><a href="#4-5-5-实例结合" class="headerlink" title="4.5.5 实例结合"></a>4.5.5 实例结合</h4><p>前面介绍了 dispatch 和 commit 方法以及 actions 等的实现，下面结合一个官方的<a href="https://github.com/vuejs/vuex/tree/dev/examples/shopping-cart" target="_blank" rel="noopener">购物车</a>实例中的部分代码来加深理解。</p>
+<p>Vuex 配置代码：</p>
+<pre><code>/
+ *  store-index.js store配置文件
+ *
+ /
+
+import Vue from &#39;vue&#39;
+import Vuex from &#39;vuex&#39;
+import * as actions from &#39;./actions&#39;
+import * as getters from &#39;./getters&#39;
+import cart from &#39;./modules/cart&#39;
+import products from &#39;./modules/products&#39;
+import createLogger from &#39;../../../src/plugins/logger&#39;
+
+Vue.use(Vuex)
+
+const debug = process.env.NODE_ENV !== &#39;production&#39;
+
+export default new Vuex.Store({
+  actions,
+  getters,
+  modules: {
+    cart,
+    products
+  },
+  strict: debug,
+  plugins: debug ? [createLogger()] : []
+})</code></pre><p>Vuex 组件 module 中各模块 state 配置代码部分：</p>
+<pre><code>/**
+ *  cart.js
+ *
+ **/
+
+const state = {
+  added: [],
+  checkoutStatus: null
+}
+
+/**
+ *  products.js
+ *
+ **/
+
+const state = {
+  all: []
+}</code></pre><p>加载上述配置后，页面 state 结构如下图：</p>
+<p><img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/shopping_cart_state.jpg" alt="cart_state"></p>
+<p>state 中的属性配置都是按照 option 配置中 module path 的规则来进行的，下面看 action 的操作实例。</p>
+<p>Vuecart 组件代码部分：</p>
+<pre><code>/**
+ *  Cart.vue 省略template代码，只看script部分
+ *
+ **/
+
+export default {
+  methods: {
+    // 购物车中的购买按钮，点击后会触发结算。源码中会调用 dispatch方法
+    checkout (products) {
+      this.$store.dispatch(&#39;checkout&#39;, products)
+    }
+  }
+}</code></pre><p>Vuexcart.js 组件 action 配置代码部分：</p>
+<pre><code>const actions = {
+  checkout ({ commit, state }, products) {
+    const savedCartItems = [...state.added] // 存储添加到购物车的商品
+    commit(types.CHECKOUT_REQUEST) // 设置提交结算状态
+    shop.buyProducts( // 提交api请求，并传入成功与失败的cb-func
+      products,
+      () =&gt; commit(types.CHECKOUT_SUCCESS), // 请求返回成功则设置提交成功状态
+      () =&gt; commit(types.CHECKOUT_FAILURE, { savedCartItems }) // 请求返回失败则设置提交失败状态
+    )
+  }
+}</code></pre><p>Vue 组件中点击购买执行当前 module 的 dispatch 方法，传入 type 值为 ‘checkout’，payload 值为 ‘products’，在源码中 dispatch 方法在所有注册过的 actions 中查找’checkout’的对应执行数组，取出循环执行。执行的是被封装过的被命名为 wrappedActionHandler 的方法，真正传入的 checkout 的执行函数在 wrappedActionHandler 这个方法中被执行，源码如下（注：前面贴过，这里再看一次）：</p>
+<pre><code>function wrappedActionHandler (payload, cb) {
+    let res = handler({
+      dispatch: local.dispatch,
+      commit: local.commit,
+      getters: local.getters,
+      state: local.state,
+      rootGetters: store.getters,
+      rootState: store.state
+    }, payload, cb)
+    if (!isPromise(res)) {
+      res = Promise.resolve(res)
+    }
+    if (store._devtoolHook) {
+      return res.catch(err =&gt; {
+        store._devtoolHook.emit(&#39;vuex:error&#39;, err)
+        throw err
+      })
+    } else {
+      return res
+    }
+  }</code></pre><p>handler 在这里就是传入的 checkout 函数，其执行需要的 commit 以及 state 就是在这里被传入，payload 也传入了，在实例中对应接收的参数名为 products。commit 的执行也是同理的，实例中 checkout 还进行了一次 commit 操作，提交一次 type 值为 types.CHECKOUT_REQUEST 的修改，因为 mutation 名字是唯一的，这里进行了常量形式的调用，防止命名重复，执行跟源码分析中一致，调用  <code>function wrappedMutationHandler (payload) { handler(local.state, payload) }</code>  封装函数来实际调用配置的 mutation 方法。</p>
+<p>看到完源码分析和上面的小实例，应该能理解 dispatch action 和 commit mutation 的工作原理了。接着看源码，看看 getters 是如何实现 state 实时访问的。</p>
+<h3 id="4-6-store-vm-组件设置"><a href="#4-6-store-vm-组件设置" class="headerlink" title="4.6 store._vm 组件设置"></a>4.6 store._vm 组件设置</h3><p>执行完各 module 的 install 后，执行 resetStoreVM 方法，进行 store 组件的初始化。</p>
+<pre><code>// initialize the store vm, which is responsible for the reactivity
+// (also registers _wrappedGetters as computed properties)
+resetStoreVM(this, state)</code></pre><p>综合前面的分析可以了解到，Vuex 其实构建的就是一个名为 store 的 vm 组件，所有配置的 state、actions、mutations 以及 getters 都是其组件的属性，所有的操作都是对这个 vm 组件进行的。</p>
+<p>一起看下 resetStoreVM 方法的内部实现。</p>
+<pre><code>function resetStoreVM (store, state) {
+  const oldVm = store._vm // 缓存前vm组件
+
+  // bind store public getters
+  store.getters = {}
+  const wrappedGetters = store._wrappedGetters
+  const computed = {}
+
+  // 循环所有处理过的getters，并新建computed对象进行存储，通过Object.defineProperty方法为getters对象建立属性，使得我们通过this.$store.getters.xxxgetter能够访问到该getters
+  forEachValue(wrappedGetters, (fn, key) =&gt; {
+    // use computed to leverage its lazy-caching mechanism
+    computed[key] = () =&gt; fn(store)
+    Object.defineProperty(store.getters, key, {
+      get: () =&gt; store._vm[key],
+      enumerable: true // for local getters
+    })
+  })
+
+  // use a Vue instance to store the state tree
+  // suppress warnings just in case the user has added
+  // some funky global mixins
+  const silent = Vue.config.silent
+
+  // 暂时将Vue设为静默模式，避免报出用户加载的某些插件触发的警告
+  Vue.config.silent = true
+  // 设置新的storeVm，将当前初始化的state以及getters作为computed属性（刚刚遍历生成的）
+  store._vm = new Vue({
+    data: { state },
+    computed
+  })
+
+  // 恢复Vue的模式
+  Vue.config.silent = silent
+
+  // enable strict mode for new vm
+  if (store.strict) {
+    // 该方法对state执行$watch以禁止从mutation外部修改state
+    enableStrictMode(store)
+  }
+
+  // 若不是初始化过程执行的该方法，将旧的组件state设置为null，强制更新所有监听者(watchers)，待更新生效，DOM更新完成后，执行vm组件的destroy方法进行销毁，减少内存的占用
+  if (oldVm) {
+    // dispatch changes in all subscribed watchers
+    // to force getter re-evaluation.
+    store._withCommit(() =&gt; {
+      oldVm.state = null
+    })
+    Vue.nextTick(() =&gt; oldVm.$destroy())
+  }
+}</code></pre><p>resetStoreVm 方法创建了当前 store 实例的_vm 组件，至此 store 就创建完毕了。上面代码涉及到了严格模式的判断，看一下严格模式如何实现的。</p>
+<pre><code>function enableStrictMode (store) {
+  store._vm.$watch(&#39;state&#39;, () =&gt; {
+    assert(store._committing, `Do not mutate vuex store state outside mutation handlers.`)
+  }, { deep: true, sync: true })
+}</code></pre><p>很简单的应用，监视 state 的变化，如果没有通过  <code>this._withCommit()</code>  方法进行 state 修改，则报错。</p>
+<h3 id="4-7-plugin-注入"><a href="#4-7-plugin-注入" class="headerlink" title="4.7 plugin 注入"></a>4.7 plugin 注入</h3><p>最后执行 plugin 的植入。</p>
+<pre><code>plugins.concat(devtoolPlugin).forEach(plugin =&gt; plugin(this))</code></pre><p>devtoolPlugin 提供的功能有 3 个：</p>
+<pre><code>// 1. 触发Vuex组件初始化的hook
+devtoolHook.emit(&#39;vuex:init&#39;, store)
+
+// 2. 提供“时空穿梭”功能，即state操作的前进和倒退
+devtoolHook.on(&#39;vuex:travel-to-state&#39;, targetState =&gt; {
+  store.replaceState(targetState)
+})
+
+// 3. mutation被执行时，触发hook，并提供被触发的mutation函数和当前的state状态
+store.subscribe((mutation, state) =&gt; {
+  devtoolHook.emit(&#39;vuex:mutation&#39;, mutation, state)
+})</code></pre><p>源码分析到这里，Vuex 框架的实现原理基本都已经分析完毕。</p>
+<h2 id="五、总结"><a href="#五、总结" class="headerlink" title="五、总结"></a>五、总结</h2><p>最后我们回过来看文章开始提出的 5 个问题。</p>
+<ol>
+<li><strong>问</strong>：<em>使用 Vuex 只需执行  <code>Vue.use(Vuex)</code>，并在 Vue 的配置中传入一个 store 对象的示例，store 是如何实现注入的？</em></li>
+</ol>
+<blockquote>
+<p><strong>答</strong>：<code>Vue.use(Vuex)</code>  方法执行的是 install 方法，它实现了 Vue 实例对象的 init 方法封装和注入，使传入的 store 对象被设置到 Vue 上下文环境的$store 中。因此在 Vue Component 任意地方都能够通过<code>this.$store</code>访问到该 store。</p>
+</blockquote>
+<ol start="2">
+<li><strong>问</strong>：<em>state 内部支持模块配置和模块嵌套，如何实现的？</em></li>
+</ol>
+<blockquote>
+<p><strong>答</strong>：在 store 构造方法中有 makeLocalContext 方法，所有 module 都会有一个 local context，根据配置时的 path 进行匹配。所以执行如<code>dispatch(&#39;submitOrder&#39;, payload)</code>这类 action 时，默认的拿到都是 module 的 local state，如果要访问最外层或者是其他 module 的 state，只能从 rootState 按照 path 路径逐步进行访问。</p>
+</blockquote>
+<ol start="3">
+<li><strong>问</strong>：<em>在执行 dispatch 触发 action(commit 同理)的时候，只需传入(type, payload)，action 执行函数中第一个参数 store 从哪里获取的？</em></li>
+</ol>
+<blockquote>
+<p><strong>答</strong>：store 初始化时，所有配置的 action 和 mutation 以及 getters 均被封装过。在执行如<code>dispatch(&#39;submitOrder&#39;, payload)</code>的时候，actions 中 type 为 submitOrder 的所有处理方法都是被封装后的，其第一个参数为当前的 store 对象，所以能够获取到  <code>{ dispatch, commit, state, rootState }</code>  等数据。</p>
+</blockquote>
+<ol start="4">
+<li><strong>问</strong>：<em>Vuex 如何区分 state 是外部直接修改，还是通过 mutation 方法修改的？</em></li>
+</ol>
+<blockquote>
+<p><strong>答</strong>：Vuex 中修改 state 的唯一渠道就是执行  <code>commit(&#39;xx&#39;, payload)</code>  方法，其底层通过执行  <code>this._withCommit(fn)</code>  设置_committing 标志变量为 true，然后才能修改 state，修改完毕还需要还原_committing 变量。外部修改虽然能够直接修改 state，但是并没有修改_committing 标志位，所以只要 watch 一下 state，state change 时判断是否_committing 值为 true，即可判断修改的合法性。</p>
+</blockquote>
+<ol start="5">
+<li><strong>问</strong>：<em>调试时的”时空穿梭”功能是如何实现的？</em></li>
+</ol>
+<blockquote>
+<p><strong>答</strong>：devtoolPlugin 中提供了此功能。因为 dev 模式下所有的 state change 都会被记录下来，’时空穿梭’ 功能其实就是将当前的 state 替换为记录中某个时刻的 state 状态，利用  <code>store.replaceState(targetState)</code>  方法将执行<code>this._vm.state = state</code>  实现。</p>
+</blockquote>
+<p>源码中还有一些工具函数类似 registerModule、unregisterModule、hotUpdate、watch 以及 subscribe 等，如有兴趣可以打开源码看看，这里不再细述。</p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://jixioakang.com" rel="external nofollow noreferrer">xkloveme</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://jixioakang.com/2017/08/24/2017-08-24-vuex-kuang-jia-yuan-li-yu-yuan-ma-fen-xi/">http://jixioakang.com/2017/08/24/2017-08-24-vuex-kuang-jia-yuan-li-yu-yuan-ma-fen-xi/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://jixioakang.com" target="_blank">xkloveme</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%8A%80%E6%9C%AF/">
+                                    <span class="chip bg-color">技术</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+  #reward {
+    margin: 40px 0;
+    text-align: center;
+  }
+
+  #reward .reward-link {
+    font-size: 1.4rem;
+    line-height: 38px;
+  }
+
+  #reward .btn-floating:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  #rewardModal {
+    width: 320px;
+  }
+
+  #rewardModal .reward-title {
+    margin: 15px auto;
+    padding-bottom: 5px;
+  }
+
+  #rewardModal .modal-content {
+    padding: 10px;
+  }
+
+  #rewardModal .close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 1.3rem;
+    line-height: 20px;
+    cursor: pointer;
+  }
+
+  #rewardModal .close:hover {
+    color: #ef5350;
+    transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    -o-transform: scale(1.3);
+  }
+
+  #rewardModal .reward-tabs {
+    margin: 0 auto;
+    width: 210px;
+  }
+
+  .reward-tabs .tabs {
+    height: 38px;
+    margin: 10px auto;
+    padding-left: 0;
+  }
+
+  .reward-content ul {
+    padding-left: 0 !important;
+  }
+
+  .reward-tabs .tabs .tab {
+    height: 38px;
+    line-height: 38px;
+  }
+
+  .reward-tabs .tab a {
+    color: #fff;
+    background-color: #ccc;
+  }
+
+  .reward-tabs .tab a:hover {
+    background-color: #ccc;
+    color: #fff;
+  }
+
+  .reward-tabs .wechat-tab .active {
+    color: #fff !important;
+    background-color: #22ab38 !important;
+  }
+
+  .reward-tabs .alipay-tab .active {
+    color: #fff !important;
+    background-color: #019fe8 !important;
+  }
+
+  .reward-tabs .reward-img {
+    width: 210px;
+  }
+</style>
+
+<div id="reward">
+  <a
+    href="#rewardModal"
+    class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red"
+    >赏</a
+  >
+
+  <!-- Modal Structure -->
+  <div id="rewardModal" class="modal">
+    <div class="modal-content">
+      <a class="close modal-close"><i class="fas fa-times"></i></a>
+      <h4 class="reward-title">你的赏识是我前进的动力</h4>
+      <div class="reward-content">
+        <div class="reward-tabs">
+          <ul class="tabs row">
+            <li class="tab col s6 alipay-tab waves-effect waves-light">
+              <a href="#alipay">支付宝</a>
+            </li>
+            <li class="tab col s6 wechat-tab waves-effect waves-light">
+              <a href="#wechat">微 信</a>
+            </li>
+          </ul>
+          <div id="alipay">
+            <img
+              src="/medias/reward/alipay.jpg"
+              class="reward-img"
+              alt="支付宝打赏二维码"
+            />
+          </div>
+          <div id="wechat">
+            <img
+              src="/medias/reward/wechat.png"
+              class="reward-img"
+              alt="微信打赏二维码"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $(".tabs").tabs();
+  });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'f1e60c7afa53a51926b5',
+        clientSecret: '2430231be04e68f6ba8ccf331c537cc19f50a0bd',
+        repo: 'xkloveme.github.io',
+        owner: 'xkloveme',
+        admin: "xkloveme",
+        id: '2017-08-24T15-50-00',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2017/08/26/2017-08-26-dui-vue-sheng-ming-zhou-qi-gou-zi-han-shu-de-li-jie/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="对vue生命周期/钩子函数的理解">
+                        
+                        <span class="card-title">对vue生命周期/钩子函数的理解</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            对于实现页面逻辑交互等效果，我们必须知晓 vue 的生命周期，才能愉快的玩耍，知道我们写的东西应该挂载到哪里，vue 官方给出的 api 讲解的那叫一个简单啊，如下：
+所有的生命周期钩子自动绑定 this 上下文到实例中，因此你可以访问数据
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2017-08-26
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            xkloveme
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2017/08/24/2017-08-24-vue-shi-li-zhong-de-sheng-ming-zhou-qi-gou-zi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Vue 实例中的生命周期钩子">
+                        
+                        <span class="card-title">Vue 实例中的生命周期钩子</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Vue 框架的入口就是 Vue 实例，其实就是框架中的 view model ，它包含页面中的业务处理逻辑、数据模型等，它的生命周期中有多个事件钩子，让我们在控制整个 Vue 实例的过程时更容易形成好的逻辑。
+Vue 实例在文档中经常会使用
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2017-08-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            xkloveme
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%8A%80%E6%9C%AF/">
+                        <span class="chip bg-color">技术</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 小康之家<br />'
+            + '文章作者: xkloveme<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+  <div class="container row center-align">
+    <div class="col s12 m8 l8 copy-right">
+      Copyright&nbsp;&copy;
+      <span id="year">年份</span>
+      <a href="http://jixioakang.com" target="_blank">xkloveme</a>
+      |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+      <br />
+       &nbsp;<i
+        class="fas fa-chart-area"
+      ></i
+      >&nbsp;站点总字数:&nbsp;<span class="white-color"
+        >136.2k</span
+      >&nbsp;字      
+      <span id="busuanzi_container_site_pv">
+        |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span
+          id="busuanzi_value_site_pv"
+          class="white-color"
+        ></span
+        >&nbsp;次
+      </span>
+       
+      <span id="busuanzi_container_site_uv">
+        |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span
+          id="busuanzi_value_site_uv"
+          class="white-color"
+        ></span
+        >&nbsp;人
+      </span>
+      
+      <br />
+      
+      <span id="sitetime">载入运行时间...</span>
+      <script>
+        function siteTime() {
+          window.setTimeout("siteTime()", 1000);
+          var seconds = 1000;
+          var minutes = seconds * 60;
+          var hours = minutes * 60;
+          var days = hours * 24;
+          var years = days * 365;
+          var today = new Date();
+          var startYear = "2020";
+          var startMonth = "3";
+          var startDate = "13";
+          var startHour = "0";
+          var startMinute = "0";
+          var startSecond = "0";
+          var todayYear = today.getFullYear();
+          var todayMonth = today.getMonth() + 1;
+          var todayDate = today.getDate();
+          var todayHour = today.getHours();
+          var todayMinute = today.getMinutes();
+          var todaySecond = today.getSeconds();
+          var t1 = Date.UTC(
+            startYear,
+            startMonth,
+            startDate,
+            startHour,
+            startMinute,
+            startSecond
+          );
+          var t2 = Date.UTC(
+            todayYear,
+            todayMonth,
+            todayDate,
+            todayHour,
+            todayMinute,
+            todaySecond
+          );
+          var diff = t2 - t1;
+          var diffYears = Math.floor(diff / years);
+          var diffDays = Math.floor(diff / days - diffYears * 365);
+          var diffHours = Math.floor(
+            (diff - (diffYears * 365 + diffDays) * days) / hours
+          );
+          var diffMinutes = Math.floor(
+            (diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+              minutes
+          );
+          var diffSeconds = Math.floor(
+            (diff -
+              (diffYears * 365 + diffDays) * days -
+              diffHours * hours -
+              diffMinutes * minutes) /
+              seconds
+          );
+          if (startYear == todayYear) {
+            document.getElementById("year").innerHTML = todayYear;
+            document.getElementById("sitetime").innerHTML =
+              "本站已安全运行 " +
+              diffDays +
+              " 天 " +
+              diffHours +
+              " 小时 " +
+              diffMinutes +
+              " 分钟 " +
+              diffSeconds +
+              " 秒";
+          } else {
+            document.getElementById("year").innerHTML =
+              startYear + " - " + todayYear;
+            document.getElementById("sitetime").innerHTML =
+              "本站已安全运行 " +
+              diffYears +
+              " 年 " +
+              diffDays +
+              " 天 " +
+              diffHours +
+              " 小时 " +
+              diffMinutes +
+              " 分钟 " +
+              diffSeconds +
+              " 秒";
+          }
+        }
+        setInterval(siteTime, 1000);
+      </script>
+      
+      <br />
+      
+    </div>
+    <div class="col s12 m4 l4 social-link social-statis">
+      
+    <a href="https://github.com/xkloveme" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:xkloveme@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+    <a href="https://twitter.com/xkloveme" class="tooltipped" target="_blank" data-tooltip="关注我的Twitter: https://twitter.com/xkloveme" data-position="top" data-delay="50">
+        <i class="fab fa-twitter"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+
+    </div>
+  </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-102352377-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-102352377-2');
+</script>
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

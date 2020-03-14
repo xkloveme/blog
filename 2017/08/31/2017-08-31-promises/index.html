@@ -1,0 +1,1329 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="一篇傻瓜都能看懂的Promises文章, 小康,xkloveme,博客">
+    <meta name="description" content="JavaScript Promises 其实不难。然而，很多人一开始就觉得有点难理解.。因此我想用一种假设的方式写下我理解 promise。
+（一）理解 promises举个简单例子：
+想象你是一个孩子。你老妈承诺下礼拜 给你买个新手机。你">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>一篇傻瓜都能看懂的Promises文章 | 小康之家</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="小康之家" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">小康之家</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">小康之家</div>
+        <div class="logo-desc">
+            
+            小康のblog
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/xkloveme" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/xkloveme" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        一篇傻瓜都能看懂的Promises文章
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%8A%80%E6%9C%AF/">
+                                <span class="chip bg-color">技术</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2017-08-31
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.8k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    6 分
+                </div>
+                
+				
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+            
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>JavaScript Promises 其实不难。然而，很多人一开始就觉得有点难理解.。因此我想用一种假设的方式写下我理解 promise。</p>
+<h2 id="（一）理解-promises"><a href="#（一）理解-promises" class="headerlink" title="（一）理解 promises"></a>（一）理解 promises</h2><p>举个简单例子：</p>
+<p>想象你是一个孩子。你老妈承诺下礼拜 给你买个新手机。你 [不知道] 你是否会得到手机直到下礼拜。你老妈可以真的买你一个全新的手机，也可以让你滚蛋并告诉你不买了（如果她不高兴了）。</p>
+<p>这是一个承诺。一个承诺有 3 个状态。分别是:</p>
+<p>1.悬而未决：你 [不知道] 你是否会得到手机直到下礼拜。</p>
+<p>2.解决：你老妈可以真的买你一个全新的手机。</p>
+<p>3.拒绝：你老妈拒绝给你买，因为你惹她不高兴。</p>
+<p>（二）创建一个 promise</p>
+<p>咱们把上面的例子转换成 JavaScript.</p>
+<p><img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/v2-bddd640f82f57be2996015b83b80c232_b.png" alt=""></p>
+<p>–&gt; 代码表现力挺强的嘛！</p>
+<ol>
+<li>“isMomHappy”是个布尔值，定义老妈是否开心。</li>
+<li>“willIGetNewPhone”是一个 promise，这个承诺可以解决(给你买)，也可以拒绝(老妈不开心就不给你买)。.</li>
+<li>还有一个标准语法去定义一个新的 promise，参考<a href="http://link.zhihu.com/?target=https%3A//developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise">MDN documentation</a>，看下面代码：</li>
+</ol>
+<p><img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/v2-c5447368a938c1e4637c958bf7309b20_b.png" alt=""></p>
+<ol>
+<li>需要记住的是，在你定义的 promise 里，当结果是成功的，叫 解决(你的成功值)，如果结果失败了，叫 拒绝（你的失败值）。</li>
+<li>在我们的例子中，如果老妈高兴，我们会得到一个电话。因此，我们称 resolvefunction（电话变量）。如果老妈不高兴，我们称为 拒绝函数（拒绝的理由）；</li>
+</ol>
+<h2 id="（三）玩转-promises"><a href="#（三）玩转-promises" class="headerlink" title="（三）玩转 promises"></a>（三）玩转 promises</h2><p>现在有了 promise，咱们就开始玩一玩。</p>
+<p><img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/v2-dd6de543c36c77e4977b9dc160e36992_b.png" alt=""></p>
+<ol>
+<li>我们有一个函数“askmom”。在这个函数中，我们将使用我们的承诺“ willigetnewphone”。</li>
+<li>当我们的 promise 是解决或者拒绝的时候，我们要做点事儿，我们用“.then &amp; .catch ”来处理我们的行动；</li>
+<li>在“.then”里面有函数“ function(fulfilled) { … } ”。这个函数的返回值是啥呢？返回值是 promise 解决的值（你的成功时候的值）；在我们的案例中它是一部新电话 。</li>
+<li>在 “.catch”里面有函数”function(error){ … } “。猜测一下，其实这个返回的是错误值，就是 promise 拒绝的值。</li>
+</ol>
+<p>走一下案例看下结果!</p>
+<p><img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/v2-045efcf752f1e929d6cd45d94004a703_b.jpg" alt=""></p>
+<h2 id="（四）链接-promises"><a href="#（四）链接-promises" class="headerlink" title="（四）链接 promises"></a>（四）链接 promises</h2><p>Promises 都是可链的。</p>
+<p>这样说吧，你，咱例子中的孩子，承诺给你的朋友说：如果你老妈给你买了新手机，就让你的朋友过过眼瘾，你要显摆显摆！</p>
+<p>这又是另外一个 promise 了，写成代码看下!</p>
+<p><img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/v2-9f4668dd366b16e12155fda0e0bf50bd_b.png" alt=""></p>
+<p>注意：</p>
+<ul>
+<li>在这个例子中，你可能会意识到我们不叫 拒绝。因为它是可选的。</li>
+<li>我们可以缩短这个案例，看代码：</li>
+</ul>
+<p><img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/v2-a47456668347170c874ace6938f1ea3c_b.png" alt=""></p>
+<p>咱们现在链接 promise。你，这个孩子只能在得到手机后才能显摆手机。</p>
+<p><img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/v2-c0980c53aa2343c9bf98766fdeb01340_b.png" alt=""></p>
+<p>–&gt; 简单吧！</p>
+<h2 id="（五）promises-都是异步的"><a href="#（五）promises-都是异步的" class="headerlink" title="（五）promises 都是异步的"></a>（五）promises 都是异步的</h2><p>Promises 都是异步的，咱们在这个 promise 开始和结束前写一段信息。</p>
+<p><img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/v2-8f7031b7feb2f9138e9fbf9e43cea4ba_b.png" alt=""></p>
+<p>期望输出的顺序是什么？也许你以为：</p>
+<p><img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/v2-ab5f509dd4b7fa340e70f18464a7feef_b.png" alt=""></p>
+<p>然而，实际的输出序列是：</p>
+<p><img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/v2-5112fc6cb9fe8362dde307decef8cb31_b.png" alt="">)<img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/v2-dcc2a769de96a95e5e313175803175f3_b.jpg" alt=""></p>
+<h4 id="为啥？因为生活就是不等人的，JavaScript-也是！"><a href="#为啥？因为生活就是不等人的，JavaScript-也是！" class="headerlink" title="为啥？因为生活就是不等人的，JavaScript 也是！"></a>为啥？因为生活就是不等人的，JavaScript 也是！</h4><p>你，孩子，不会说不去玩了就干等你老妈的承诺（新手机），对吧。这就是 异步调用，代码将无阻塞运行或等待结果。任何需要等 promise 的行为放在”.then”里面。</p>
+<h2 id="Promise-在-ES5-ES6-ES7-下："><a href="#Promise-在-ES5-ES6-ES7-下：" class="headerlink" title="Promise 在 ES5 /ES6 /ES7 下："></a>Promise 在 ES5 /ES6 /ES7 下：</h2><h4 id="ES5-大多数的浏览器"><a href="#ES5-大多数的浏览器" class="headerlink" title="ES5 - 大多数的浏览器"></a>ES5 - 大多数的浏览器</h4><p>ES5 不支持 promise，大多数浏览器借助第三方库（<a href="http://link.zhihu.com/?target=http%3A//bluebirdjs.com/docs/getting-started.html">Bluebird</a> 、<a href="http://link.zhihu.com/?target=https%3A//github.com/kriskowal/q">Q</a>）的话可以实现；</p>
+<h4 id="ES6-现代浏览器"><a href="#ES6-现代浏览器" class="headerlink" title="ES6 - 现代浏览器"></a>ES6 - 现代浏览器</h4><p>演示代码是 ok 的，因为 ES6 支持 promise。此外，我们也可以用 ES6 的箭头函数来简化代码。也可以用上 let 和 const。</p>
+<p>下面是 ES6 的演示代码：</p>
+<p><img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/v2-f7a80927108438f8adc8d56aff34d545_b.png" alt=""></p>
+<p>–&gt; 注意到所有的 var 都被 const 取代。所有的函数（解决，拒绝） 都使用箭头函数简化。</p>
+<h4 id="ES7-异步等待使语法看起来更漂亮！"><a href="#ES7-异步等待使语法看起来更漂亮！" class="headerlink" title="ES7 - 异步等待使语法看起来更漂亮！"></a>ES7 - 异步等待使语法看起来更漂亮！</h4><p>ES7 介绍 异步 和 等待 语法。它使异步语法看起来更漂亮、更容易理解，没有 “.then” 和”.catch”。</p>
+<p>用 ES7 语法来重写我们的例子：</p>
+<p><img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/v2-ad5f551844f352ed5879b9296160e9e1_b.png" alt=""></p>
+<ol>
+<li>当你需要在一个函数里面返回一个 promise，你在异步 调用这个函数。例如 案例中的异步函数”function showOff(phone)”。</li>
+<li>当你需要一个 promise，你就在等待着 。例如 “let phone = await willIGetNewPhone;” &amp; “ let message = await showOff(phone)”。</li>
+<li>使用 “ try { … } catch(error) { … } “ 捕捉 promise 错误/拒绝 。</li>
+</ol>
+<h2 id="为什么使用-promise？什么时候使用它们？"><a href="#为什么使用-promise？什么时候使用它们？" class="headerlink" title="为什么使用 promise？什么时候使用它们？"></a>为什么使用 promise？什么时候使用它们？</h2><p>为什么我们需要 promise？promise 之前的世界是怎样的？在回答这些问题之前，让我们回到最基础的地方。</p>
+<h3 id="对比正常函数和异步函数"><a href="#对比正常函数和异步函数" class="headerlink" title="对比正常函数和异步函数"></a>对比正常函数和异步函数</h3><p>让我们来看看这两个例子，这两个例子执行两个数字相加：</p>
+<p>正常函数两个数相加：</p>
+<p><img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/v2-7655e97e8eac3bad9bf7c6462c71471c_b.png" alt=""></p>
+<p>异步函数两个数相加：<img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/v2-cfc0dae019c56b1bacb9af1b94ae593c_b.png" alt=""></p>
+<p>如果你用正常的函数让两个数字，你会立即得到结果.。但是，当你发出远程调用来得到结果时，你需要等待，你不能立即得到结果.。</p>
+<p>或者这样说，你不知道你是否会得到结果，因为服务器可能会下降，响应速度慢等，你不希望在等待结果的时候，整个进程被阻止。调用 API，下载文件，读取文件中的一些你要执行的常用的异步操作。</p>
+<p>Promises 之前的世界：Callback 回调</p>
+<p>我们必须使用 promise 来实现异步调用吗？不是的，在 promise 之前，我们使用回调。回调函数只是你得到返回结果时调用的函数.。让我们使用回调修改前面的例子。<br><img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/v2-a0c0cc78e15e5ce37898520f433ee9f0_b.png" alt=""></p>
+<p>异步看起来 ok，为啥还要用 promise 呢?</p>
+<h3 id="如果你想进行后续的异步操作怎么办？"><a href="#如果你想进行后续的异步操作怎么办？" class="headerlink" title="如果你想进行后续的异步操作怎么办？"></a>如果你想进行后续的异步操作怎么办？</h3><p>三个数相加，正常函数这样写：</p>
+<p><img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/v2-59dc79d91bc6308f1f9dcab7c1f526ec_b.png" alt=""></p>
+<p>怎么看起来像回调？</p>
+<p><img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/v2-e49abd186159baff398864f7493f5cf0_b.png" alt=""></p>
+<p>语法对用户是友好的。有一个更好的术语，它看起来像一个金字塔，但人们通常把这称为“回调地狱”，因为回调嵌套到另一个回调。假设你有 10 的回调，你的代码将嵌套的 10 倍！</p>
+<h3 id="逃离回调地狱吧！"><a href="#逃离回调地狱吧！" class="headerlink" title="逃离回调地狱吧！"></a>逃离回调地狱吧！</h3><p>让 promise 来拯救。让我们来看看同样的例子的 promise 版本。</p>
+<p><img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/v2-137fc3c1c3f2a3064c3c56c19de109dd_b.png" alt=""></p>
+<p>有了承诺，我们用”.then”扁平化回调。在某种程度上，因为没有回调嵌套，它看起来干净。当然，用 ES7 异步语法，可以让他看起来更简洁！</p>
+<h2 id="新家伙：Observables-观测值"><a href="#新家伙：Observables-观测值" class="headerlink" title="新家伙：Observables 观测值"></a>新家伙：Observables 观测值</h2><p>在 promise 已经让你很幸福的时候，Observables 这货来锦上添花，让处理异步数据量更容易。</p>
+<blockquote>
+<p>Observables 是懒惰的事件流，可以发出零个或多个事件，而且可能完成也可能不完成。</p>
+</blockquote>
+<p>promise 和 observable 的关键区别是：</p>
+<ul>
+<li>Observables 观测值是可以取消的</li>
+<li>Observable 是懒惰的</li>
+</ul>
+<p>不要害怕，让我们来看看 Observables 的案例。在这个例子中，关于 Observables 使用 RxJS。</p>
+<p><img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/v2-e7fc7687124a145f61c8ba55afedc011_b.png" alt=""></p>
+<p>Observables 观测值可以很容易的做一些时髦的东西。看案例：</p>
+<p><img src="http://www.jixiaokang.com/wp-content/uploads/2018/05/v2-6c2ecaebec8cf5dbf0dbfc800bbd4204_b.png" alt=""></p>
+<p>好吧，咱们以后再接着讨论 Observables 观测值吧！</p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://jixioakang.com" rel="external nofollow noreferrer">xkloveme</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://jixioakang.com/2017/08/31/2017-08-31-promises/">http://jixioakang.com/2017/08/31/2017-08-31-promises/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://jixioakang.com" target="_blank">xkloveme</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E6%8A%80%E6%9C%AF/">
+                                    <span class="chip bg-color">技术</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+  #reward {
+    margin: 40px 0;
+    text-align: center;
+  }
+
+  #reward .reward-link {
+    font-size: 1.4rem;
+    line-height: 38px;
+  }
+
+  #reward .btn-floating:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  #rewardModal {
+    width: 320px;
+  }
+
+  #rewardModal .reward-title {
+    margin: 15px auto;
+    padding-bottom: 5px;
+  }
+
+  #rewardModal .modal-content {
+    padding: 10px;
+  }
+
+  #rewardModal .close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 1.3rem;
+    line-height: 20px;
+    cursor: pointer;
+  }
+
+  #rewardModal .close:hover {
+    color: #ef5350;
+    transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    -o-transform: scale(1.3);
+  }
+
+  #rewardModal .reward-tabs {
+    margin: 0 auto;
+    width: 210px;
+  }
+
+  .reward-tabs .tabs {
+    height: 38px;
+    margin: 10px auto;
+    padding-left: 0;
+  }
+
+  .reward-content ul {
+    padding-left: 0 !important;
+  }
+
+  .reward-tabs .tabs .tab {
+    height: 38px;
+    line-height: 38px;
+  }
+
+  .reward-tabs .tab a {
+    color: #fff;
+    background-color: #ccc;
+  }
+
+  .reward-tabs .tab a:hover {
+    background-color: #ccc;
+    color: #fff;
+  }
+
+  .reward-tabs .wechat-tab .active {
+    color: #fff !important;
+    background-color: #22ab38 !important;
+  }
+
+  .reward-tabs .alipay-tab .active {
+    color: #fff !important;
+    background-color: #019fe8 !important;
+  }
+
+  .reward-tabs .reward-img {
+    width: 210px;
+  }
+</style>
+
+<div id="reward">
+  <a
+    href="#rewardModal"
+    class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red"
+    >赏</a
+  >
+
+  <!-- Modal Structure -->
+  <div id="rewardModal" class="modal">
+    <div class="modal-content">
+      <a class="close modal-close"><i class="fas fa-times"></i></a>
+      <h4 class="reward-title">你的赏识是我前进的动力</h4>
+      <div class="reward-content">
+        <div class="reward-tabs">
+          <ul class="tabs row">
+            <li class="tab col s6 alipay-tab waves-effect waves-light">
+              <a href="#alipay">支付宝</a>
+            </li>
+            <li class="tab col s6 wechat-tab waves-effect waves-light">
+              <a href="#wechat">微 信</a>
+            </li>
+          </ul>
+          <div id="alipay">
+            <img
+              src="/medias/reward/alipay.jpg"
+              class="reward-img"
+              alt="支付宝打赏二维码"
+            />
+          </div>
+          <div id="wechat">
+            <img
+              src="/medias/reward/wechat.png"
+              class="reward-img"
+              alt="微信打赏二维码"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $(".tabs").tabs();
+  });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'f1e60c7afa53a51926b5',
+        clientSecret: '2430231be04e68f6ba8ccf331c537cc19f50a0bd',
+        repo: 'xkloveme.github.io',
+        owner: 'xkloveme',
+        admin: "xkloveme",
+        id: '2017-08-31T15-34-00',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2017/09/09/2017-09-09-ru-he-geng-hao-di-yun-yong-chrome/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="如何更好地运用 Chrome (Google)">
+                        
+                        <span class="card-title">如何更好地运用 Chrome (Google)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            已经在很多工具类文章前言中，提及使用工具的重要性；以至于在写这篇时候，大为窘迫：穷尽了脑海中那些名句箴言，目测都已然在先前文章中被引用。鉴于杳让人心底意识到工具的重要性，并且能践行之，远比介绍如何使用重要的多，所以，开篇之前，还是得再次重申
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2017-09-09
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            xkloveme
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">工具</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2017/08/31/2017-08-31-yi-dong-duan-bu-yun-xu-dian-ji-fan-hui-an-niu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="移动端或者pc端不允许点击返回按钮">
+                        
+                        <span class="card-title">移动端或者pc端不允许点击返回按钮</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            公司做移动端，支付成功之后摁返回按钮导致短信再次发送或者接口再次请求，只想让他点击页面指定的返回按钮，但是由于移动端不好监听手机的物理返回键以及微信左上角的返回按钮，经公司大牛研究好久出来下面代码
+history.pushState({},
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2017-08-31
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            xkloveme
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%8A%80%E6%9C%AF/">
+                        <span class="chip bg-color">技术</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 小康之家<br />'
+            + '文章作者: xkloveme<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+  <div class="container row center-align">
+    <div class="col s12 m8 l8 copy-right">
+      Copyright&nbsp;&copy;
+      <span id="year">年份</span>
+      <a href="http://jixioakang.com" target="_blank">xkloveme</a>
+      |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+      <br />
+       &nbsp;<i
+        class="fas fa-chart-area"
+      ></i
+      >&nbsp;站点总字数:&nbsp;<span class="white-color"
+        >136.2k</span
+      >&nbsp;字      
+      <span id="busuanzi_container_site_pv">
+        |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span
+          id="busuanzi_value_site_pv"
+          class="white-color"
+        ></span
+        >&nbsp;次
+      </span>
+       
+      <span id="busuanzi_container_site_uv">
+        |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span
+          id="busuanzi_value_site_uv"
+          class="white-color"
+        ></span
+        >&nbsp;人
+      </span>
+      
+      <br />
+      
+      <span id="sitetime">载入运行时间...</span>
+      <script>
+        function siteTime() {
+          window.setTimeout("siteTime()", 1000);
+          var seconds = 1000;
+          var minutes = seconds * 60;
+          var hours = minutes * 60;
+          var days = hours * 24;
+          var years = days * 365;
+          var today = new Date();
+          var startYear = "2020";
+          var startMonth = "3";
+          var startDate = "13";
+          var startHour = "0";
+          var startMinute = "0";
+          var startSecond = "0";
+          var todayYear = today.getFullYear();
+          var todayMonth = today.getMonth() + 1;
+          var todayDate = today.getDate();
+          var todayHour = today.getHours();
+          var todayMinute = today.getMinutes();
+          var todaySecond = today.getSeconds();
+          var t1 = Date.UTC(
+            startYear,
+            startMonth,
+            startDate,
+            startHour,
+            startMinute,
+            startSecond
+          );
+          var t2 = Date.UTC(
+            todayYear,
+            todayMonth,
+            todayDate,
+            todayHour,
+            todayMinute,
+            todaySecond
+          );
+          var diff = t2 - t1;
+          var diffYears = Math.floor(diff / years);
+          var diffDays = Math.floor(diff / days - diffYears * 365);
+          var diffHours = Math.floor(
+            (diff - (diffYears * 365 + diffDays) * days) / hours
+          );
+          var diffMinutes = Math.floor(
+            (diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+              minutes
+          );
+          var diffSeconds = Math.floor(
+            (diff -
+              (diffYears * 365 + diffDays) * days -
+              diffHours * hours -
+              diffMinutes * minutes) /
+              seconds
+          );
+          if (startYear == todayYear) {
+            document.getElementById("year").innerHTML = todayYear;
+            document.getElementById("sitetime").innerHTML =
+              "本站已安全运行 " +
+              diffDays +
+              " 天 " +
+              diffHours +
+              " 小时 " +
+              diffMinutes +
+              " 分钟 " +
+              diffSeconds +
+              " 秒";
+          } else {
+            document.getElementById("year").innerHTML =
+              startYear + " - " + todayYear;
+            document.getElementById("sitetime").innerHTML =
+              "本站已安全运行 " +
+              diffYears +
+              " 年 " +
+              diffDays +
+              " 天 " +
+              diffHours +
+              " 小时 " +
+              diffMinutes +
+              " 分钟 " +
+              diffSeconds +
+              " 秒";
+          }
+        }
+        setInterval(siteTime, 1000);
+      </script>
+      
+      <br />
+      
+    </div>
+    <div class="col s12 m4 l4 social-link social-statis">
+      
+    <a href="https://github.com/xkloveme" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:xkloveme@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+    <a href="https://twitter.com/xkloveme" class="tooltipped" target="_blank" data-tooltip="关注我的Twitter: https://twitter.com/xkloveme" data-position="top" data-delay="50">
+        <i class="fab fa-twitter"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+
+    </div>
+  </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-102352377-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-102352377-2');
+</script>
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

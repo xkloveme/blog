@@ -130,11 +130,11 @@
   </entry>
   
   <entry>
-    <title>Alfred Workflow教程与实例</title>
-    <link href="http://jixioakang.com/2016/11/23/2016-11-23-aflred-workflow/"/>
-    <id>http://jixioakang.com/2016/11/23/2016-11-23-aflred-workflow/</id>
-    <published>2016-11-23T16:00:00.000Z</published>
-    <updated>2020-03-13T09:08:01.101Z</updated>
+    <title>黑匣子里到底装了什么</title>
+    <link href="http://jixioakang.com/2018/07/24/2018-07-24-hei-xia-zi-li-dao-di-zhuang-liao-shi-me/"/>
+    <id>http://jixioakang.com/2018/07/24/2018-07-24-hei-xia-zi-li-dao-di-zhuang-liao-shi-me/</id>
+    <published>2018-07-24T12:47:29.000Z</published>
+    <updated>2020-03-14T06:37:22.785Z</updated>
     
     <summary type="html">
     
@@ -142,7 +142,10 @@
       
         
         
-          &lt;p&gt;小帽子 &lt;a href=&quot;https://www.alfredapp.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Alfred&lt;/a&gt; 作为 macOS 上的最佳效率软件应该没太大争议(&lt;a
+          &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;脏乱不堪的房间里忽然透进来一道微弱的光。多希望有人能一脚把门踹开，让房间里的人都能看到这些“脏乱“。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;—文昭&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;当民族主义与爱国情怀在中国氤氲蒸腾之时，千疮百孔的食药安全已
         
       
     
@@ -150,18 +153,174 @@
     
     
     
-      <category term="教程" scheme="http://jixioakang.com/tags/%E6%95%99%E7%A8%8B/"/>
+      <category term="人生百态" scheme="http://jixioakang.com/tags/%E4%BA%BA%E7%94%9F%E7%99%BE%E6%80%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue中数组和对象更改后视图不刷新的问题</title>
+    <link href="http://jixioakang.com/2018/06/27/2018-06-27-vue-zhong-shu-zu-he-dui-xiang-geng-gai-hou-shi-tu-bu-shua-xin-de-wen-ti/"/>
+    <id>http://jixioakang.com/2018/06/27/2018-06-27-vue-zhong-shu-zu-he-dui-xiang-geng-gai-hou-shi-tu-bu-shua-xin-de-wen-ti/</id>
+    <published>2018-06-27T15:01:38.000Z</published>
+    <updated>2020-03-14T06:37:22.785Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;Vue-数据响应原理&quot;&gt;&lt;a href=&quot;#Vue-数据响应原理&quot; class=&quot;headerlink&quot; title=&quot;Vue 数据响应原理&quot;&gt;&lt;/a&gt;Vue 数据响应原理&lt;/h4&gt;&lt;p&gt;[video width=”2560” height=”1440”
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="vue" scheme="http://jixioakang.com/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript逻辑运算符“||”和“&amp;&amp;”的简单梳理</title>
+    <link href="http://jixioakang.com/2018/05/31/2018-05-31-javascript-luo-ji-yun-suan-fu-he-de-jian-dan-shu-li/"/>
+    <id>http://jixioakang.com/2018/05/31/2018-05-31-javascript-luo-ji-yun-suan-fu-he-de-jian-dan-shu-li/</id>
+    <published>2018-05-31T23:28:19.000Z</published>
+    <updated>2020-03-14T06:37:22.785Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;一道经典的前端面试题：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;alert(1 &amp;amp;&amp;amp; 2) 得到的结果是什么？ A:true      B:false      C:1      D:2&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;请带着你的回答，往下看……
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="技术" scheme="http://jixioakang.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS几种数组遍历方式详解</title>
+    <link href="http://jixioakang.com/2018/05/27/2018-05-27-js-ji-chong-shu-zu-bian-li-fang-shi-xiang-jie/"/>
+    <id>http://jixioakang.com/2018/05/27/2018-05-27-js-ji-chong-shu-zu-bian-li-fang-shi-xiang-jie/</id>
+    <published>2018-05-27T20:42:38.000Z</published>
+    <updated>2020-03-14T06:37:22.785Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="ES6" scheme="http://jixioakang.com/tags/ES6/"/>
+    
+      <category term="JavaScript" scheme="http://jixioakang.com/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>超简单！Mac打造漂亮又好用的 zsh shell 环境</title>
+    <link href="http://jixioakang.com/2018/05/17/2018-05-17-chao-jian-dan-mac-da-zao-piao-liang-you-hao-yong-de-zsh-shell-huan-jing/"/>
+    <id>http://jixioakang.com/2018/05/17/2018-05-17-chao-jian-dan-mac-da-zao-piao-liang-you-hao-yong-de-zsh-shell-huan-jing/</id>
+    <published>2018-05-17T08:16:48.000Z</published>
+    <updated>2020-03-14T06:37:22.785Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;http://www.jixiaokang.com/wp-content/uploads/2018/05/QQ20180517-1@2x.png&quot; alt=&quot;&quot;&gt;身为开发者，很大一部分的时间是在用 command line 做事，如果能把
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="工具" scheme="http://jixioakang.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="技术" scheme="http://jixioakang.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue 分享知识点</title>
+    <link href="http://jixioakang.com/2018/05/17/2018-05-17-vue-fen-xiang-zhi-shi-dian/"/>
+    <id>http://jixioakang.com/2018/05/17/2018-05-17-vue-fen-xiang-zhi-shi-dian/</id>
+    <published>2018-05-17T06:46:00.000Z</published>
+    <updated>2020-03-14T06:37:22.785Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;vue 分享模块清单&lt;br&gt;1.Vue 2.0 之 Vue 实例和生命周期&lt;br&gt;2.vue 2.0 之自定义指令&lt;br&gt;3.vue 2.0 之观察者模式实现简单异步无限滚动 4.从 JavaScript 属性描述器剖析 Vue.js 响应式视图&lt;br&gt;5.Vue
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="技术" scheme="http://jixioakang.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vscode 常用配置</title>
+    <link href="http://jixioakang.com/2018/05/15/2018-05-15-vscode-chang-yong-pei-zhi/"/>
+    <id>http://jixioakang.com/2018/05/15/2018-05-15-vscode-chang-yong-pei-zhi/</id>
+    <published>2018-05-15T01:24:00.000Z</published>
+    <updated>2020-03-14T06:37:22.785Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre&gt;&lt;code&gt;{ &amp;quot;workbench.iconTheme&amp;quot;: &amp;quot;vscode-icons&amp;quot;, &amp;quot;editor.tabSize&amp;quot;: 2,
+        
+      
+    
+    </summary>
+    
+    
     
       <category term="工具" scheme="http://jixioakang.com/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
-    <title>使用GitHub Pages+Jekyll搭建个人博客</title>
-    <link href="http://jixioakang.com/2016/11/20/2016-11-18-build-blog-with-github-and-jekyll/"/>
-    <id>http://jixioakang.com/2016/11/20/2016-11-18-build-blog-with-github-and-jekyll/</id>
-    <published>2016-11-20T16:00:00.000Z</published>
-    <updated>2020-03-13T09:28:13.518Z</updated>
+    <title>Mac OS X 终端切换root用户</title>
+    <link href="http://jixioakang.com/2018/03/18/2018-03-18-mac-os-x-zhong-duan-qie-huan-root-yong-hu/"/>
+    <id>http://jixioakang.com/2018/03/18/2018-03-18-mac-os-x-zhong-duan-qie-huan-root-yong-hu/</id>
+    <published>2018-03-18T08:16:00.000Z</published>
+    <updated>2020-03-14T06:37:22.785Z</updated>
     
     <summary type="html">
     
@@ -169,7 +328,9 @@
       
         
         
-          &lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/assets/build_blog_with_github_and_jekyll/01.jpg&quot;
+          &lt;p&gt;mac 打开终端默认是当前登录用户，若要切换到 root 用户，使用命令：&lt;/p&gt;
+&lt;p&gt;第一种：(1)输入  sudo -i 或者 su - 或着 su - root  然后回车&lt;/p&gt;
+&lt;p&gt;(2)输入密码，就可以进入 root 用户（因为我之前设置过一次
         
       
     
@@ -177,11 +338,215 @@
     
     
     
-      <category term="教程" scheme="http://jixioakang.com/tags/%E6%95%99%E7%A8%8B/"/>
+      <category term="工具" scheme="http://jixioakang.com/tags/%E5%B7%A5%E5%85%B7/"/>
     
-      <category term="Jekyll" scheme="http://jixioakang.com/tags/Jekyll/"/>
+      <category term="技术" scheme="http://jixioakang.com/tags/%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="GitHub" scheme="http://jixioakang.com/tags/GitHub/"/>
+  </entry>
+  
+  <entry>
+    <title>Mac 使用技巧总结</title>
+    <link href="http://jixioakang.com/2018/03/16/2018-03-16-mac-shi-yong-ji-qiao-zong-jie/"/>
+    <id>http://jixioakang.com/2018/03/16/2018-03-16-mac-shi-yong-ji-qiao-zong-jie/</id>
+    <published>2018-03-16T09:29:00.000Z</published>
+    <updated>2020-03-14T06:37:22.785Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;Mac 系统日常使用技巧归纳总结。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;一、Mac-中-Finder-显示、关闭隐藏文件&quot;&gt;&lt;a href=&quot;#一、Mac-中-Finder-显示、关闭隐藏文件&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="工具" scheme="http://jixioakang.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mac 快捷键</title>
+    <link href="http://jixioakang.com/2018/03/16/2018-03-16-mac-kuai-jie-jian/"/>
+    <id>http://jixioakang.com/2018/03/16/2018-03-16-mac-kuai-jie-jian/</id>
+    <published>2018-03-16T09:24:00.000Z</published>
+    <updated>2020-03-14T06:37:22.785Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;作者：Macin&lt;br&gt;链接：&lt;a href=&quot;https://www.zhihu.com/question/26379660/answer/32645377&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="工具" scheme="http://jixioakang.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue前端框架面试问题</title>
+    <link href="http://jixioakang.com/2018/03/14/2018-03-14-vue-qian-duan-kuang-jia-mian-shi-wen-ti/"/>
+    <id>http://jixioakang.com/2018/03/14/2018-03-14-vue-qian-duan-kuang-jia-mian-shi-wen-ti/</id>
+    <published>2018-03-14T01:24:00.000Z</published>
+    <updated>2020-03-14T06:37:22.785Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;1、active-class-是哪个组件的属性？嵌套路由怎么定义？&quot;&gt;&lt;a href=&quot;#1、active-class-是哪个组件的属性？嵌套路由怎么定义？&quot; class=&quot;headerlink&quot; title=&quot;1、active-class
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="技术" scheme="http://jixioakang.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="面试" scheme="http://jixioakang.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ESLint 配置</title>
+    <link href="http://jixioakang.com/2018/03/13/2018-03-13-eslint-pei-zhi/"/>
+    <id>http://jixioakang.com/2018/03/13/2018-03-13-eslint-pei-zhi/</id>
+    <published>2018-03-13T06:58:00.000Z</published>
+    <updated>2020-03-14T06:37:22.785Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;ESLint-配置&quot;&gt;&lt;a href=&quot;#ESLint-配置&quot; class=&quot;headerlink&quot; title=&quot;ESLint 配置&quot;&gt;&lt;/a&gt;ESLint 配置&lt;/h1&gt;&lt;p&gt;ESlint
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="技术" scheme="http://jixioakang.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>字符串方法</title>
+    <link href="http://jixioakang.com/2018/02/26/2018-02-26-zi-fu-chuan-fang-fa/"/>
+    <id>http://jixioakang.com/2018/02/26/2018-02-26-zi-fu-chuan-fang-fa/</id>
+    <published>2018-02-26T11:02:00.000Z</published>
+    <updated>2020-03-14T06:37:22.785Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="js" scheme="http://jixioakang.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数组方法</title>
+    <link href="http://jixioakang.com/2018/02/26/2018-02-26-shu-zu-fang-fa/"/>
+    <id>http://jixioakang.com/2018/02/26/2018-02-26-shu-zu-fang-fa/</id>
+    <published>2018-02-26T11:02:00.000Z</published>
+    <updated>2020-03-14T06:37:22.785Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;前言：&quot;&gt;&lt;a href=&quot;#前言：&quot; class=&quot;headerlink&quot; title=&quot;前言：&quot;&gt;&lt;/a&gt;前言：&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;定义：数组是值的有序集合。
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="技术" scheme="http://jixioakang.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在 Google platform 上架設 ShadowSocks(SS) + BBR</title>
+    <link href="http://jixioakang.com/2018/02/09/2018-02-09-jia-she-shadowsocks-ss-bbr/"/>
+    <id>http://jixioakang.com/2018/02/09/2018-02-09-jia-she-shadowsocks-ss-bbr/</id>
+    <published>2018-02-09T07:06:00.000Z</published>
+    <updated>2020-03-14T06:37:22.785Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;建立-VPS&quot;&gt;&lt;a href=&quot;#建立-VPS&quot; class=&quot;headerlink&quot; title=&quot;建立 VPS&quot;&gt;&lt;/a&gt;建立 VPS&lt;/h3&gt;&lt;p&gt;Google cloud platform 有免費 12 個月 300USD
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="翻墙" scheme="http://jixioakang.com/tags/%E7%BF%BB%E5%A2%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chrome浏览器下 , webVPN 离线安装教程</title>
+    <link href="http://jixioakang.com/2018/02/09/2018-02-09-webvpn-chi-xian-an-zhuang/"/>
+    <id>http://jixioakang.com/2018/02/09/2018-02-09-webvpn-chi-xian-an-zhuang/</id>
+    <published>2018-02-09T03:33:00.000Z</published>
+    <updated>2020-03-14T06:37:22.785Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;chrome-浏览器下-webVPN-离线安装教程&quot;&gt;&lt;a href=&quot;#chrome-浏览器下-webVPN-离线安装教程&quot; class=&quot;headerlink&quot; title=&quot;chrome 浏览器下 , webVPN 离线安装教程&quot;&gt;&lt;/a&gt;chrome
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="工具" scheme="http://jixioakang.com/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
