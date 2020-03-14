@@ -41,7 +41,7 @@
                             <%
                                 var len = theme.featureImages.length;
                                 var num = Math.abs(hashCode(post.title) % len);
-                                var featureimg = theme.featureImages[num];
+                                var featureimg = theme.featureImages[num]+'?t='+Math.random().toString(36).slice(2);
                             %>
                             <img src="<%= featureimg %>" class="responsive-img" alt="<%- post.title %>">
                             <% } %>

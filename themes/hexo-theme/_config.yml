@@ -357,33 +357,33 @@ baiduPush: true
 # 使用到的前端库，可按需替换成对应的CDN地址，如果下面未指定具体的版本号，使用最新的版本即可.
 libs:
   css:
-    fontAwesome: /libs/awesome/css/all.css # V5.11.1
-    materialize: /libs/materialize/materialize.min.css # 1.0.0
-    aos: /libs/aos/aos.css
-    animate: /libs/animate/animate.min.css # V3.5.1
-    lightgallery: /libs/lightGallery/css/lightgallery.min.css # V1.6.11
-    aplayer: /libs/aplayer/APlayer.min.css
-    dplayer: /libs/dplayer/DPlayer.min.css
-    gitalk: /libs/gitalk/gitalk.css
-    jqcloud: /libs/jqcloud/jqcloud.css
-    tocbot: /libs/tocbot/tocbot.css
+    fontAwesome: https://cdn.bootcss.com/font-awesome/5.12.1/css/all.css # V5.11.1
+    materialize: https://cdn.bootcss.com/materialize/1.0.0/css/materialize.min.css # 1.0.0
+    aos: https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.css
+    animate: https://cdn.bootcss.com/animate.css/3.5.1/animate.min.css # V3.5.1
+    lightgallery: https://cdn.bootcss.com/lightgallery/1.6.11/css/lightgallery.min.css # V1.6.11
+    aplayer: https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css
+    dplayer: https://cdn.bootcss.com/dplayer/1.25.0/DPlayer.min.css
+    gitalk: https://cdn.bootcss.com/gitalk/1.6.2/gitalk.min.css
+    jqcloud: https://cdn.bootcss.com/jqcloud/1.0.4/jqcloud.min.css
+    tocbot: https://cdn.bootcss.com/tocbot/4.10.0/tocbot.css
   js:
-    jquery: /libs/jquery/jquery.min.js
-    materialize: /libs/materialize/materialize.min.js # 1.0.0
-    masonry: /libs/masonry/masonry.pkgd.min.js # v4.0.0
-    aos: /libs/aos/aos.js
-    scrollProgress: /libs/scrollprogress/scrollProgress.min.js
-    lightgallery: /libs/lightGallery/js/lightgallery-all.min.js # V1.6.11
+    jquery: https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js
+    materialize: https://cdn.bootcss.com/materialize/1.0.0/js/materialize.min.js # 1.0.0
+    masonry: https://cdn.bootcss.com/masonry/4.0.0/masonry.pkgd.min.js # v4.0.0
+    aos: https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.js
+    scrollProgress: https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.min.js
+    lightgallery: https://cdn.bootcss.com/lightgallery/1.6.11/js/lightgallery-all.min.js # V1.6.11
     clicklove: /libs/others/clicklove.js
     busuanzi: /libs/others/busuanzi.pure.mini.js
-    aplayer: /libs/aplayer/APlayer.min.js
-    dplayer: /libs/dplayer/DPlayer.min.js
-    crypto: /libs/cryptojs/crypto-js.min.js
-    echarts: /libs/echarts/echarts.min.js
-    gitalk: /libs/gitalk/gitalk.min.js
-    valine: /libs/valine/Valine.min.js # 若想保持最新版，请替换为 https://unpkg.com/valine/dist/Valine.min.js  默认为 /libs/valine/Valine.min.js
-    jqcloud: /libs/jqcloud/jqcloud-1.0.4.min.js
-    tocbot: /libs/tocbot/tocbot.min.js
+    aplayer: https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js
+    dplayer: https://cdn.bootcss.com/dplayer/1.25.0/DPlayer.min.js
+    crypto: https://cdn.bootcss.com/crypto-js/4.0.0/crypto-js.min.js
+    echarts: https://cdn.bootcss.com/echarts/4.6.0/echarts.min.js
+    gitalk: https://cdn.bootcss.com/gitalk/1.6.2/gitalk.min.js
+    valine: https://unpkg.com/valine/dist/Valine.min.js # 若想保持最新版，请替换为 https://unpkg.com/valine/dist/Valine.min.js  默认为 /libs/valine/Valine.min.js
+    jqcloud: https://cdn.bootcss.com/jqcloud/1.0.4/jqcloud-1.0.4.min.js
+    tocbot: https://cdn.bootcss.com/tocbot/4.10.0/tocbot.min.js
     canvas_nest: /libs/background/canvas-nest.js
     ribbon: /libs/background/ribbon.min.js
     ribbon_dynamic: /libs/background/ribbon-dynamic.js
@@ -392,30 +392,7 @@ libs:
 # The post featured images that needs to be displayed when there is no image.
 # 无文章特色图片时需要显示的文章特色图片.
 featureImages:
-  - /medias/featureimages/0.jpg
-  - /medias/featureimages/1.jpg
-  - /medias/featureimages/2.jpg
-  - /medias/featureimages/3.jpg
-  - /medias/featureimages/4.jpg
-  - /medias/featureimages/5.jpg
-  - /medias/featureimages/6.jpg
-  - /medias/featureimages/7.jpg
-  - /medias/featureimages/8.jpg
-  - /medias/featureimages/9.jpg
-  - /medias/featureimages/10.jpg
-  - /medias/featureimages/11.jpg
-  - /medias/featureimages/12.jpg
-  - /medias/featureimages/13.jpg
-  - /medias/featureimages/14.jpg
-  - /medias/featureimages/15.jpg
-  - /medias/featureimages/16.jpg
-  - /medias/featureimages/17.jpg
-  - /medias/featureimages/18.jpg
-  - /medias/featureimages/19.jpg
-  - /medias/featureimages/20.jpg
-  - /medias/featureimages/21.jpg
-  - /medias/featureimages/22.jpg
-  - /medias/featureimages/23.jpg
+  - https://api.qqsuu.cn/api/img
 
 # default configs that the default policy for every articles/posts
 # default 配置文章的默认转载规则
