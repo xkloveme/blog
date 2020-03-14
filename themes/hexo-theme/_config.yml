@@ -269,11 +269,11 @@ postCalendar: true
 gitalk:
   enable: true
   owner: xkloveme
-  repo: https://github.com/xkloveme/xkloveme.github.io
+  repo: xkloveme.github.io
   oauth:
     clientId: f1e60c7afa53a51926b5
     clientSecret: 2430231be04e68f6ba8ccf331c537cc19f50a0bd
-  admin:
+  admin: xkloveme
 
 # the Gitment config，default disabled
 # Gitment 评论模块的配置，默认为不激活
