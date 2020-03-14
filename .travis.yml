@@ -3,10 +3,10 @@ node_js: stable
 
 cache: npm
 before_install:
-  - npm install hexo -g
+  - npm i -g hexo-cli
 
-# install:
-#   - npm install
+install:
+  - npm install
 
 script:
   - hexo generate # generate static files
