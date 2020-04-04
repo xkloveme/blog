@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jixioakang.com/"/>
-  <updated>2020-03-16T02:23:14.713Z</updated>
+  <updated>2020-03-22T08:48:58.911Z</updated>
   <id>http://jixioakang.com/</id>
   
   <author>
@@ -17,11 +17,70 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>前端面试之HTTP</title>
+    <link href="http://jixioakang.com/2020/03/22/2020-03-22-qian-duan-mian-shi-zhi-http/"/>
+    <id>http://jixioakang.com/2020/03/22/2020-03-22-qian-duan-mian-shi-zhi-http/</id>
+    <published>2020-03-22T08:22:06.000Z</published>
+    <updated>2020-03-22T08:48:58.911Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;HTTP-有哪些方法？&quot;&gt;&lt;a href=&quot;#HTTP-有哪些方法？&quot; class=&quot;headerlink&quot; title=&quot;HTTP 有哪些方法？&quot;&gt;&lt;/a&gt;HTTP 有哪些方法？&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;HTTP1.0 定义了三种请求方法： GET,
+        
+      
+    
+    </summary>
+    
+    
+      <category term="面试" scheme="http://jixioakang.com/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+      <category term="面试" scheme="http://jixioakang.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="HTTP" scheme="http://jixioakang.com/tags/HTTP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>约在春天相见</title>
+    <link href="http://jixioakang.com/2020/03/13/2020-03-14-yue-zai-chun-tian-xiang-jian/"/>
+    <id>http://jixioakang.com/2020/03/13/2020-03-14-yue-zai-chun-tian-xiang-jian/</id>
+    <published>2020-03-13T03:57:26.000Z</published>
+    <updated>2020-03-14T12:25:04.735Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;
+
+&lt;h1 id=&quot;《约在春天相见》&quot;&gt;&lt;a href=&quot;#《约在春天相见》&quot; class=&quot;headerlink&quot; title=&quot;《约在春天相见》&quot;&gt;&lt;/a&gt;《约在春天相见》&lt;/h1&gt;&lt;h2 id=&quot;词曲：大雄&quot;&gt;&lt;a href=&quot;#词曲：大雄&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="琐碎" scheme="http://jixioakang.com/categories/%E7%90%90%E7%A2%8E/"/>
+    
+    
+      <category term="人生百态" scheme="http://jixioakang.com/tags/%E4%BA%BA%E7%94%9F%E7%99%BE%E6%80%81/"/>
+    
+  </entry>
+  
+  <entry>
     <title>发哨子的人</title>
     <link href="http://jixioakang.com/2020/03/13/2020-03-13-fa-shao-zi-de-ren/"/>
     <id>http://jixioakang.com/2020/03/13/2020-03-13-fa-shao-zi-de-ren/</id>
-    <published>2020-03-13T11:57:26.000Z</published>
-    <updated>2020-03-16T02:23:14.713Z</updated>
+    <published>2020-03-13T03:57:26.000Z</published>
+    <updated>2020-03-14T06:52:36.525Z</updated>
     
     <summary type="html">
     
@@ -47,11 +106,11 @@
   </entry>
   
   <entry>
-    <title>约在春天相见</title>
-    <link href="http://jixioakang.com/2020/03/13/2020-03-14-yue-zai-chun-tian-xiang-jian/"/>
-    <id>http://jixioakang.com/2020/03/13/2020-03-14-yue-zai-chun-tian-xiang-jian/</id>
-    <published>2020-03-13T11:57:26.000Z</published>
-    <updated>2020-03-16T02:23:14.713Z</updated>
+    <title>如何上传自己的UI组件包</title>
+    <link href="http://jixioakang.com/2019/10/11/2019-10-12-ru-he-shang-chuan-zi-ji-de-ui-zu-jian-bao/"/>
+    <id>http://jixioakang.com/2019/10/11/2019-10-12-ru-he-shang-chuan-zi-ji-de-ui-zu-jian-bao/</id>
+    <published>2019-10-11T16:00:00.000Z</published>
+    <updated>2020-03-14T11:54:01.546Z</updated>
     
     <summary type="html">
     
@@ -59,28 +118,30 @@
       
         
         
-          &lt;center&gt;
-
-&lt;h1 id=&quot;《约在春天相见》&quot;&gt;&lt;a href=&quot;#《约在春天相见》&quot; class=&quot;headerlink&quot; title=&quot;《约在春天相见》&quot;&gt;&lt;/a&gt;《约在春天相见》&lt;/h1&gt;&lt;h2 id=&quot;词曲：大雄&quot;&gt;&lt;a href=&quot;#词曲：大雄&quot;
+          &lt;h1 id=&quot;开篇&quot;&gt;&lt;a href=&quot;#开篇&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
     
-      <category term="琐碎" scheme="http://jixioakang.com/categories/%E7%90%90%E7%A2%8E/"/>
+      <category term="前端" scheme="http://jixioakang.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="人生百态" scheme="http://jixioakang.com/tags/%E4%BA%BA%E7%94%9F%E7%99%BE%E6%80%81/"/>
+      <category term="vue" scheme="http://jixioakang.com/tags/vue/"/>
+    
+      <category term="GitHub" scheme="http://jixioakang.com/tags/GitHub/"/>
+    
+      <category term="教程" scheme="http://jixioakang.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>基于 Vue拓展的 v-xxx 库</title>
-    <link href="http://jixioakang.com/2019/10/12/2019-10-12-vue-v-xxx-ji-yu-vue-tuo-zhan-de-v-xxx-ku/"/>
-    <id>http://jixioakang.com/2019/10/12/2019-10-12-vue-v-xxx-ji-yu-vue-tuo-zhan-de-v-xxx-ku/</id>
-    <published>2019-10-12T00:00:00.000Z</published>
-    <updated>2020-03-16T02:23:14.713Z</updated>
+    <link href="http://jixioakang.com/2019/10/11/2019-10-12-vue-v-xxx-ji-yu-vue-tuo-zhan-de-v-xxx-ku/"/>
+    <id>http://jixioakang.com/2019/10/11/2019-10-12-vue-v-xxx-ji-yu-vue-tuo-zhan-de-v-xxx-ku/</id>
+    <published>2019-10-11T16:00:00.000Z</published>
+    <updated>2020-03-14T11:53:59.439Z</updated>
     
     <summary type="html">
     
@@ -99,51 +160,20 @@
       <category term="前端" scheme="http://jixioakang.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="GitHub" scheme="http://jixioakang.com/tags/GitHub/"/>
-    
       <category term="vue" scheme="http://jixioakang.com/tags/vue/"/>
+    
+      <category term="GitHub" scheme="http://jixioakang.com/tags/GitHub/"/>
     
       <category term="指令" scheme="http://jixioakang.com/tags/%E6%8C%87%E4%BB%A4/"/>
     
   </entry>
   
   <entry>
-    <title>如何上传自己的UI组件包</title>
-    <link href="http://jixioakang.com/2019/10/12/2019-10-12-ru-he-shang-chuan-zi-ji-de-ui-zu-jian-bao/"/>
-    <id>http://jixioakang.com/2019/10/12/2019-10-12-ru-he-shang-chuan-zi-ji-de-ui-zu-jian-bao/</id>
-    <published>2019-10-12T00:00:00.000Z</published>
-    <updated>2020-03-16T02:23:14.713Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;开篇&quot;&gt;&lt;a href=&quot;#开篇&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="http://jixioakang.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="GitHub" scheme="http://jixioakang.com/tags/GitHub/"/>
-    
-      <category term="教程" scheme="http://jixioakang.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="vue" scheme="http://jixioakang.com/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Vue中的代理Proxy和$refs</title>
-    <link href="http://jixioakang.com/2018/08/10/2018-07-10-vue-refs/"/>
-    <id>http://jixioakang.com/2018/08/10/2018-07-10-vue-refs/</id>
-    <published>2018-08-10T00:00:00.000Z</published>
-    <updated>2020-03-16T02:23:14.713Z</updated>
+    <link href="http://jixioakang.com/2018/08/09/2018-07-10-vue-refs/"/>
+    <id>http://jixioakang.com/2018/08/09/2018-07-10-vue-refs/</id>
+    <published>2018-08-09T16:00:00.000Z</published>
+    <updated>2020-03-14T06:52:03.314Z</updated>
     
     <summary type="html">
     
@@ -170,8 +200,8 @@
     <title>黑匣子里到底装了什么</title>
     <link href="http://jixioakang.com/2018/07/24/2018-07-24-hei-xia-zi-li-dao-di-zhuang-liao-shi-me/"/>
     <id>http://jixioakang.com/2018/07/24/2018-07-24-hei-xia-zi-li-dao-di-zhuang-liao-shi-me/</id>
-    <published>2018-07-24T12:47:29.000Z</published>
-    <updated>2020-03-16T02:23:14.713Z</updated>
+    <published>2018-07-24T04:47:29.000Z</published>
+    <updated>2020-03-14T07:09:19.363Z</updated>
     
     <summary type="html">
     
@@ -200,8 +230,8 @@
     <title>Vue中数组和对象更改后视图不刷新的问题</title>
     <link href="http://jixioakang.com/2018/06/27/2018-06-27-vue-zhong-shu-zu-he-dui-xiang-geng-gai-hou-shi-tu-bu-shua-xin-de-wen-ti/"/>
     <id>http://jixioakang.com/2018/06/27/2018-06-27-vue-zhong-shu-zu-he-dui-xiang-geng-gai-hou-shi-tu-bu-shua-xin-de-wen-ti/</id>
-    <published>2018-06-27T15:01:38.000Z</published>
-    <updated>2020-03-16T02:23:14.713Z</updated>
+    <published>2018-06-27T07:01:38.000Z</published>
+    <updated>2020-03-14T06:51:56.187Z</updated>
     
     <summary type="html">
     
@@ -227,8 +257,8 @@
     <title>javascript逻辑运算符“||”和“&amp;&amp;”的简单梳理</title>
     <link href="http://jixioakang.com/2018/05/31/2018-05-31-javascript-luo-ji-yun-suan-fu-he-de-jian-dan-shu-li/"/>
     <id>http://jixioakang.com/2018/05/31/2018-05-31-javascript-luo-ji-yun-suan-fu-he-de-jian-dan-shu-li/</id>
-    <published>2018-05-31T23:28:19.000Z</published>
-    <updated>2020-03-16T02:23:14.713Z</updated>
+    <published>2018-05-31T15:28:19.000Z</published>
+    <updated>2020-03-14T06:51:52.336Z</updated>
     
     <summary type="html">
     
@@ -258,8 +288,8 @@
     <title>JS几种数组遍历方式详解</title>
     <link href="http://jixioakang.com/2018/05/27/2018-05-27-js-ji-chong-shu-zu-bian-li-fang-shi-xiang-jie/"/>
     <id>http://jixioakang.com/2018/05/27/2018-05-27-js-ji-chong-shu-zu-bian-li-fang-shi-xiang-jie/</id>
-    <published>2018-05-27T20:42:38.000Z</published>
-    <updated>2020-03-16T02:23:14.713Z</updated>
+    <published>2018-05-27T12:42:38.000Z</published>
+    <updated>2020-03-14T06:51:36.124Z</updated>
     
     <summary type="html">
     
@@ -287,8 +317,8 @@
     <title>超简单！Mac打造漂亮又好用的 zsh shell 环境</title>
     <link href="http://jixioakang.com/2018/05/17/2018-05-17-chao-jian-dan-mac-da-zao-piao-liang-you-hao-yong-de-zsh-shell-huan-jing/"/>
     <id>http://jixioakang.com/2018/05/17/2018-05-17-chao-jian-dan-mac-da-zao-piao-liang-you-hao-yong-de-zsh-shell-huan-jing/</id>
-    <published>2018-05-17T08:16:48.000Z</published>
-    <updated>2020-03-16T02:23:14.713Z</updated>
+    <published>2018-05-17T00:16:48.000Z</published>
+    <updated>2020-03-14T06:51:47.969Z</updated>
     
     <summary type="html">
     
@@ -314,10 +344,10 @@
   
   <entry>
     <title>vue 分享知识点</title>
-    <link href="http://jixioakang.com/2018/05/17/2018-05-17-vue-fen-xiang-zhi-shi-dian/"/>
-    <id>http://jixioakang.com/2018/05/17/2018-05-17-vue-fen-xiang-zhi-shi-dian/</id>
-    <published>2018-05-17T06:46:00.000Z</published>
-    <updated>2020-03-16T02:23:14.713Z</updated>
+    <link href="http://jixioakang.com/2018/05/16/2018-05-17-vue-fen-xiang-zhi-shi-dian/"/>
+    <id>http://jixioakang.com/2018/05/16/2018-05-17-vue-fen-xiang-zhi-shi-dian/</id>
+    <published>2018-05-16T22:46:00.000Z</published>
+    <updated>2020-03-14T06:51:32.708Z</updated>
     
     <summary type="html">
     
@@ -341,10 +371,10 @@
   
   <entry>
     <title>vscode 常用配置</title>
-    <link href="http://jixioakang.com/2018/05/15/2018-05-15-vscode-chang-yong-pei-zhi/"/>
-    <id>http://jixioakang.com/2018/05/15/2018-05-15-vscode-chang-yong-pei-zhi/</id>
-    <published>2018-05-15T01:24:00.000Z</published>
-    <updated>2020-03-16T02:23:14.713Z</updated>
+    <link href="http://jixioakang.com/2018/05/14/2018-05-15-vscode-chang-yong-pei-zhi/"/>
+    <id>http://jixioakang.com/2018/05/14/2018-05-15-vscode-chang-yong-pei-zhi/</id>
+    <published>2018-05-14T17:24:00.000Z</published>
+    <updated>2020-03-14T06:51:25.831Z</updated>
     
     <summary type="html">
     
@@ -370,8 +400,8 @@
     <title>Mac OS X 终端切换root用户</title>
     <link href="http://jixioakang.com/2018/03/18/2018-03-18-mac-os-x-zhong-duan-qie-huan-root-yong-hu/"/>
     <id>http://jixioakang.com/2018/03/18/2018-03-18-mac-os-x-zhong-duan-qie-huan-root-yong-hu/</id>
-    <published>2018-03-18T08:16:00.000Z</published>
-    <updated>2020-03-16T02:23:14.713Z</updated>
+    <published>2018-03-18T00:16:00.000Z</published>
+    <updated>2020-03-14T06:51:16.478Z</updated>
     
     <summary type="html">
     
@@ -401,8 +431,8 @@
     <title>Mac 使用技巧总结</title>
     <link href="http://jixioakang.com/2018/03/16/2018-03-16-mac-shi-yong-ji-qiao-zong-jie/"/>
     <id>http://jixioakang.com/2018/03/16/2018-03-16-mac-shi-yong-ji-qiao-zong-jie/</id>
-    <published>2018-03-16T09:29:00.000Z</published>
-    <updated>2020-03-16T02:23:14.713Z</updated>
+    <published>2018-03-16T01:29:00.000Z</published>
+    <updated>2020-03-14T06:51:08.212Z</updated>
     
     <summary type="html">
     
@@ -431,8 +461,8 @@
     <title>Mac 快捷键</title>
     <link href="http://jixioakang.com/2018/03/16/2018-03-16-mac-kuai-jie-jian/"/>
     <id>http://jixioakang.com/2018/03/16/2018-03-16-mac-kuai-jie-jian/</id>
-    <published>2018-03-16T09:24:00.000Z</published>
-    <updated>2020-03-16T02:23:14.713Z</updated>
+    <published>2018-03-16T01:24:00.000Z</published>
+    <updated>2020-03-14T06:50:59.349Z</updated>
     
     <summary type="html">
     
@@ -456,10 +486,10 @@
   
   <entry>
     <title>Vue前端框架面试问题</title>
-    <link href="http://jixioakang.com/2018/03/14/2018-03-14-vue-qian-duan-kuang-jia-mian-shi-wen-ti/"/>
-    <id>http://jixioakang.com/2018/03/14/2018-03-14-vue-qian-duan-kuang-jia-mian-shi-wen-ti/</id>
-    <published>2018-03-14T01:24:00.000Z</published>
-    <updated>2020-03-16T02:23:14.713Z</updated>
+    <link href="http://jixioakang.com/2018/03/13/2018-03-14-vue-qian-duan-kuang-jia-mian-shi-wen-ti/"/>
+    <id>http://jixioakang.com/2018/03/13/2018-03-14-vue-qian-duan-kuang-jia-mian-shi-wen-ti/</id>
+    <published>2018-03-13T17:24:00.000Z</published>
+    <updated>2020-03-14T06:50:42.262Z</updated>
     
     <summary type="html">
     
@@ -485,10 +515,10 @@
   
   <entry>
     <title>ESLint 配置</title>
-    <link href="http://jixioakang.com/2018/03/13/2018-03-13-eslint-pei-zhi/"/>
-    <id>http://jixioakang.com/2018/03/13/2018-03-13-eslint-pei-zhi/</id>
-    <published>2018-03-13T06:58:00.000Z</published>
-    <updated>2020-03-16T02:23:14.713Z</updated>
+    <link href="http://jixioakang.com/2018/03/12/2018-03-13-eslint-pei-zhi/"/>
+    <id>http://jixioakang.com/2018/03/12/2018-03-13-eslint-pei-zhi/</id>
+    <published>2018-03-12T22:58:00.000Z</published>
+    <updated>2020-03-14T06:50:35.857Z</updated>
     
     <summary type="html">
     
@@ -511,38 +541,11 @@
   </entry>
   
   <entry>
-    <title>字符串方法</title>
-    <link href="http://jixioakang.com/2018/02/26/2018-02-26-zi-fu-chuan-fang-fa/"/>
-    <id>http://jixioakang.com/2018/02/26/2018-02-26-zi-fu-chuan-fang-fa/</id>
-    <published>2018-02-26T11:02:00.000Z</published>
-    <updated>2020-03-16T02:23:14.713Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="http://jixioakang.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="js" scheme="http://jixioakang.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
     <title>数组方法</title>
     <link href="http://jixioakang.com/2018/02/26/2018-02-26-shu-zu-fang-fa/"/>
     <id>http://jixioakang.com/2018/02/26/2018-02-26-shu-zu-fang-fa/</id>
-    <published>2018-02-26T11:02:00.000Z</published>
-    <updated>2020-03-16T02:23:14.713Z</updated>
+    <published>2018-02-26T03:02:00.000Z</published>
+    <updated>2020-03-14T06:50:22.132Z</updated>
     
     <summary type="html">
     
@@ -566,11 +569,11 @@
   </entry>
   
   <entry>
-    <title>在 Google platform 上架設 ShadowSocks(SS) + BBR</title>
-    <link href="http://jixioakang.com/2018/02/09/2018-02-09-jia-she-shadowsocks-ss-bbr/"/>
-    <id>http://jixioakang.com/2018/02/09/2018-02-09-jia-she-shadowsocks-ss-bbr/</id>
-    <published>2018-02-09T07:06:00.000Z</published>
-    <updated>2020-03-16T02:23:14.713Z</updated>
+    <title>字符串方法</title>
+    <link href="http://jixioakang.com/2018/02/26/2018-02-26-zi-fu-chuan-fang-fa/"/>
+    <id>http://jixioakang.com/2018/02/26/2018-02-26-zi-fu-chuan-fang-fa/</id>
+    <published>2018-02-26T03:02:00.000Z</published>
+    <updated>2020-03-14T06:50:27.685Z</updated>
     
     <summary type="html">
     
@@ -578,17 +581,17 @@
       
         
         
-          &lt;h3 id=&quot;建立-VPS&quot;&gt;&lt;a href=&quot;#建立-VPS&quot; class=&quot;headerlink&quot; title=&quot;建立 VPS&quot;&gt;&lt;/a&gt;建立 VPS&lt;/h3&gt;&lt;p&gt;Google cloud platform 有免費 12 個月 300USD
+          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
     
-      <category term="教程" scheme="http://jixioakang.com/categories/%E6%95%99%E7%A8%8B/"/>
+      <category term="前端" scheme="http://jixioakang.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="翻墙" scheme="http://jixioakang.com/tags/%E7%BF%BB%E5%A2%99/"/>
+      <category term="js" scheme="http://jixioakang.com/tags/js/"/>
     
   </entry>
   
