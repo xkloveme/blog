@@ -1,7 +1,21 @@
+sudo: false
 language: node_js
-node_js: stable
+node_js:
+  - 10 # use nodejs v10 LTS
 
-cache: npm
+# 指定缓存模块，可选。缓存可加快编译速度。
+cache:
+  directories:
+    - node_modules
+
+# 指定博客的仓库地址
+env:
+ global:
+   # Github Pages
+   - GH_REF: github.com/xkloveme/xkloveme.github.io
+   # Coding Pages
+   - CO_REF: e.coding.net/jixiaokang/blog.git
+
 before_install:
   - npm i -g hexo-cli
 
@@ -28,7 +42,16 @@ after_script:
   - git config user.email "admin@jixiaokang.com"
   - git add .
   - git commit -m "👷‍♀️Automatically update from travis-ci👷‍♀️ at `date +"%Y-%m-%d %H:%M"`"
-  - git push --quiet --force  "https://${GH_TOKEN}@${GH_REF}" master
+  # - git push --quiet --force  "https://${GH_TOKEN}@${GH_REF}" master
+  # Github Pages
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
+  # Coding Pages
+  - git push --force --quiet "https://jixiaokang:${CO_TOKEN}@${CO_REF}" master:coding-pages
+  - git tag v0.0.$TRAVIS_BUILD_NUMBER -a -m "Auto Taged By TravisCI With Build $TRAVIS_BUILD_NUMBER"
+  # Github Pages
+  - git push --quiet "https://${GH_TOKEN}@${GH_REF}" master:master --tags
+  # Coding Pages
+  - git push --quiet "https://jixiaokang:${CO_TOKEN}@${CO_REF}" master:master --tags
 
 branches:
   only:
