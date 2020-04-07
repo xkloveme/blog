@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jixioakang.com/"/>
-  <updated>2020-04-07T05:24:56.846Z</updated>
+  <updated>2020-04-07T05:31:31.432Z</updated>
   <id>http://jixioakang.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://jixioakang.com/2020/04/06/2020-04-06-qian-kao-bei-he-shen-kao-bei/"/>
     <id>http://jixioakang.com/2020/04/06/2020-04-06-qian-kao-bei-he-shen-kao-bei/</id>
     <published>2020-04-06T22:39:12.000Z</published>
-    <updated>2020-04-07T05:24:56.846Z</updated>
+    <updated>2020-04-07T05:31:31.432Z</updated>
     
     <summary type="html">
     
@@ -76,35 +76,6 @@
   </entry>
   
   <entry>
-    <title>约在春天相见</title>
-    <link href="http://jixioakang.com/2020/03/13/2020-03-14-yue-zai-chun-tian-xiang-jian/"/>
-    <id>http://jixioakang.com/2020/03/13/2020-03-14-yue-zai-chun-tian-xiang-jian/</id>
-    <published>2020-03-13T03:57:26.000Z</published>
-    <updated>2020-03-14T12:25:04.735Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;
-
-&lt;h1 id=&quot;《约在春天相见》&quot;&gt;&lt;a href=&quot;#《约在春天相见》&quot; class=&quot;headerlink&quot; title=&quot;《约在春天相见》&quot;&gt;&lt;/a&gt;《约在春天相见》&lt;/h1&gt;&lt;h2 id=&quot;词曲：大雄&quot;&gt;&lt;a href=&quot;#词曲：大雄&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="琐碎" scheme="http://jixioakang.com/categories/%E7%90%90%E7%A2%8E/"/>
-    
-    
-      <category term="人生百态" scheme="http://jixioakang.com/tags/%E4%BA%BA%E7%94%9F%E7%99%BE%E6%80%81/"/>
-    
-  </entry>
-  
-  <entry>
     <title>发哨子的人</title>
     <link href="http://jixioakang.com/2020/03/13/2020-03-13-fa-shao-zi-de-ren/"/>
     <id>http://jixioakang.com/2020/03/13/2020-03-13-fa-shao-zi-de-ren/</id>
@@ -135,11 +106,11 @@
   </entry>
   
   <entry>
-    <title>如何上传自己的UI组件包</title>
-    <link href="http://jixioakang.com/2019/10/11/2019-10-12-ru-he-shang-chuan-zi-ji-de-ui-zu-jian-bao/"/>
-    <id>http://jixioakang.com/2019/10/11/2019-10-12-ru-he-shang-chuan-zi-ji-de-ui-zu-jian-bao/</id>
-    <published>2019-10-11T16:00:00.000Z</published>
-    <updated>2020-03-14T11:54:01.546Z</updated>
+    <title>约在春天相见</title>
+    <link href="http://jixioakang.com/2020/03/13/2020-03-14-yue-zai-chun-tian-xiang-jian/"/>
+    <id>http://jixioakang.com/2020/03/13/2020-03-14-yue-zai-chun-tian-xiang-jian/</id>
+    <published>2020-03-13T03:57:26.000Z</published>
+    <updated>2020-03-14T12:25:04.735Z</updated>
     
     <summary type="html">
     
@@ -147,21 +118,19 @@
       
         
         
-          &lt;h1 id=&quot;开篇&quot;&gt;&lt;a href=&quot;#开篇&quot; class=&quot;headerlink&quot;
+          &lt;center&gt;
+
+&lt;h1 id=&quot;《约在春天相见》&quot;&gt;&lt;a href=&quot;#《约在春天相见》&quot; class=&quot;headerlink&quot; title=&quot;《约在春天相见》&quot;&gt;&lt;/a&gt;《约在春天相见》&lt;/h1&gt;&lt;h2 id=&quot;词曲：大雄&quot;&gt;&lt;a href=&quot;#词曲：大雄&quot;
         
       
     
     </summary>
     
     
-      <category term="前端" scheme="http://jixioakang.com/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="琐碎" scheme="http://jixioakang.com/categories/%E7%90%90%E7%A2%8E/"/>
     
     
-      <category term="vue" scheme="http://jixioakang.com/tags/vue/"/>
-    
-      <category term="GitHub" scheme="http://jixioakang.com/tags/GitHub/"/>
-    
-      <category term="教程" scheme="http://jixioakang.com/tags/%E6%95%99%E7%A8%8B/"/>
+      <category term="人生百态" scheme="http://jixioakang.com/tags/%E4%BA%BA%E7%94%9F%E7%99%BE%E6%80%81/"/>
     
   </entry>
   
@@ -194,6 +163,37 @@
       <category term="GitHub" scheme="http://jixioakang.com/tags/GitHub/"/>
     
       <category term="指令" scheme="http://jixioakang.com/tags/%E6%8C%87%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何上传自己的UI组件包</title>
+    <link href="http://jixioakang.com/2019/10/11/2019-10-12-ru-he-shang-chuan-zi-ji-de-ui-zu-jian-bao/"/>
+    <id>http://jixioakang.com/2019/10/11/2019-10-12-ru-he-shang-chuan-zi-ji-de-ui-zu-jian-bao/</id>
+    <published>2019-10-11T16:00:00.000Z</published>
+    <updated>2020-03-14T11:54:01.546Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;开篇&quot;&gt;&lt;a href=&quot;#开篇&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://jixioakang.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="vue" scheme="http://jixioakang.com/tags/vue/"/>
+    
+      <category term="GitHub" scheme="http://jixioakang.com/tags/GitHub/"/>
+    
+      <category term="教程" scheme="http://jixioakang.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
