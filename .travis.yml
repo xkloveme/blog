@@ -1,7 +1,6 @@
 sudo: false
 language: node_js
-node_js:
-  - 10 # use nodejs v10 LTS
+node_js: stable
 
 # 指定缓存模块，可选。缓存可加快编译速度。
 cache:
@@ -45,6 +44,7 @@ after_script:
   # Github Pages
   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
   # Coding Pages
+  - git config --system --unset credential.helper
   - git push --force --quiet "https://jixiaokang:${CO_TOKEN}@${CO_REF}" master:coding-pages
   - git tag v0.0.$TRAVIS_BUILD_NUMBER -a -m "Auto Taged By TravisCI With Build $TRAVIS_BUILD_NUMBER"
   # Github Pages
