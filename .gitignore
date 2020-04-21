@@ -7,3 +7,4 @@ node_modules
 .DS_Store
 pubilc/*
 yulib.resource
+db.json

@@ -392,7 +392,7 @@ libs:
 # The post featured images that needs to be displayed when there is no image.
 # 无文章特色图片时需要显示的文章特色图片.
 featureImages:
-  - https://picsum.photos/800/500
+  - https://picsum.photos/600/300
 
 # default configs that the default policy for every articles/posts
 # default 配置文章的默认转载规则
