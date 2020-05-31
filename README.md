@@ -4,4 +4,8 @@
 
 - [Preview](http://jixiaokang.com/)
 
-## 介绍
+## 新建笔记
+
+``` bash
+hexo new 2020-05-31
+```
