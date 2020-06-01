@@ -9,3 +9,7 @@
 ``` bash
 hexo new 2020-05-31
 ```
+
+## 关注我
+
+- [github](http://www.github.com/xkloveme)
