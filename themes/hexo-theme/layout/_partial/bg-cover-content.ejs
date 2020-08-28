@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
         <div class="brand">
-            <div class="title center-align">
+            <div class="title center-align" data-z-depth=".25em" data-z  data-z-layers="10" data-z-event="pointer" data-z-eventRotation="30deg">
                 <% if (config.subtitle && config.subtitle.length > 0) { %>
                 <%= config.subtitle %>
                 <% } else { %>
@@ -11,7 +11,7 @@
 
             <div class="description center-align">
                 <% if (theme.subtitle.enable) { %>
-                <span id="subtitle"></span>
+                <span id="subtitle" ></span>
                 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
                 <script>
                     var typed = new Typed("#subtitle", {
@@ -41,3 +41,4 @@
     $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
 </script>
 <% } %>
+<script src="<%- theme.libs.js.ztext %>"></script>
